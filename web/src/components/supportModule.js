@@ -17,7 +17,14 @@ const SupportModule = () => {
         <div className="support-module__collaborators">
           <img src={newLogo} alt="NEW logo" />
           <img src={deloitteLogo} alt="Deloitte logo" />
+          <img src={nybyLogo} alt="NyBy logo" />
+          <img src={nabohjelpLogo} alt="NaboHjelp logo" />
+          <img src={sanityLogo} alt="Sanity logo" />
         </div>
+        <span className="support-module__email">
+          Email <a href="mailto:anders@new.no">anders@new.no</a> if you want to
+          take part
+        </span>
       </div>
     </div>
   );

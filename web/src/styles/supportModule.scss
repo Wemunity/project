@@ -6,24 +6,52 @@
   width: 100vw;
 
   &__content {
+    padding: 50px 4% 100px;
     max-width: 900px;
-    padding-top: 50px;
     margin: 0 auto;
-  }
-
-  &__logo {
-    font-size: 20px;
-    font-weight: 600;
+    @media (min-width: 1650px) {
+      padding: 50px 4% 130px;
+      max-width: 1100px;
+    }
   }
 
   &__title {
     font-size: 40px;
     margin-top: 50px;
     margin-bottom: 0;
+    font-weight: 300;
+
+    @media (min-width: 1650px) {
+      font-size: 50px;
+    }
   }
 
   &__text {
     font-size: 16px;
     max-width: 600px;
+    @media (min-width: 1650px) {
+      font-size: 25px;
+    }
+  }
+
+  &__collaborators {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 40px 0;
+
+    img {
+      margin-right: 50px;
+      height: 120px;
+      width: 170px;
+    }
+  }
+
+  &__email {
+    font-size: 16px;
+    @media (min-width: 1650px) {
+      font-size: 25px;
+    }
   }
 }

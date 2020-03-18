@@ -4,6 +4,7 @@ import '../styles/app.scss';
 import SocialModule from '../components/socialModule.js';
 import FeatureModule from '../components/featureModule.js';
 import SupportModule from '../components/supportModule.js';
+import Footer from '../components/footer.js';
 
 function LandingPage() {
   return (
@@ -12,6 +13,7 @@ function LandingPage() {
       <SocialModule />
       <FeatureModule />
       <SupportModule />
+      <Footer />
     </div>
   );
 }
