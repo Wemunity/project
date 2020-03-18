@@ -11,16 +11,22 @@ const SocialModule = () => {
           Collaborative and open source. Get involved!
         </p>
         <div className="social-module__buttons">
-          <button className="social-module__button social-module__button--blue">
+          <a
+            href="https://www.facebook.com/groups/wemunity"
+            className="social-module__button social-module__button--blue"
+          >
             <span>
               Wemunity on facebook <img src={facebook} alt="facebook" />
             </span>
-          </button>
-          <button className="social-module__button social-module__button--grey">
+          </a>
+          <a
+            href="https://github.com/Wemunity"
+            className="social-module__button social-module__button--grey"
+          >
             <span>
               Wemunity on github <img src={github} alt="github" />
             </span>
-          </button>
+          </a>
         </div>
       </div>
     </div>

@@ -24,6 +24,13 @@
     @media (min-width: 1650px) {
       font-size: 50px;
     }
+    @media (max-width: 1100px) {
+      font-size: 30px;
+      line-height: unset;
+    }
+    @media (max-width: 525px) {
+      font-size: 25px;
+    }
   }
 
   &__text {
@@ -31,6 +38,10 @@
     max-width: 600px;
     @media (min-width: 1650px) {
       font-size: 25px;
+    }
+    @media (max-width: 1100px) {
+      line-height: unset;
+      font-size: 16px;
     }
   }
 
@@ -40,6 +51,12 @@
     justify-content: space-between;
     flex-wrap: wrap;
     margin: 40px 0;
+    @media (max-width: 790px) {
+      justify-content: space-around;
+    }
+    @media (max-width: 525px) {
+      justify-content: space-between;
+    }
 
     img {
       margin-right: 50px;
@@ -49,9 +66,13 @@
   }
 
   &__email {
-    font-size: 16px;
+    font-size: 20px;
     @media (min-width: 1650px) {
       font-size: 25px;
+    }
+    @media (max-width: 1100px) {
+      line-height: unset;
+      font-size: 16px;
     }
   }
 }
