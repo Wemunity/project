@@ -84,4 +84,15 @@
       top: 30px;
     }
   }
+
+  &__link {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:visited {
+      color: white;
+    }
+  }
 }
