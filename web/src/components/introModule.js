@@ -10,13 +10,12 @@ const IntroModule = () => {
       <div className="intro-module__content">
         <span className="intro-module__logo">Wemunity project</span>
         <h1 className="intro-module__title">
-          Mobilize immunized citizens to contribute in dealing with Covid-19
-          pandemi
+          Mobilize immunized citizens in dealing with the COVID-19 pandemic
         </h1>
         <p className="intro-module__text">
-          Building a service where recovered patients can registered, be
-          medically cleared and made available to provide assistance to keep up
-          critical societal functions.
+          We are building an open source system where the recovered can be
+          approved to provide assistance in keeping up critical societal
+          functions.
         </p>
       </div>
     </div>

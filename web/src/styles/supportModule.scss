@@ -62,6 +62,7 @@
       margin-right: 50px;
       height: 120px;
       width: 170px;
+      object-fit: contain;
 
       @media (max-width: 525px) {
         height: 90px;

@@ -26,6 +26,17 @@ const Footer = () => {
           <h4>Contact</h4>
           <span>Anders Waage Nilsen</span>
           <span>anders@new.no</span>
+
+          <h4>Social</h4>
+          <a
+            className="footer__link"
+            href="https://www.facebook.com/groups/wemunity"
+          >
+            <span>Facebook</span>
+          </a>
+          <a className="footer__link" href="https://github.com/Wemunity">
+            <span>Github</span>
+          </a>
         </div>
       </div>
     </div>
