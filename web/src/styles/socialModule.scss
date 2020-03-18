@@ -16,18 +16,30 @@
   }
 
   &__content {
+    padding: 0 4%;
     max-width: 900px;
     margin: 70px auto 0;
+    @media (min-width: 1650px) {
+      max-width: 1100px;
+      padding: 0 4% 100px;
+    }
   }
 
   &__title {
     font-size: 40px;
     margin-top: 50px;
     margin-bottom: 0;
+    font-weight: 300;
+    @media (min-width: 1650px) {
+      font-size: 50px;
+    }
   }
 
   &__text {
     font-size: 16px;
+    @media (min-width: 1650px) {
+      font-size: 25px;
+    }
   }
 
   &__buttons {
@@ -36,6 +48,9 @@
     justify-content: space-between;
     max-width: 470px;
     margin-top: 70px;
+    @media (min-width: 1650px) {
+      max-width: 550px;
+    }
   }
 
   &__button {
@@ -44,6 +59,9 @@
     border-radius: 20px;
     cursor: pointer;
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+    @media (min-width: 1650px) {
+      padding: 8px 20px;
+    }
 
     &--blue {
       color: white;
@@ -57,6 +75,10 @@
 
     span {
       font-size: 14px;
+      line-height: unset;
+      @media (min-width: 1650px) {
+        font-size: 16px;
+      }
       img {
         height: 18px;
         margin-left: 8px;

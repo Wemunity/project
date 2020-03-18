@@ -2,37 +2,49 @@
   background: #090039;
   color: white;
   position: relative;
-  min-height: 500px;
   width: 100vw;
 
   &__image {
     position: absolute;
     left: 0;
     top: 60px;
+    @media (min-width: 1650px) {
+      top: 30px;
+    }
     img {
       height: 150px;
       width: 180px;
+      @media (min-width: 1650px) {
+        width: 400px;
+        height: 230px;
+      }
     }
   }
 
   &__content {
+    padding: 150px 4% 50px;
     max-width: 900px;
-    padding-top: 150px;
     margin: 0 auto;
+    @media (min-width: 1650px) {
+      padding: 175px 4% 60px;
+      max-width: 1100px;
+    }
   }
 
   &__logo {
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 600;
   }
 
   &__title {
-    font-size: 40px;
+    font-size: 50px;
     margin-top: 50px;
     margin-bottom: 0;
+    font-weight: 300;
   }
 
   &__text {
-    font-size: 16px;
+    font-size: 25px;
+    max-width: 850px;
   }
 }

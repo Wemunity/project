@@ -4,6 +4,7 @@
 @import './socialModule';
 @import './featureModule';
 @import './supportModule';
+@import './footer';
 
 html {
   padding: 0;
@@ -30,4 +31,14 @@ h6,
 p,
 span {
   font-family: 'Poppins', sans-serif;
+}
+
+h1,
+h2 {
+  line-height: 66px;
+}
+
+p,
+span {
+  line-height: 38px;
 }
