@@ -6,7 +6,7 @@
   width: 100vw;
 
   &__content {
-    padding: 50px 4% 0;
+    padding: 50px 4% 50px;
     max-width: 900px;
     margin: 0 auto;
     display: flex;
@@ -15,6 +15,9 @@
     @media (min-width: 1650px) {
       max-width: 1100px;
     }
+    @media (max-width: 525px) {
+      flex-direction: column;
+    }
   }
 
   &__column {
@@ -22,11 +25,14 @@
     span {
       display: block;
       line-height: 35px;
-      p {
-        margin-top: 0;
-        @media (min-width: 1650px) {
-          font-size: 20px;
-        }
+      min-width: 175px;
+
+      @media (min-width: 1650px) {
+        font-size: 20px;
+      }
+      @media (max-width: 1100px) {
+        line-height: unset;
+        font-size: 16px;
       }
     }
 
@@ -46,6 +52,10 @@
       @media (min-width: 1650px) {
         font-size: 20px;
       }
+      @media (max-width: 1100px) {
+        line-height: unset;
+        font-size: 16px;
+      }
     }
   }
 
@@ -54,6 +64,12 @@
   }
 
   &__corona {
+    @media (max-width: 525px) {
+      position: absolute;
+      width: 200px;
+      right: 0;
+      transform: rotate(90deg);
+    }
     width: 100%;
   }
 
@@ -62,5 +78,10 @@
     left: 50%;
     top: 100px;
     width: 40px;
+    @media (max-width: 525px) {
+      left: unset;
+      right: 30px;
+      top: 30px;
+    }
   }
 }

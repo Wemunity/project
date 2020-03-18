@@ -11,12 +11,19 @@
     @media (min-width: 1650px) {
       top: 30px;
     }
+    @media (max-width: 525px) {
+      left: 50px;
+      top: 20px;
+    }
     img {
       height: 150px;
       width: 180px;
       @media (min-width: 1650px) {
         width: 400px;
         height: 230px;
+      }
+      @media (max-width: 525px) {
+        width: 100%;
       }
     }
   }
@@ -29,22 +36,48 @@
       padding: 175px 4% 60px;
       max-width: 1100px;
     }
+    @media (max-width: 1100px) {
+      padding: 100px 4% 60px;
+    }
   }
 
   &__logo {
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 600;
+    @media (min-width: 1650px) {
+      font-size: 30px;
+    }
+    @media (max-width: 525px) {
+      font-size: 20px;
+    }
   }
 
   &__title {
-    font-size: 50px;
+    font-size: 40px;
     margin-top: 50px;
     margin-bottom: 0;
     font-weight: 300;
+    @media (min-width: 1650px) {
+      font-size: 50px;
+    }
+    @media (max-width: 1100px) {
+      font-size: 30px;
+      line-height: unset;
+    }
+    @media (max-width: 525px) {
+      font-size: 25px;
+    }
   }
 
   &__text {
-    font-size: 25px;
+    font-size: 20px;
     max-width: 850px;
+    @media (min-width: 1650px) {
+      font-size: 25px;
+    }
+    @media (max-width: 1100px) {
+      line-height: unset;
+      font-size: 16px;
+    }
   }
 }
