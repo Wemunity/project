@@ -1,0 +1,67 @@
+.social-module {
+  background: #fff;
+  color: #090039;
+  position: relative;
+  min-height: 350px;
+  width: 100vw;
+
+  &__image {
+    position: absolute;
+    left: 0;
+    top: 60px;
+    img {
+      height: 150px;
+      width: 180px;
+    }
+  }
+
+  &__content {
+    max-width: 900px;
+    margin: 70px auto 0;
+  }
+
+  &__title {
+    font-size: 40px;
+    margin-top: 50px;
+    margin-bottom: 0;
+  }
+
+  &__text {
+    font-size: 16px;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 470px;
+    margin-top: 70px;
+  }
+
+  &__button {
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+
+    &--blue {
+      color: white;
+      background: #090039;
+    }
+
+    &--grey {
+      color: #090039;
+      background: #e1e1ef;
+    }
+
+    span {
+      font-size: 14px;
+      img {
+        height: 18px;
+        margin-left: 8px;
+        margin-bottom: -4px;
+      }
+    }
+  }
+}

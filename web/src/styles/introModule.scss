@@ -1,0 +1,38 @@
+.intro-module {
+  background: #090039;
+  color: white;
+  position: relative;
+  min-height: 500px;
+  width: 100vw;
+
+  &__image {
+    position: absolute;
+    left: 0;
+    top: 60px;
+    img {
+      height: 150px;
+      width: 180px;
+    }
+  }
+
+  &__content {
+    max-width: 900px;
+    padding-top: 150px;
+    margin: 0 auto;
+  }
+
+  &__logo {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  &__title {
+    font-size: 40px;
+    margin-top: 50px;
+    margin-bottom: 0;
+  }
+
+  &__text {
+    font-size: 16px;
+  }
+}

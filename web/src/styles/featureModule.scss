@@ -1,0 +1,37 @@
+.feature-module {
+  background: #e1e1ef;
+  color: #090039;
+  position: relative;
+  min-height: 480px;
+  width: 100vw;
+
+  &__content {
+    max-width: 1100px;
+    padding-top: 70px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  &__feature {
+    max-width: 220px;
+    margin: 10px;
+  }
+
+  &__image {
+    margin-left: 30px;
+    width: 80px;
+    height: 80px;
+  }
+
+  &__heading {
+    font-weight: 600;
+    font-size: 20px;
+  }
+
+  &__text {
+    font-size: 16px;
+  }
+}
