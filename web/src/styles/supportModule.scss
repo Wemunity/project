@@ -62,6 +62,10 @@
       margin-right: 50px;
       height: 120px;
       width: 170px;
+
+      @media (max-width: 525px) {
+        height: 90px;
+      }
     }
   }
 
