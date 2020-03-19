@@ -34,14 +34,16 @@
   }
 
   &__text {
-    font-size: 16px;
-    max-width: 600px;
-    @media (min-width: 1650px) {
-      font-size: 25px;
-    }
-    @media (max-width: 1100px) {
-      line-height: unset;
+    p {
       font-size: 16px;
+      max-width: 600px;
+      @media (min-width: 1650px) {
+        font-size: 25px;
+      }
+      @media (max-width: 1100px) {
+        line-height: unset;
+        font-size: 16px;
+      }
     }
   }
 
