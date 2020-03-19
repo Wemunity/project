@@ -23,7 +23,7 @@ const SupportModule = ({ m }) => {
                 key={s._key}
                 className="feature-module__image"
                 src={imageUrlFor(buildImageObj(s.logo))
-                  .width(300)
+                  .width(170)
                   .url()}
                 alt={s.title}
               />
