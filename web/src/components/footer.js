@@ -2,17 +2,15 @@ import React from 'react';
 import coronaPattern from '../assets/corona_pattern.svg';
 import smiley from '../assets/smiley.svg';
 
-const Footer = () => {
+const BlockContent = require('@sanity/block-content-to-react');
+
+const Footer = ({ m }) => {
   return (
     <div className="module footer">
       <div className="footer__content">
         <div className="footer__column">
-          <h4>Wemunity project</h4>
-          <p>
-            Wemunity is an open source project where we explore how immunized
-            citizens can be utilized strategically in response to viral
-            epidemics.
-          </p>
+          <h4>{m && m[0].branding && m[0].branding}</h4>
+          {m && m[0].text && <BlockContent blocks={m[0].text} />}
         </div>
         <div className="footer__image">
           <img

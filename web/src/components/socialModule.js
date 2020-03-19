@@ -2,29 +2,35 @@ import React from 'react';
 import facebook from '../assets/facebook.svg';
 import github from '../assets/github.svg';
 
-const SocialModule = () => {
+const BlockContent = require('@sanity/block-content-to-react');
+
+const SocialModule = ({ m }) => {
   return (
     <div className="module social-module">
       <div className="social-module__content">
-        <h2 className="social-module__title">An open innovation project</h2>
-        <p className="social-module__text">
-          Collaborative and open source. Get involved!
-        </p>
+        <h2 className="social-module__title">
+          {m && m[0].title && m[0].title}
+        </h2>
+        <div className="social-module__text">
+          {m && m[0].text && <BlockContent blocks={m[0].text} />}
+        </div>
         <div className="social-module__buttons">
           <a
-            href="https://www.facebook.com/groups/wemunity"
+            href={m && m[0].buttonBlueUrl}
             className="social-module__button social-module__button--blue"
           >
             <span>
-              Wemunity on facebook <img src={facebook} alt="facebook" />
+              {m && m[0].buttonBlueText}
+              <img src={facebook} alt="facebook" />
             </span>
           </a>
           <a
-            href="https://github.com/Wemunity"
+            href={m && m[0].buttonGreyUrl}
             className="social-module__button social-module__button--grey"
           >
             <span>
-              Wemunity on github <img src={github} alt="github" />
+              {m && m[0].buttonGreyText}
+              <img src={github} alt="github" />
             </span>
           </a>
         </div>

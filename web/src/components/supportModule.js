@@ -1,25 +1,33 @@
 import React from 'react';
-import newLogo from '../assets/new.svg';
-import deloitteLogo from '../assets/deloitte.svg';
-import nybyLogo from '../assets/nyby.svg';
-import sanityLogo from '../assets/sanity.svg';
-import nabohjelpLogo from '../assets/nabohjelp.svg';
 
-const SupportModule = () => {
+import { buildImageObj } from '../lib/helpers';
+import imageUrlFor from '../lib/image-url';
+
+const BlockContent = require('@sanity/block-content-to-react');
+
+const SupportModule = ({ m }) => {
   return (
     <div className="module support-module">
       <div className="support-module__content">
-        <h1 className="support-module__title">Support the project</h1>
-        <p className="support-module__text">
-          We need technical skills, domain knowledge and funding. These
-          companies supports the project
-        </p>
+        <h1 className="support-module__title">
+          {' '}
+          {m && m[0].title && m[0].title}
+        </h1>
+        <div className="support-module__text">
+          {m && m[0].text && <BlockContent blocks={m[0].text} />}
+        </div>
         <div className="support-module__collaborators">
-          <img src={newLogo} alt="NEW logo" />
-          <img src={deloitteLogo} alt="Deloitte logo" />
-          <img src={nybyLogo} alt="NyBy logo" />
-          <img src={nabohjelpLogo} alt="NaboHjelp logo" />
-          <img src={sanityLogo} alt="Sanity logo" />
+          {m &&
+            m[0].supporters.map(s => (
+              <img
+                key={s._key}
+                className="feature-module__image"
+                src={imageUrlFor(buildImageObj(s.logo))
+                  .width(300)
+                  .url()}
+                alt={s.title}
+              />
+            ))}
         </div>
         <span className="support-module__email">
           Email <a href="mailto:anders@new.no">anders@new.no</a> if you want to
