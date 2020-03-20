@@ -1,10 +1,13 @@
 // PRODUCTION ---------------------------------------------------------------------------------------------------------------------------------
 
+const sslRedirect = require('heroku-ssl-redirect');
 const express = require('express');
 const port = process.env.PORT || 8080;
 const favicon = require('express-favicon');
 const path = require('path');
 const app = express();
+
+app.use(sslRedirect());
 
 //favicon
 app.use(favicon(__dirname + '/build/favicon.ico'));
