@@ -19,19 +19,15 @@ const SocialModule = ({ m }) => {
             href={m && m[0].buttonBlueUrl}
             className="social-module__button social-module__button--blue"
           >
-            <span>
-              {m && m[0].buttonBlueText}
-              <img src={facebook} alt="facebook" />
-            </span>
+            <span>{m && m[0].buttonBlueText}</span>
+            <img src={facebook} alt="facebook" />
           </a>
           <a
             href={m && m[0].buttonGreyUrl}
             className="social-module__button social-module__button--grey"
           >
-            <span>
-              {m && m[0].buttonGreyText}
-              <img src={github} alt="github" />
-            </span>
+            <span>{m && m[0].buttonGreyText}</span>
+            <img src={github} alt="github" />
           </a>
         </div>
       </div>
