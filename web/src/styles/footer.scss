@@ -17,6 +17,7 @@
     }
     @media (max-width: 525px) {
       flex-direction: column;
+      padding: 40px 6% 350px;
     }
   }
 
@@ -34,6 +35,9 @@
         line-height: unset;
         font-size: 16px;
       }
+    }
+    @media (max-width: 525px) {
+      max-width: 100%;
     }
 
     h4 {
@@ -56,6 +60,9 @@
         line-height: unset;
         font-size: 16px;
       }
+      @media (max-width: 525px) {
+        font-size: 18px;
+      }
     }
   }
 
@@ -66,9 +73,9 @@
   &__corona {
     @media (max-width: 525px) {
       position: absolute;
-      width: 200px;
-      right: 0;
-      transform: rotate(90deg);
+      width: 100%;
+      bottom: 70px;
+      right: -50px;
     }
     width: 100%;
   }
@@ -79,9 +86,9 @@
     top: 100px;
     width: 40px;
     @media (max-width: 525px) {
-      left: unset;
-      right: 30px;
-      top: 30px;
+      left: 45%;
+      top: unset;
+      bottom: 185px;
     }
   }
 
