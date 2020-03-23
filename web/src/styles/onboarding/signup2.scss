@@ -1,0 +1,50 @@
+.signup2{
+  background-color: $dark-blue;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #FFF;
+
+  &__top{
+    height: 315px;
+    display: flex;
+    flex-direction: column;
+  }
+    &__corona-image{
+      position: relative;
+      overflow: hidden;
+      top: 70px;
+    }
+    &__smiley{
+      position: relative;
+      top: 50px;
+      bottom: 0;
+      transform: translateY(-50%);
+    }
+
+  &__content{
+    margin-top: 63px;
+  }
+    &__form{
+
+    }
+    &__form-field{
+      padding: 15px 0;
+    }
+
+  &__bottom{
+    position: absolute;
+    bottom: 37px;
+    display: flex;
+    flex-direction: column;
+  }
+    &__button{
+
+    }
+
+    &__dots{
+      padding-top: 30px;
+    }
+}

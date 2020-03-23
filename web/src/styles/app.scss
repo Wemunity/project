@@ -1,10 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 
+@import './_variables';
+
 @import './introModule';
 @import './socialModule';
 @import './featureModule';
 @import './supportModule';
 @import './footer';
+@import './button';
+@import './formfield';
+@import './checkbox';
+@import './radiobutton';
+@import './onboarding/signup1';
+@import './onboarding/signup2';
+@import './onboarding/signup3';
+@import './onboarding/signup4';
+@import './onboarding/signup5';
+@import './onboarding/welcome';
 
 html {
   padding: 0;
