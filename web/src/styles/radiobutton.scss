@@ -45,6 +45,11 @@
   // &__container input:checked ~ &__checkmark {
   //   background-color: #2196F3;
   // }
+
+  &__checkmark:hover {
+    box-shadow: 0 3px 8px rgba(8,0,206,0.16);
+  }
+
   &__checkmark:after {
     content: "";
     position: absolute;
@@ -54,11 +59,11 @@
     display: block;
   }
   &__container &__checkmark:after {
-    left: 3px;
-    top: 3px;
-    width: 15px;
-    height: 15px;
-    background-color: $dark-blue;
+    left: 5px;
+    top: 5px;
+    width: 11px;
+    height: 11px;
+    background-color: $blue;
     border-radius: 50%;
   }
 

@@ -7,6 +7,11 @@
   align-items: center;
   color: $dark-blue;
 
+  &__wrapper{
+    width: 88%;
+
+  }
+
   &__top{
     height: 315px;
     display: flex;
@@ -16,24 +21,39 @@
       position: relative;
       overflow: hidden;
       top: 70px;
+      @media (min-width: 525px) {
+        display: none;
+      }
     }
     &__smiley{
       position: relative;
       top: 50px;
       bottom: 0;
       transform: translateY(-50%);
+      @media (min-width: 525px) {
+        display: none;
+      }
     }
 
   &__content{
     margin-top: 63px;
     padding: 0 5%;
     font-size: 24px;
+    @media (min-width: 525px) {
+      padding-left: 17%;
+      padding-right: 17%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
   }
 
   &__bottom{
     position: absolute;
     bottom: 37px;
     display: flex;
+    width: inherit;
+    align-items: center;
     flex-direction: column;
   }
     &__button{

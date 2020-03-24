@@ -9,6 +9,7 @@
 @import './footer';
 @import './button';
 @import './formfield';
+@import './datefield';
 @import './checkbox';
 @import './radiobutton';
 @import './onboarding/signup1';
@@ -17,6 +18,8 @@
 @import './onboarding/signup4';
 @import './onboarding/signup5';
 @import './onboarding/welcome';
+@import './tasks';
+@import './terms';
 
 html {
   padding: 0;

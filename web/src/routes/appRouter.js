@@ -7,6 +7,7 @@ import Signup3 from '../pages/onboarding/signup3';
 import Signup4 from '../pages/onboarding/signup4';
 import Signup5 from '../pages/onboarding/signup5';
 import Welcome from '../pages/onboarding/welcome';
+import Tasks from '../pages/tasks';
 
 const AppRouter = () => (
   <BrowserRouter>
@@ -19,6 +20,7 @@ const AppRouter = () => (
         <Route path="/signup/4" component={Signup4} exact={true} />
         <Route path="/signup/5" component={Signup5} exact={true} />
         <Route path="/welcome" component={Welcome} exact={true} />
+        <Route path="/tasks" component={Tasks} exact={true} />
       </Switch>
     </div>
   </BrowserRouter>

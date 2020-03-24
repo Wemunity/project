@@ -1,7 +1,7 @@
 .button{
   background-color: $blue;
   height: 49px;
-  width: 134px;
+  min-width: 134px;
   border-radius: 24.5px;
   display: flex;
   align-items: center;
@@ -10,12 +10,19 @@
   font-weight: 600;
   box-shadow: 0 3px 8px rgba(8,0,206,0.16);
   text-decoration: none;
+
+
   span{
     text-decoration: none;
     // color: white;
   }
 
-  &__arrow{
+  &__content{
+    padding-left: 25px;
+    padding-right: 20px;
+  }
 
+  &__arrow{
+    padding-left: 10px;
   }
 }

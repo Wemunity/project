@@ -1,4 +1,4 @@
-.formfield{
+.datefield{
   // width: 88%;
   // padding: 0 22px;
   color: #FFF;
@@ -35,23 +35,7 @@
     background-color: $dark-blue;
   }
 
-
-  //form
-
-  // &__container input {
-  //   position: absolute;
-  //   opacity: 0;
-  //   cursor: pointer;
-  //   height: 0;
-  //   width: 0;
-  // }
-
-  // &____textfield{
-  //   padding-bottom: 7px;
-  //   font-size: 24px;
-  // }
-
-  &__container input{
+  &__textinput{
     width: 100%;
     font-size: 24px;
     background-color: rgba(0,0,0,0);
@@ -60,7 +44,7 @@
     color: inherit;
 
   }
-  &__container input:focus{
+  &__textinput:focus{
     outline: none;
   }
 

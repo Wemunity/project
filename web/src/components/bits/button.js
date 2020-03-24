@@ -14,8 +14,10 @@ const Button = props => {
   return (
     <Link to={link} style={{textDecoration:'none'}}>
       <div className="button" style={{backgroundColor:backgroundColor, color:textColor}}>
+        <div className="button__content">
           <span>{text}</span>
           {arrow === true ? <img className="button__arrow" src={light === true ? ArrowBlue : ArrowWhite} alt="->"/> : null}
+        </div>
       </div>
     </Link>
   );

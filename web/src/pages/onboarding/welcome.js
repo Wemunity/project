@@ -6,15 +6,20 @@ import Button from '../../components/bits/button';
 
 const Welcome = props => {
   return (
-    <div className="signup5">
-      <div className="signup5__wrapper">
-        <div className="signup5__top">
-          <span>There are many ways we all can contribute</span>
+    <div className="welcome">
+      <div className="welcome__wrapper">
+        <div className="welcome__top">
+          <h4>Welcome, person</h4>
+          <span>You are number <b>XXXX</b> to sign up globally</span><br/>
+          <br/>
+          <span>& you are number <b>XXXX</b> to sign up in Norway</span>
         </div>
-        <div className="signup5__content">
+        <div className="welcome__content">
         </div>
-        <div className="signup5__bottom">
-          <Button text={'Finish'} light={false} link={'/welcome'}/>
+        <div className="welcome__bottom">
+          <div className="welcome__profileimage"></div>
+          <div className="welcome__caption"><span><b>Together we will beat this!</b></span></div>
+          <Button text={'Explore tasks'} light={false} link={'/tasks'} arrow={true}/>
         </div>
       </div>
     </div>

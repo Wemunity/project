@@ -7,6 +7,9 @@
   align-items: center;
   color: #FFF;
 
+  &__wrapper{
+    width: 88%;
+  }
   &__top{
     height: 315px;
     display: flex;
@@ -16,22 +19,56 @@
       position: relative;
       overflow: hidden;
       top: 70px;
+      @media (min-width: 525px) {
+        display: none;
+      }
     }
     &__smiley{
       position: relative;
       top: 50px;
       bottom: 0;
       transform: translateY(-50%);
+      @media (min-width: 525px) {
+        display: none;
+      }
     }
 
   &__content{
     margin-top: 63px;
+    @media (min-width: 525px) {
+      margin-left: 17%;
+      margin-right: 17%;
+    }
   }
     &__form{
-
+      display: flex;
+      flex-direction: column;
+      @media (min-width: 525px) {
+        flex-direction: row;
+      }
     }
     &__form-field{
       padding: 15px 0;
+      width: 100%;
+      @media (min-width: 525px) {
+        padding-right: 15%;
+        &:last-of-type{
+          padding-right: 0;
+        }
+      }
+    }
+
+    &__terms{
+      padding-top: 25px;
+      @media (min-width: 525px) {
+        padding-top: 57px;
+      }
+      .checkboxfield{
+        font-size: 16px;
+      }
+      .checkboxfield__checkmark{
+        top: -10px;
+      }
     }
 
   &__bottom{
@@ -39,6 +76,8 @@
     bottom: 37px;
     display: flex;
     flex-direction: column;
+    width: inherit;
+    align-items: center;
   }
     &__button{
 

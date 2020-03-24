@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="44.259" height="43.913" viewBox="0 0 44.259 43.913">
+  <defs>
+    <filter id="Rectangle" x="0" y="0" width="44.259" height="43.913" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Button" transform="translate(-99 -548)">
+    <g transform="matrix(1, 0, 0, 1, 99, 548)" filter="url(#Rectangle)">
+      <rect id="Rectangle-2" data-name="Rectangle" width="26.259" height="25.913" rx="12.957" transform="translate(9 6)" fill="#0043ff"/>
+    </g>
+    <g id="arrow" transform="translate(115 562.031)">
+      <g id="Rounded" transform="translate(12.936 9.453) rotate(-180)">
+        <path id="Path_6" data-name="Path 6" d="M5.225.185h0a.629.629,0,0,0-.892,0L.147,4.371a.5.5,0,0,0,0,.71L4.334,9.268a.629.629,0,0,0,.892,0h0a.629.629,0,0,0,0-.892L1.578,4.724,5.23,1.072A.628.628,0,0,0,5.225.185Z" fill="#fff"/>
+      </g>
+      <line id="Line_3" data-name="Line 3" x2="11.791" transform="translate(11.791 4.642) rotate(-180)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5"/>
+    </g>
+  </g>
+</svg>

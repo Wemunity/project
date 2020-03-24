@@ -1,13 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Dots4 from '../../assets/dots4.svg';
 
-import Welcome from '../../pages/onboarding/welcome';
 import Button from '../../components/bits/button';
 import Checkbox from '../../components/bits/checkbox';
 import RadioButton from '../../components/bits/radiobutton';
+import FormField from '../../components/bits/formfield';
 //When did you start showing symptoms?
 
+
 const Signup5 = props => {
+
+  // const [showExperience, setShowExperience] = useState(false);
+  // const handleShowExperience = () => {
+  //   setShowExperience(!showExperience);
+  // };
+
+  const [radioResponse, setRadioResponse] = useState(false);
+  const onRadioButtonClick = (name) => {
+    console.log(name);
+    setRadioResponse(name);
+  }
+
   return (
     <div className="signup5">
       <div className="signup5__wrapper">
@@ -24,8 +37,9 @@ const Signup5 = props => {
             <Checkbox text="Daily chores" caption="like grocery shopping, medicines, delivery etc"/>
           </div>
           <div className="signup5__radiofield">
-            <RadioButton text="Do you have professional experience?"/>
+            <RadioButton onClick={onRadioButtonClick} checkedState={radioResponse} text="Do you have professional experience?"/>
           </div>
+          {radioResponse === 'yes' ? <FormField onChange={''} placeholderText="Admin, Psychologist, Trucker" /> : null}
         </div>
         <div className="signup5__bottom">
           <Button text={'Finish'} light={false} link={'/welcome'}/>
