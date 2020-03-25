@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 
 @import './_variables';
+@import './_mixins';
 
 @import './introModule';
 @import './socialModule';
@@ -36,6 +37,8 @@ body {
   word-break: break-word;
   overflow-x: hidden;
 }
+
+*{ box-sizing: border-box; }
 
 h1,
 h2,

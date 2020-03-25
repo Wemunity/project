@@ -1,60 +1,70 @@
 .signup2{
   background-color: $dark-blue;
   width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  // height: 100%;
   color: #FFF;
+  // position: relative;
+  // overflow: hidden;
 
   &__wrapper{
-    width: 88%;
+    @include constrain;
+    display: flex;
+    flex-flow: column;
+    height: 100vh;
+    @media (min-width: 525px) {
+      // flex-flow: row;
+      width: 100%;
+      align-items: flex-start;
+    }
+
   }
   &__top{
-    height: 315px;
-    display: flex;
-    flex-direction: column;
+
+
+    @media (min-width: 525px) {
+      // display: none;
+      flex: 0 0 300px;
+      // transform: rotate(180deg);
+      // top: -80px;
+      // left: 0
+    }
   }
+
     &__corona-image{
-      position: relative;
-      overflow: hidden;
-      top: 70px;
-      @media (min-width: 525px) {
-        display: none;
-      }
+      // top: 70px;
     }
     &__smiley{
-      position: relative;
-      top: 50px;
-      bottom: 0;
-      transform: translateY(-50%);
+      // position: relative;
+      // transform: translateY(-50%);
       @media (min-width: 525px) {
         display: none;
+        visibility: hidden;
       }
     }
 
   &__content{
-    margin-top: 63px;
+    flex: 1;
+    width: 100%;
     @media (min-width: 525px) {
-      margin-left: 17%;
-      margin-right: 17%;
+      // padding: 300px 100px;
+
     }
   }
     &__form{
-      display: flex;
-      flex-direction: column;
-      @media (min-width: 525px) {
-        flex-direction: row;
+
+      @media (min-width: 526px) {
+
+        display: flex;
+        flex-flow: row;
+        width: 100%;
       }
     }
     &__form-field{
       padding: 15px 0;
-      width: 100%;
+
+      // width: 100%;
       @media (min-width: 525px) {
-        padding-right: 15%;
-        &:last-of-type{
-          padding-right: 0;
-        }
+        margin-right: 100px;
       }
     }
 
@@ -72,18 +82,20 @@
     }
 
   &__bottom{
-    position: absolute;
-    bottom: 37px;
-    display: flex;
-    flex-direction: column;
-    width: inherit;
-    align-items: center;
+    // position: absolute;
+    // bottom: 37px;
+    flex: 0 0 100px;
+    @media (min-width: 525px) {
+      // flex-flow: row-reverse;
+    }
   }
     &__button{
 
     }
 
     &__dots{
-      padding-top: 30px;
+      @media (max-width: 525px) {
+        padding-top: 30px;
+      }
     }
 }
