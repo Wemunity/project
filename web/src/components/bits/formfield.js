@@ -28,7 +28,7 @@ const FormField = props => {
       <div className="formfield__content">
         <form>
           <label className="formfield__container">
-            <input type="text" placeholder={placeholderText} onChange={''}/>
+            <input type="text" value={props.value} placeholder={placeholderText} onChange={props.onChange}/>
             <span className="formfield__textfield"></span>
           </label>
         </form>

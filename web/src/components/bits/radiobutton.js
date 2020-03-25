@@ -5,9 +5,10 @@ import Questionbubble from '../../assets/question-bubble.svg';
 const RadioButton = props => {
   const text = props.text;
 
-  const onButtonClick = (event) => {
-    props.onClick && props.onClick(event.target.name)
+  const onRadioChange = (event) => {
+    props.onChange && props.onChange(event.target.value === "true" ? true : false)
   }
+
   return (
     <div className="radiofield">
       <div className="radiofield__text-wrapper">
@@ -17,11 +18,11 @@ const RadioButton = props => {
       <form>
         <div className="radiofield__wrapper">
           <label className="radiofield__container"><span>Yes</span>
-            <input onClick={onButtonClick} type="radio" checked={props.checkedState === 'yes' ? 'checked' : null} name="yes"/>
+            <input onChange={onRadioChange} name="radio-button" type="radio" checked={props.value} value="true"/>
             <span className="radiofield__checkmark"></span>
           </label>
           <label className="radiofield__container"><span>No</span>
-            <input onClick={onButtonClick} type="radio" checked={props.checkedState === 'no' ? 'checked' : null} name="no"/>
+            <input onChange={onRadioChange} name="radio-button" type="radio" checked={!props.value} value="false"/>
             <span className="radiofield__checkmark"></span>
           </label>
         </div>
