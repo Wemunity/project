@@ -1,4 +1,4 @@
-@mixin constrain {
+@mixin container {
   width: 100%;
   max-width: $container-width;
   margin: 0 auto;
@@ -7,4 +7,9 @@
     padding-left: $default-padding;
     padding-right: $default-padding;
   };
+}
+
+@mixin innercontainer {
+  padding-left: 90px;
+  padding-right: 90px;
 }

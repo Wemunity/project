@@ -26,7 +26,7 @@ const Signup2 = props => {
     <div className="signup2">
       <div className="signup2__wrapper">
         <div className="signup2__top">
-          <img className="signup2__corona-image" src={Coronapattern} alt="pattern"/>
+
           <img className="signup2__smiley" src={Smileyneutral} alt=":|"/>
         </div>
         <div className="signup2__content">
@@ -55,3 +55,5 @@ const Signup2 = props => {
 };
 
 export default Signup2;
+
+          // <img className="signup2__corona-image" src={Coronapattern} alt="pattern"/>

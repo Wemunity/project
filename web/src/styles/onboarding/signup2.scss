@@ -5,9 +5,11 @@
   color: #FFF;
   // position: relative;
   // overflow: hidden;
+  background-image: url('../../assets/corona_pattern.svg');
+  background-repeat: no-repeat;
 
   &__wrapper{
-    @include constrain;
+    @include container;
     display: flex;
     flex-flow: column;
     height: 100vh;
@@ -19,23 +21,19 @@
 
   }
   &__top{
-
-
-    @media (min-width: 525px) {
-      // display: none;
-      flex: 0 0 300px;
-      // transform: rotate(180deg);
-      // top: -80px;
-      // left: 0
+    flex: 0 0 300px;
+    @media (max-width: 525px) {
+      flex: 0 0 310px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
     }
   }
 
     &__corona-image{
-      // top: 70px;
+
     }
     &__smiley{
-      // position: relative;
-      // transform: translateY(-50%);
       @media (min-width: 525px) {
         display: none;
         visibility: hidden;
@@ -45,24 +43,24 @@
   &__content{
     flex: 1;
     width: 100%;
-    @media (min-width: 525px) {
+    @media (min-width: 526px) {
+      @include innercontainer;
       // padding: 300px 100px;
-
+    }
+    @media (max-width: 525px) {
+      padding-top: 40px;
     }
   }
     &__form{
-
       @media (min-width: 526px) {
-
         display: flex;
         flex-flow: row;
+        justify-content: space-between;
         width: 100%;
       }
     }
     &__form-field{
       padding: 15px 0;
-
-      // width: 100%;
       @media (min-width: 525px) {
         margin-right: 100px;
       }
@@ -73,25 +71,17 @@
       @media (min-width: 525px) {
         padding-top: 57px;
       }
-      .checkboxfield{
-        font-size: 16px;
-      }
-      .checkboxfield__checkmark{
-        top: -10px;
-      }
+      .checkboxfield{ font-size: 16px; }
+      .checkboxfield__checkmark{ top: -10px; }
     }
 
   &__bottom{
-    // position: absolute;
-    // bottom: 37px;
     flex: 0 0 100px;
     @media (min-width: 525px) {
       // flex-flow: row-reverse;
     }
   }
-    &__button{
-
-    }
+    &__button{}
 
     &__dots{
       @media (max-width: 525px) {
