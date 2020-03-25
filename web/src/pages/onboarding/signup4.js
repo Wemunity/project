@@ -1,4 +1,8 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { setName, setLocation, setAge, setDriversLicense } from '../../state/onboarding';
+
 import FormField from '../../components/bits/formfield';
 import Dots3 from '../../assets/dots3.svg';
 
@@ -9,6 +13,12 @@ import RadioButton from '../../components/bits/radiobutton';
 
 
 const Signup4 = props => {
+
+  const onBoardingState = useSelector(state => state.onboarding)
+  const dispatch = useDispatch()
+
+  console.dir(onBoardingState)
+
   return (
     <div className="signup4">
       <div className="signup4__wrapper">
@@ -19,17 +29,17 @@ const Signup4 = props => {
         <div className="signup4__content">
           <div className="signup4__form">
             <div className="signup4__form-field">
-              <FormField topText={'My name'} placeholderText={'Jon Doe'}/>
+              <FormField value={onBoardingState.name} topText={'My name'} placeholderText={'Jon Doe'} onChange={(e) => dispatch(setName(e.target.value))}/>
             </div>
             <div className="signup4__form-field">
-              <FormField topText={'Where do you live?'} placeholderText={'Tøyen'}/>
+              <FormField value={onBoardingState.location} topText={'Where do you live?'} placeholderText={'Tøyen'} onChange={(e) => dispatch(setLocation(e.target.value))}/>
             </div>
             <div className="signup4__form-field">
-              <FormField topText={'How old are you?'} placeholderText={'30'}/>
+              <FormField value={onBoardingState.age} topText={'How old are you?'} placeholderText={'30'} onChange={(e) => dispatch(setAge(e.target.value))}/>
             </div>
           </div>
           <div className="signup4__radiofield">
-            <RadioButton text="I have my drivers license"/>
+            <RadioButton value={onBoardingState.driversLicense} text="I have my drivers license" onChange={(val) => dispatch(setDriversLicense(val))}/>
           </div>
         </div>
         <div className="signup4__bottom">
@@ -42,3 +52,7 @@ const Signup4 = props => {
 };
 
 export default Signup4;
+
+// export default connect(
+//   state => ({ onboardingState: state.onboarding})
+// )(Signup4);
