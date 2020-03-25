@@ -4,10 +4,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setName, setLocation, setAge, setDriversLicense } from '../../state/onboarding';
 
 import FormField from '../../components/bits/formfield';
-import Dots3 from '../../assets/dots3.svg';
-
+import Dots from '../../components/bits/dots';
 import Button from '../../components/bits/button';
 import RadioButton from '../../components/bits/radiobutton';
+
+import CrossIcon from '../../assets/cross-icon-blue.svg';
+import WemunityIconDark from '../../assets/wemunity-icon-dark.svg';
+
 //When did you start showing symptoms?
 
 
@@ -21,9 +24,12 @@ const Signup4 = props => {
 
   return (
     <div className="signup4">
+      <img className="wemunity-icon" src={WemunityIconDark} alt="Ø"/>
       <div className="signup4__wrapper">
         <div className="signup4__top">
-          <div className="signup4__profileimage"></div>
+          <div className="signup4__profileimage">
+            <img src={CrossIcon} alt="+"/>
+          </div>
           <div className="signup4__image-text"><span>Upload profile picture</span></div>
         </div>
         <div className="signup4__content">
@@ -44,7 +50,9 @@ const Signup4 = props => {
         </div>
         <div className="signup4__bottom">
           <Button text={'Next'} light={false} link={'/signup/5'}/>
-          <img className="signup4__dots" src={Dots3} alt="- * * *"/>
+          <div className="signup3__dots">
+            <Dots active="3"/>
+          </div>
         </div>
       </div>
     </div>

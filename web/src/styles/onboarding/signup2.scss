@@ -1,12 +1,12 @@
 .signup2{
   background-color: $dark-blue;
   width: 100vw;
-  // height: 100%;
   color: #FFF;
-  // position: relative;
-  // overflow: hidden;
   background-image: url('../../assets/corona_pattern.svg');
   background-repeat: no-repeat;
+  @media (min-width: 525px) {
+    background-image: url('../../assets/corona-pattern-light-desktop.svg');
+  }
 
   &__wrapper{
     @include container;
@@ -72,20 +72,40 @@
         padding-top: 57px;
       }
       .checkboxfield{ font-size: 16px; }
-      .checkboxfield__checkmark{ top: -10px; }
+      .checkboxfield__checkmark{ top: 2px; }
     }
 
   &__bottom{
-    flex: 0 0 100px;
+    flex: 0 0 120px;
+    flex-flow: column;
+    align-items: center;
+    display: flex;
     @media (min-width: 525px) {
-      // flex-flow: row-reverse;
+      width: 100%;
+      flex: 0 0 160px;
+      flex-flow: row-reverse;
+      justify-content: flex-start;
+      align-items: flex-start;
     }
   }
-    &__button{}
-
     &__dots{
+      @media (min-width: 526px) {
+        margin-right: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
       @media (max-width: 525px) {
         padding-top: 30px;
       }
     }
+}
+
+.wemunity-icon{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  @media (max-width: 525px) {
+    display: none;
+  }
 }

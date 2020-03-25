@@ -11,7 +11,6 @@ const Welcome = props => {
         <div className="welcome__top">
           <h4>Welcome, person</h4>
           <span>You are number <b>XXXX</b> to sign up globally</span><br/>
-          <br/>
           <span>& you are number <b>XXXX</b> to sign up in Norway</span>
         </div>
         <div className="welcome__content">

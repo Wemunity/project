@@ -10,12 +10,13 @@ const Checkbox = props => {
         <label className="checkboxfield__container">
           <input type="checkbox"/>
           <span className="checkboxfield__checkmark"></span>
+          <div className="checkboxfield__text-wrapper">
+            <span>{text}</span>
+            <span className="checkboxfield__caption">{caption}</span>
+          </div>
         </label>
       </form>
-      <div className="checkboxfield__text-wrapper">
-        <span>{text}</span>
-        <span className="checkboxfield__caption">{caption}</span>
-      </div>
+
     </div>
   );
 };

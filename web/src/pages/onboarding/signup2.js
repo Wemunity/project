@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import Coronapattern from '../../assets/corona_pattern.svg';
-import DateField from '../../components/bits/datefield';
-import Smileyneutral from '../../assets/smiley_neutral.svg';
-import Dots1 from '../../assets/dots1.svg';
 
+import DateField from '../../components/bits/datefield';
+import Dots from '../../components/bits/dots';
 import Button from '../../components/bits/button';
 import Checkbox from '../../components/bits/checkbox';
 import Terms from '../../components/bits/terms';
-//When did you start showing symptoms?
+
+import Smileyneutral from '../../assets/smiley_neutral.svg';
+import WemunityIconLight from '../../assets/wemunity-icon-light.svg';
 
 const Signup2 = props => {
 
@@ -24,6 +24,7 @@ const Signup2 = props => {
 
   return (
     <div className="signup2">
+      <img className="wemunity-icon" src={WemunityIconLight} alt="Ø"/>
       <div className="signup2__wrapper">
         <div className="signup2__top">
 
@@ -47,7 +48,9 @@ const Signup2 = props => {
         </div>
         <div className="signup2__bottom">
           <Button text={'Next'} light={false} link={'/signup/3'}/>
-          <img className="signup2__dots" src={Dots1} alt="- * * *"/>
+          <div className="signup2__dots">
+            <Dots active="1"/>
+          </div>
         </div>
       </div>
     </div>

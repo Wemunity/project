@@ -1,66 +1,75 @@
 .signup5{
   background-color: $gray-white;
   width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   color: $dark-blue;
 
   &__wrapper{
-    width: 88%;
+    @include container;
+    display: flex;
+    flex-flow: column;
+    height: 100vh;
+    @media (min-width: 525px) {
+      // flex-flow: row;
+      width: 100%;
+      align-items: flex-start;
+    }
   }
   &__top{
-    // height: 315px;
+    flex: 0 0 300px;
     display: flex;
-    // width: 88%;
-    padding-top: 63px;
-    // margin: 0 22px;
+    justify-content: center;
+    align-items: center;
     font-size: 24px;
+    @media (max-width: 525px) {
+      flex: 0 0 210px;
+      justify-content: flex-start;
+    }
   }
 
-    &__image{
-      width: 93px;
-      height: 93px;
-      border-radius: 100%;
-      background-color: #FFF;
-    }
-    &__add-icon{
-
-    }
-    &__image-text{
-      font-size: 1em;
-      display: flex;
-      align-items: center;
-      padding-left: 20px;
-    }
-
   &__content{
-    margin-top: 51px;
+    flex: 1;
     width: 100%;
+    @media (min-width: 526px) {
+      @include innercontainer;
+      display: flex;
+      justify-content: space-between;
+    }
   }
     &__checkboxfield{
       padding: 10px 0;
     }
     &__radiofield{
-      padding-top: 20px;
+      @media (max-width: 526px) {
+        padding-top: 20px;
+      }
     }
+
   &__bottom{
-    position: absolute;
-    bottom: 37px;
-    left: 50%;
-    transform: translateX(-50%);
+    flex: 0 0 120px;
+    flex-flow: column;
+    align-items: center;
     display: flex;
-    flex-direction: column;
-  }
-    &__button{
-
+    @media (min-width: 525px) {
+      width: 100%;
+      flex: 0 0 160px;
+      flex-flow: row-reverse;
+      justify-content: flex-start;
+      align-items: flex-start;
     }
-
+  }
     &__dots{
-      padding-top: 30px;
+      @media (min-width: 526px) {
+        margin-right: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      @media (max-width: 525px) {
+        padding-top: 30px;
+      }
     }
 }
+
 
 .experience{
   width: 100%;

@@ -1,54 +1,36 @@
 .signup3{
   background-color: $gray-white;
-  width: 100vw;
-  height: 100vh;
-  position: relative;
-  // display: flex;
-  // flex-direction: column;
-  // align-items: center;
   color: $dark-blue;
+  width: 100vw;
+  color: #FFF;
+  background-image: url('../../assets/corona_pattern_dark.svg');
+  background-repeat: no-repeat;
+  @media (min-width: 525px) {
+    background-image: url('../../assets/corona-pattern-dark-desktop.svg');
+  }
 
   &__wrapper{
-    // width: 88%;
-    max-width: 1100px;
-    padding: 70px 4% 0;
-    margin: 0 auto;
+    @include container;
     display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    flex-wrap: wrap;
-    @media (min-width: 1650px) {
-      padding: 100px 4% 100px;
-      max-width: 1350px;
-    }
-    @media (max-width: 790px) {
-      justify-content: space-around;
-    }
-    @media (max-width: 525px) {
-      padding: 0 6%;
+    flex-flow: column;
+    height: 100vh;
+    @media (min-width: 525px) {
+      // flex-flow: row;
+      width: 100%;
+      align-items: flex-start;
     }
   }
 
   &__top{
-    // height: 315px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items:center;
-    padding-top: 70px;
-  }
-    &__corona-image{
-      @media (min-width: 525px) {
-        // display: none;
-        position: absolute;
-        transform: rotate(180deg);
-        top: -80px;
-        left: 0
-      }
+    flex: 0 0 90px;
+    @media (max-width: 525px) {
+      flex: 0 0 310px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
     }
+  }
     &__smiley{
-      position: relative;
-      transform: translateY(-50%);
       @media (min-width: 525px) {
         position: absolute;
         bottom: 188px;
@@ -57,32 +39,38 @@
     }
 
   &__content{
-    margin-top: 63px;
-    // padding: 0 5%;
+    flex: 1;
+    width: 100%;
+    color: $dark-blue;
     font-size: 24px;
     @media (min-width: 525px) {
+      // @include innercontainer;
       max-width: 600px;
-      // padding-left: 17%;
-      // padding-right: 17%;
-      // position: absolute;
-      // top: 0;
-      // left: 0;
     }
   }
 
   &__bottom{
-    position: absolute;
-    bottom: 37px;
-    display: flex;
-    width: inherit;
+    flex: 0 0 120px;
+    flex-flow: column;
     align-items: center;
-    flex-direction: column;
-  }
-    &__button{
-
+    display: flex;
+    @media (min-width: 525px) {
+      width: 100%;
+      flex: 0 0 160px;
+      flex-flow: row-reverse;
+      justify-content: flex-start;
+      align-items: flex-start;
     }
-
+  }
     &__dots{
-      padding-top: 30px;
+      @media (min-width: 526px) {
+        margin-right: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      @media (max-width: 525px) {
+        padding-top: 30px;
+      }
     }
 }

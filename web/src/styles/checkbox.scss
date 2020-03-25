@@ -21,7 +21,7 @@
   }
   &__checkmark{
     position: absolute;
-    top: -20px;
+    top: 7px;
     left: 0;
     height: 21px;
     width: 21px;
@@ -35,7 +35,7 @@
   &__checkmark:hover {
     box-shadow: 0 3px 8px rgba(8,0,206,0.16);
   }
-  
+
   &__checkmark:after {
     content: "";
     position: absolute;

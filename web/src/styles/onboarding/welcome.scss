@@ -1,24 +1,33 @@
 .welcome{
   background-color: $gray-white;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   color: $dark-blue;
+  width: 100vw;
+  color: #FFF;
 
   &__wrapper{
-    width: 88%;
+    @include container;
+    display: flex;
+    flex-flow: column;
+    height: 100vh;
+    @media (min-width: 525px) {
+      // flex-flow: row;
+      width: 100%;
+      align-items: flex-start;
+    }
   }
   &__top{
-    // height: 315px;
-    // display: flex;
-    // width: 88%;
-    padding-top: 63px;
-    // margin: 0 22px;
+    color: $dark-blue;
     font-size: 24px;
-    span{
-
+    margin-top: 100px;
+    flex: 0 0 300px;
+    font-size: 24px;
+    @media (max-width: 525px) {
+      margin-top: 0;
+      flex: 0 0 350px;
+      display: flex;
+      justify-content: center;
+      flex-flow: column;
+      align-items: flex-start;
     }
   }
 
@@ -39,29 +48,55 @@
     }
 
   &__content{
-    margin-top: 51px;
+    flex: 1;
     width: 100%;
+
+    @media (min-width: 525px) {
+      // @include innercontainer;
+      max-width: 600px;
+    }
   }
 
   &__bottom{
-    position: absolute;
-    width: inherit;
-    bottom: 37px;
-    // left: 50%;
-    // transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
+    flex: 0 0 297px;
+    flex-flow: column;
     align-items: center;
+    display: flex;
+    @media (min-width: 525px) {
+      width: 100%;
+      flex: 0 0 160px;
+      flex-flow: row-reverse;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
   }
+    &__dots{
+      @media (min-width: 526px) {
+        margin-right: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      @media (max-width: 525px) {
+        padding-top: 30px;
+      }
+    }
 
   &__profileimage{
     width: 89px;
     height: 89px;
     border-radius: 100%;
     background-color: #FFF;
+    @media (min-width: 526px) {
+      display: none;
+    }
   }
   &__caption{
+    color: $dark-blue;
     padding: 20px 0 30px 0;
+    @media (min-width: 526px) {
+      display: none;
+    }
   }
 
     &__dots{

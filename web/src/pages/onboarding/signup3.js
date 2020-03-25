@@ -1,9 +1,11 @@
 import React from 'react';
 import Button from '../../components/bits/button';
+import Dots from '../../components/bits/dots';
 
 import CoronapatternDark from '../../assets/corona_pattern_dark.svg';
 import Smileysmile from '../../assets/smiley_smile.svg';
 import Dots2 from '../../assets/dots2.svg';
+import WemunityIconDark from '../../assets/wemunity-icon-dark.svg';
 
 
 
@@ -12,18 +14,20 @@ import Dots2 from '../../assets/dots2.svg';
 const Signup3 = props => {
   return (
     <div className="signup3">
+    <img className="wemunity-icon" src={WemunityIconDark} alt="Ø"/>
       <div className="signup3__wrapper">
         <div className="signup3__top">
-          <img className="signup3__corona-image" src={CoronapatternDark} alt="pattern"/>
           <img className="signup3__smiley" src={Smileysmile} alt=":|"/>
         </div>
         <div className="signup3__content">
-          <span ><b>You are most likely immune:<br/></b>We will notify you when we have verified your immunity at a hospital</span>
+          <span><b>You are most likely immune:<br/></b>We will notify you when we have verified your immunity at a hospital</span>
 
         </div>
         <div className="signup3__bottom">
           <Button text={'Next'} light={false} link={'/signup/4'}/>
-          <img className="signup3__dots" src={Dots2} alt="- * * *"/>
+          <div className="signup3__dots">
+            <Dots active="2"/>
+          </div>
         </div>
       </div>
     </div>
