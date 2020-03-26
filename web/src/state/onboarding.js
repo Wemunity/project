@@ -10,6 +10,7 @@ const initialState = {
   socialCare: false,
   dailyChores: false,
   professionalExperience: false,
+  professionalExperiences: [],
 };
 
 // CONSTANTS
@@ -23,6 +24,7 @@ const SET_DRIVERS_LICENCE = 'SET_DRIVERS_LICENCE';
 const SET_BASIC_SOCIAL_CARE = 'SET_BASIC_SOCIAL_CARE';
 const SET_DAILY_CHORES = 'SET_DAILY_CHORES';
 const SET_PROFESSIONAL_EXPERIENCE = 'SET_PROFESSIONAL_EXPERIENCE';
+const SET_PROFESSIONAL_EXPERIENCES = 'SET_PROFESSIONAL_EXPERIENCES';
 
 // ACTIONS
 export const setSymptomStartDate = (symptomStartDate) => ({
@@ -75,6 +77,11 @@ export const setProfessionalExperience = (professionalExperience) => ({
   professionalExperience
 });
 
+export const setProfessionalExperiences = (experiences) => ({
+  type: SET_PROFESSIONAL_EXPERIENCES,
+  experiences
+});
+
 
 // REDUCERS
 export default (state = initialState, action:any) => {
@@ -109,6 +116,9 @@ export default (state = initialState, action:any) => {
     case SET_PROFESSIONAL_EXPERIENCE:
       return { ...state, professionalExperience: action.professionalExperience };
 
+    case SET_PROFESSIONAL_EXPERIENCES:
+      return { ...state, professionalExperiences: action.experiences };
+      
     default:
       return state;
   }

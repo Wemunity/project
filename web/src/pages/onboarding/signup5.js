@@ -3,10 +3,14 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { setBasicSocialCare, setDailyChores, setProfessionalExperience } from '../../state/onboarding';
 
+import { experiences } from '../../config/professionalExperiences';
+import { setProfessionalExperiences } from '../../state/onboarding';
+
+import ReactTags from 'react-tag-autocomplete'
 import Button from '../../components/bits/button';
 import Checkbox from '../../components/bits/checkbox';
 import RadioButton from '../../components/bits/radiobutton';
-import FormField from '../../components/bits/formfield';
+
 import Dots from '../../components/bits/dots';
 
 import WemunityIconDark from '../../assets/wemunity-icon-dark.svg';
@@ -15,20 +19,27 @@ import WemunityIconDark from '../../assets/wemunity-icon-dark.svg';
 
 const Signup5 = props => {
 
-  const onBoardingState = useSelector(state => state.onboarding)
-  const dispatch = useDispatch()
+  const [hasExperience, setHasExperience] = useState(false);
+  const onRadioButtonChange = (val) => {
+    setHasExperience(val);
+  }
 
-  console.dir(onBoardingState);
+  const onboardingState = useSelector(state => state.onboarding);
+  const dispatch = useDispatch();
 
-  // const [showExperience, setShowExperience] = useState(false);
-  // const handleShowExperience = () => {
-  //   setShowExperience(!showExperience);
-  // };
+  console.dir(onboardingState);
 
-  const [radioResponse, setRadioResponse] = useState(false);
-  const onRadioButtonClick = (name) => {
-    console.log(name);
-    setRadioResponse(name);
+  const suggestions = experiences;
+
+  const handleDelete = (i) => {
+    const ts = onboardingState.professionalExperiences.slice(0)
+    ts.splice(i, 1)
+    dispatch(setProfessionalExperiences(ts))
+  }
+
+  const handleAddition = (tag) => {
+    const ts = [].concat(onboardingState.professionalExperiences, tag)
+    dispatch(setProfessionalExperiences(ts))
   }
 
   return (
@@ -42,16 +53,26 @@ const Signup5 = props => {
           <div>
             <span><b>How do you want to help?</b></span><br/>
             <div className="signup5__checkboxfield">
-              <Checkbox text="Basic social care" caption="Like visiting, calling someone, taking a walk" value={onBoardingState.socialCare} onChange={(val) => dispatch(setBasicSocialCare(val))}/>
+              <Checkbox text="Basic social care" caption="Like visiting, calling someone, taking a walk" value={onboardingState.socialCare} onChange={(val) => dispatch(setBasicSocialCare(val))}/>
             </div>
             <div className="signup5__checkboxfield">
-              <Checkbox text="Daily chores" caption="like grocery shopping, medicines, delivery etc" value={onBoardingState.dailyChores} onChange={(val) => dispatch(setDailyChores(val))}/>
+              <Checkbox text="Daily chores" caption="like grocery shopping, medicines, delivery etc" value={onboardingState.dailyChores} onChange={(val) => dispatch(setDailyChores(val))}/>
             </div>
           </div>
           <div className="signup5__radiofield">
-            <RadioButton text="Do you have professional experience?" value={onBoardingState.professionalExperience} onChange={(val) => dispatch(setProfessionalExperience(val))}/>
+            <RadioButton onChange={onRadioButtonChange} text="Do you have professional experience?" value={onboardingState.professionalExperience} onChange={(val) => dispatch(setProfessionalExperience(val))}/>
+            {
+              hasExperience ? (
+                <ReactTags
+                  tags={onboardingState.professionalExperiences}
+                  suggestions={suggestions}
+                  placeholder={'Start typing..'}
+                  handleDelete={handleDelete.bind(this)}
+                  handleAddition={handleAddition.bind(this)} />)
+              : null
+            }
           </div>
-          {radioResponse === 'yes' ? <FormField onChange={''} placeholderText="Admin, Psychologist, Trucker" /> : null}
+          {/* radioResponse === 'yes' ? <FormField onChange={''} placeholderText="Admin, Psychologist, Trucker" /> : null */}
         </div>
         <div className="signup5__bottom">
           <Button text={'Finish'} light={false} link={'/welcome'}/>
