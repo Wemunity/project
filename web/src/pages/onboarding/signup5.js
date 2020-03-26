@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
+import { experiences } from '../../config/professionalExperiences';
+import { setProfessionalExperiences } from '../../state/onboarding';
+
+import ReactTags from 'react-tag-autocomplete'
 import Button from '../../components/bits/button';
 import Checkbox from '../../components/bits/checkbox';
 import RadioButton from '../../components/bits/radiobutton';
-import FormField from '../../components/bits/formfield';
+
 import Dots from '../../components/bits/dots';
 
 import WemunityIconDark from '../../assets/wemunity-icon-dark.svg';
@@ -12,15 +17,25 @@ import WemunityIconDark from '../../assets/wemunity-icon-dark.svg';
 
 const Signup5 = props => {
 
-  // const [showExperience, setShowExperience] = useState(false);
-  // const handleShowExperience = () => {
-  //   setShowExperience(!showExperience);
-  // };
+  const [hasExperience, setHasExperience] = useState(false);
+  const onRadioButtonChange = (val) => {
+    setHasExperience(val);
+  }
 
-  const [radioResponse, setRadioResponse] = useState(false);
-  const onRadioButtonClick = (name) => {
-    console.log(name);
-    setRadioResponse(name);
+  const onboardingState = useSelector(state => state.onboarding);
+  const dispatch = useDispatch();
+
+  const suggestions = experiences;
+
+  const handleDelete = (i) => {
+    const ts = onboardingState.professionalExperiences.slice(0)
+    ts.splice(i, 1)
+    dispatch(setProfessionalExperiences(ts))
+  }
+
+  const handleAddition = (tag) => {
+    const ts = [].concat(onboardingState.professionalExperiences, tag)
+    dispatch(setProfessionalExperiences(ts))
   }
 
   return (
@@ -41,9 +56,19 @@ const Signup5 = props => {
             </div>
           </div>
           <div className="signup5__radiofield">
-            <RadioButton onClick={onRadioButtonClick} checkedState={radioResponse} text="Do you have professional experience?"/>
+            <RadioButton onChange={onRadioButtonChange} value={hasExperience} text="Do you have professional experience?"/>
+            {
+              hasExperience ? (
+                <ReactTags
+                  tags={onboardingState.professionalExperiences}
+                  suggestions={suggestions}
+                  placeholder={'Start typing..'}
+                  handleDelete={handleDelete.bind(this)}
+                  handleAddition={handleAddition.bind(this)} />)
+              : null
+            }
           </div>
-          {radioResponse === 'yes' ? <FormField onChange={''} placeholderText="Admin, Psychologist, Trucker" /> : null}
+          {/* radioResponse === 'yes' ? <FormField onChange={''} placeholderText="Admin, Psychologist, Trucker" /> : null */}
         </div>
         <div className="signup5__bottom">
           <Button text={'Finish'} light={false} link={'/welcome'}/>

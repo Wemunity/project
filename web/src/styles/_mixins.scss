@@ -13,3 +13,13 @@
   padding-left: 90px;
   padding-right: 90px;
 }
+
+@mixin spaceGrotesk {
+  font-family: 'SpaceGrotesk';
+  font-weight: 400;
+}
+
+@mixin spaceGroteskSemiBold {
+  font-family: 'SpaceGrotesk SemiBold';
+  font-weight: 600;
+}

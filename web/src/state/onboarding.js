@@ -6,6 +6,7 @@ const initialState = {
   location: "",
   age: "",
   driversLicense: false,
+  professionalExperiences: [],
 };
 
 // CONSTANTS
@@ -13,6 +14,7 @@ const SET_NAME = 'SET_NAME';
 const SET_AGE = 'SET_AGE';
 const SET_LOCATION = 'SET_LOCATION';
 const SET_DRIVERS_LICENCE = 'SET_DRIVERS_LICENCE';
+const SET_PROFESSIONAL_EXPERIENCES = 'SET_PROFESSIONAL_EXPERIENCES';
 
 // ACTIONS
 export const setName = (name) => ({
@@ -35,6 +37,11 @@ export const setDriversLicense = (hasDriversLicense) => ({
   hasDriversLicense
 });
 
+export const setProfessionalExperiences = (experiences) => ({
+  type: SET_PROFESSIONAL_EXPERIENCES,
+  experiences
+});
+
 
 
 // REDUCERS
@@ -51,6 +58,9 @@ export default (state = initialState, action:any) => {
 
     case SET_DRIVERS_LICENCE:
       return { ...state, driversLicense: action.hasDriversLicense };
+
+    case SET_PROFESSIONAL_EXPERIENCES:
+      return { ...state, professionalExperiences: action.experiences };
 
     default:
       return state;

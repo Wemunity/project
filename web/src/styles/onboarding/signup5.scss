@@ -70,6 +70,59 @@
     }
 }
 
+  .react-tags {
+    display: flex;
+    flex-flow: column-reverse;
+    align-items: center;
+    padding: 0;
+    margin: 20px 0;
+    border: none;
+  }
+
+  .react-tags__selected {
+    flex: 1;
+    width: 100%;
+  }
+
+  .react-tags__search {
+    flex: 1;
+    width: 100%;
+
+    .react-tags__search-input, input {
+      width: 100% !important;
+    }
+
+    input {
+      @include spaceGrotesk;
+      font-size: $font-size;
+      padding: 8px;
+      background: none;
+      border-bottom: 1px solid #090039;
+      color: $dark-blue;
+    }
+  }
+
+    .react-tags__selected-tag {
+      background-color: $white;
+      border: none;
+      height: 28px;
+      border-radius: 10px;
+      padding: 2px 12px;
+
+      &:after {
+        color: $black;
+      }
+    }
+
+      .react-tags__selected-tag-name {
+        @include spaceGroteskSemiBold;
+        font-size: $font-size-s;
+        line-height: 1.2em;
+        color: $dark-blue;
+        display: inline-block;
+        vertical-align: top;
+      }
+
 
 .experience{
   width: 100%;
