@@ -1,32 +1,26 @@
 .datefield{
-  // width: 88%;
-  // padding: 0 22px;
   color: #FFF;
-
-
   text-align: left;
   &__toptext{
     font-size: 16px;
   }
 
   &__content{
-    // padding-top: 9px;
-    // padding-bottom: 7px;
-    // font-size: 24px;
     width: 100%;
+    height: 38px;
     display: flex;
-    position: relative;
-    align-items: center;
+    // position: relative;
+    justify-content: space-between;
     form{
       width: 100%;
     }
   }
 
   &__arrow{
-    position: absolute;
+    // position: absolute;
     // float: right;
-    right: 0;
-    transform: translateY(-30%);
+    // right: 0;
+    transform: translateY(-10%);
   }
 
   &__line{
@@ -40,9 +34,7 @@
     font-size: 24px;
     background-color: rgba(0,0,0,0);
     border: 0;
-    // color: #FFF;
-    color: inherit;
-
+    color: #FFF;
   }
   &__textinput:focus{
     outline: none;

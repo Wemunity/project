@@ -31,6 +31,9 @@
     }
   }
     &__smiley{
+      @media (max-width: 525px) {
+        transform: translateY(-30%);
+      }
       @media (min-width: 525px) {
         position: absolute;
         bottom: 188px;
@@ -46,6 +49,31 @@
     @media (min-width: 525px) {
       // @include innercontainer;
       max-width: 600px;
+    }
+  }
+
+  &__explanation{
+    color: $blue;
+    h1{
+      font-size: 50px;
+      margin: 10px 0;
+    }
+    span{
+      font-size: 16px;
+      line-height: normal;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    @media (max-width: 525px) {
+      // display: flex;
+      // flex-flow: column;
+      // justify-content: center;
+      text-align: center;
+    }
+    @media (min-width: 526px) {
+      display: flex;
+      align-items: center;
+      h1{ margin-right: 20px; }
     }
   }
 

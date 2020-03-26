@@ -71,8 +71,14 @@
       @media (min-width: 525px) {
         padding-top: 57px;
       }
+      display: flex;
+      align-items: baseline;
       .checkboxfield{ font-size: 16px; }
       .checkboxfield__checkmark{ top: 2px; }
+      a{
+        text-decoration: underline;
+        cursor: pointer;
+      }
     }
 
   &__bottom{

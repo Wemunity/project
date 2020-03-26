@@ -2,6 +2,7 @@
 
 @import './_variables';
 @import './_mixins';
+@import './_fonts';
 
 @import './introModule';
 @import './socialModule';
@@ -46,10 +47,14 @@ h2,
 h3,
 h4,
 h5,
-h6,
+h6 {
+  font-family: 'SpaceGrotesk SemiBold', sans-serif;
+}
+
 p,
 span {
-  font-family: 'Poppins', sans-serif;
+  // font-family: 'Poppins', sans-serif;
+  font-family: 'SpaceGrotesk', sans-serif;
 }
 
 h1,

@@ -40,9 +40,10 @@ const Signup2 = props => {
             </div>
           </div>
           <div className="signup2__terms">
-            <div onClick={handleShowTerms}>
-              <Checkbox text={'I agree to the terms and conditions'} caption=" "/>
+            <div>
+              <Checkbox text={'I agree to the'} caption=" "/>
             </div>
+            <span onClick={handleShowTerms}>&nbsp;<a>terms and conditions</a></span>
             {showTerms ? <Terms onClick={handleShowTerms}/> : null}
           </div>
         </div>

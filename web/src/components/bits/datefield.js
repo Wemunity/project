@@ -33,10 +33,11 @@ const DateField = props => {
                 selected={startDate}
                 onChange={handleSetStartDate}
                 className="datefield__textinput"
-                shouldCloseOnSelect={true}
+                // shouldCloseOnSelect={true}
                 locale={en}
+                placeholderText="dd/mm/yy"
               />
-            <span className="datefield__textfield"></span>
+            {/* <span className="datefield__textfield"></span> */}
           </label>
         </form>
         {arrow === true ? <img className="datefield__arrow" src={
