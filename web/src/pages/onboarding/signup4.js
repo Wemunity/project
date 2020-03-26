@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
@@ -46,6 +46,12 @@ const Signup4 = props => {
       setErrorState(errors);
     }
   };
+
+  useEffect(() => {
+    if (!onBoardingState.agreeTerms) {
+      setRedirect(<Redirect push to="/signup/2" />);
+    }
+  }, [onBoardingState.agreeTerms]);
 
   return (
     <div className="signup4">
