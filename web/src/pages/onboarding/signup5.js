@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { setBasicSocialCare, setDailyChores, setProfessionalExperience } from '../../state/onboarding';
-
+import { setBasicSocialCare, setDailyChores, setProfessionalExperience, setProfessionalExperiences } from '../../state/onboarding';
 import { experiences } from '../../config/professionalExperiences';
-import { setProfessionalExperiences } from '../../state/onboarding';
 
 import ReactTags from 'react-tag-autocomplete'
 import Button from '../../components/bits/button';
@@ -22,6 +20,8 @@ const Signup5 = props => {
   const [hasExperience, setHasExperience] = useState(false);
   const onRadioButtonChange = (val) => {
     setHasExperience(val);
+    console.log(val);
+    dispatch(setProfessionalExperience(val))
   }
 
   const onboardingState = useSelector(state => state.onboarding);
@@ -60,7 +60,7 @@ const Signup5 = props => {
             </div>
           </div>
           <div className="signup5__radiofield">
-            <RadioButton onChange={onRadioButtonChange} text="Do you have professional experience?" value={onboardingState.professionalExperience} onChange={(val) => dispatch(setProfessionalExperience(val))}/>
+            <RadioButton onChange={onRadioButtonChange} text="Do you have professional experience?" value={onboardingState.professionalExperience} />
             {
               hasExperience ? (
                 <ReactTags
