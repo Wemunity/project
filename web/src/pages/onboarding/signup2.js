@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { setSymptomStartDate, setSymptomEndDate, setAgreeTerms } from '../../state/onboarding';
 
 import DateField from '../../components/bits/datefield';
 import Dots from '../../components/bits/dots';
@@ -11,6 +14,11 @@ import WemunityIconLight from '../../assets/wemunity-icon-light.svg';
 
 const Signup2 = props => {
 
+  const onBoardingState = useSelector(state => state.onboarding)
+  const dispatch = useDispatch()
+
+  console.dir(onBoardingState)
+
   const [showTerms, setShowTerms] = useState(false);
 
   const handleShowTerms = (name) => {
@@ -21,6 +29,7 @@ const Signup2 = props => {
   const onDateChange = (date) => {
     console.log(date);
   }
+
 
   return (
     <div className="signup2">
@@ -33,15 +42,15 @@ const Signup2 = props => {
         <div className="signup2__content">
           <div className="signup2__form">
             <div className="signup2__form-field">
-              <DateField onChange={onDateChange} lightText={true} topText={'When did you start showing symptoms?'} placeholderText={'01-01-1337'} arrow={true} date={true}/>
+              <DateField value={onBoardingState.symptomStartDate} onChange={(e) => dispatch(setSymptomStartDate(e))} lightText={true} topText={'When did you start showing symptoms?'} arrow={true} date={true}/>
             </div>
             <div className="signup2__form-field">
-              <DateField onChange={onDateChange} lightText={true} topText={'When did you last show symptoms?'} placeholderText={'01-01-1337'} arrow={true} date={true}/>
+              <DateField value={onBoardingState.symptomEndDate} onChange={(e) => dispatch(setSymptomEndDate(e))} lightText={true} topText={'When did you last show symptoms?'} arrow={true} date={true}/>
             </div>
           </div>
           <div className="signup2__terms">
             <div>
-              <Checkbox text={'I agree to the'} caption=" "/>
+              <Checkbox value={onBoardingState.agreeTerms} onChange={(val) => dispatch(setAgreeTerms(val))} text={'I agree to the'} caption=" "/>
             </div>
             <span onClick={handleShowTerms}>&nbsp;<a>terms and conditions</a></span>
             {showTerms ? <Terms onClick={handleShowTerms}/> : null}

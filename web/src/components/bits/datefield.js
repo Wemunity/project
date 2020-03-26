@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import en from 'date-fns/locale/en-GB';
@@ -8,13 +8,9 @@ import ArrowBlue from '../../assets/arrow-blue.svg';
 import ArrowWhite from '../../assets/arrow-white.svg';
 
 const DateField = props => {
-  const lightText = props.lightText;
-  const topText = props.topText;
   const placeholderText = props.placeholderText;
-  const arrow = props.arrow;
-  const date = props.date;
-  var textColor = lightText ? '#FFF' : '#090039';
-
+  var textColor = props.lightText ? '#FFF' : '#090039';
+  // const calendar = useRef(null)
   const [startDate, setStartDate] = useState(new Date());
   const handleSetStartDate = (date) => {
     setStartDate(date);
@@ -24,7 +20,7 @@ const DateField = props => {
 
     <div className="datefield" style={{color:textColor}}>
       <div className="datefield__toptext">
-        <span>{topText}</span>
+        <span>{props.topText}</span>
       </div>
       <div className="datefield__content">
         <form>
@@ -33,20 +29,22 @@ const DateField = props => {
                 selected={startDate}
                 onChange={handleSetStartDate}
                 className="datefield__textinput"
-                // shouldCloseOnSelect={true}
+                shouldCloseOnSelect={true}
                 locale={en}
                 placeholderText="dd/mm/yy"
+                dateFormat="MMMM d, yyyy"
+                // ref={calendar}
               />
             {/* <span className="datefield__textfield"></span> */}
           </label>
         </form>
-        {arrow === true ? <img className="datefield__arrow" src={
-          lightText === true ? ArrowWhite: ArrowBlue} alt="->"/>
+        {props.arrow === true ? <img className="datefield__arrow" src={
+          props.lightText === true ? ArrowWhite: ArrowBlue} alt="->"/>
           : null
         }
 
       </div>
-      {lightText ? <div className="datefield__line" style={{backgroundColor:'#E1E1EF'}}/> : <div className="datefield__line"/>}
+      {props.lightText ? <div className="datefield__line" style={{backgroundColor:'#E1E1EF'}}/> : <div className="datefield__line"/>}
 
     </div>
   );

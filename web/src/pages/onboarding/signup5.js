@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { setBasicSocialCare, setDailyChores, setProfessionalExperience } from '../../state/onboarding';
 
 import Button from '../../components/bits/button';
 import Checkbox from '../../components/bits/checkbox';
@@ -11,6 +14,11 @@ import WemunityIconDark from '../../assets/wemunity-icon-dark.svg';
 
 
 const Signup5 = props => {
+
+  const onBoardingState = useSelector(state => state.onboarding)
+  const dispatch = useDispatch()
+
+  console.dir(onBoardingState);
 
   // const [showExperience, setShowExperience] = useState(false);
   // const handleShowExperience = () => {
@@ -34,14 +42,14 @@ const Signup5 = props => {
           <div>
             <span><b>How do you want to help?</b></span><br/>
             <div className="signup5__checkboxfield">
-              <Checkbox text="Basic social care" caption="Like visiting, calling someone, taking a walk"/>
+              <Checkbox text="Basic social care" caption="Like visiting, calling someone, taking a walk" value={onBoardingState.socialCare} onChange={(val) => dispatch(setBasicSocialCare(val))}/>
             </div>
             <div className="signup5__checkboxfield">
-              <Checkbox text="Daily chores" caption="like grocery shopping, medicines, delivery etc"/>
+              <Checkbox text="Daily chores" caption="like grocery shopping, medicines, delivery etc" value={onBoardingState.dailyChores} onChange={(val) => dispatch(setDailyChores(val))}/>
             </div>
           </div>
           <div className="signup5__radiofield">
-            <RadioButton onClick={onRadioButtonClick} checkedState={radioResponse} text="Do you have professional experience?"/>
+            <RadioButton text="Do you have professional experience?" value={onBoardingState.professionalExperience} onChange={(val) => dispatch(setProfessionalExperience(val))}/>
           </div>
           {radioResponse === 'yes' ? <FormField onChange={''} placeholderText="Admin, Psychologist, Trucker" /> : null}
         </div>
