@@ -1,9 +1,9 @@
-.signup4{
+.signup4 {
   background-color: $gray-white;
   width: 100vw;
   color: $dark-blue;
 
-  &__wrapper{
+  &__wrapper {
     @include container;
     display: flex;
     flex-flow: column;
@@ -14,7 +14,15 @@
       align-items: flex-start;
     }
   }
-  &__top{
+
+  &__error {
+    position: absolute;
+    color: red;
+    display: block;
+    top: 0;
+  }
+
+  &__top {
     flex: 0 0 300px;
     display: flex;
     justify-content: center;
@@ -25,66 +33,69 @@
     }
   }
 
-    &__profileimage{
-      width: 93px;
-      height: 93px;
-      border-radius: 100%;
-      background-color: #FFF;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    &__add-icon{
+  &__profileimage {
+    width: 93px;
+    height: 93px;
+    border-radius: 100%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__add-icon {
+  }
+  &__image-text {
+    font-size: 1em;
+    padding-left: 20px;
+  }
 
-    }
-    &__image-text{
-      font-size: 1em;
-      padding-left: 20px;
-    }
-
-  &__content{
+  &__content {
     flex: 1;
     width: 100%;
     @media (min-width: 526px) {
       @include innercontainer;
     }
   }
-    &__form{
-      @media (min-width: 526px) {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 50px;
-      }
-    }
-    &__form-field{
-      padding: 0 0 15px 0;
-      .formfield__line{
-        background-color: $dark-blue;
-      }
-    }
-
-    &__bottom{
-      flex: 0 0 120px;
-      flex-flow: column;
-      align-items: center;
+  &__form {
+    @media (min-width: 526px) {
       display: flex;
-      @media (min-width: 525px) {
-        width: 100%;
-        flex: 0 0 160px;
-        flex-flow: row-reverse;
-        justify-content: flex-start;
-        align-items: flex-start;
-      }
+      justify-content: space-between;
+      margin-bottom: 50px;
     }
-      &__dots{
-        @media (min-width: 526px) {
-          margin-right: 15px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        @media (max-width: 525px) {
-          padding-top: 30px;
-        }
-      }
+  }
+  &__form-field {
+    position: relative;
+    padding: 0 0 15px 0;
+    &--paddingTop {
+      padding: 20px 0 15px 0;
     }
+    .formfield__line {
+      background-color: $dark-blue;
+    }
+  }
+
+  &__bottom {
+    flex: 0 0 120px;
+    flex-flow: column;
+    align-items: center;
+    display: flex;
+    @media (min-width: 525px) {
+      width: 100%;
+      flex: 0 0 160px;
+      flex-flow: row-reverse;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+  }
+  &__dots {
+    @media (min-width: 526px) {
+      margin-right: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    @media (max-width: 525px) {
+      padding-top: 30px;
+    }
+  }
+}

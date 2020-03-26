@@ -1,14 +1,15 @@
-.signup2{
+.signup2 {
   background-color: $dark-blue;
   width: 100vw;
-  color: #FFF;
+  color: #fff;
   background-image: url('../../assets/corona_pattern.svg');
   background-repeat: no-repeat;
   @media (min-width: 525px) {
     background-image: url('../../assets/corona-pattern-light-desktop.svg');
   }
 
-  &__wrapper{
+  &__wrapper {
+    position: relative;
     @include container;
     display: flex;
     flex-flow: column;
@@ -18,9 +19,16 @@
       width: 100%;
       align-items: flex-start;
     }
-
   }
-  &__top{
+
+  &__error {
+    position: absolute;
+    top: 150px;
+    color: rgb(250, 104, 104);
+    font-size: 1.4rem;
+  }
+
+  &__top {
     flex: 0 0 300px;
     @media (max-width: 525px) {
       flex: 0 0 310px;
@@ -30,17 +38,16 @@
     }
   }
 
-    &__corona-image{
-
+  &__corona-image {
+  }
+  &__smiley {
+    @media (min-width: 525px) {
+      display: none;
+      visibility: hidden;
     }
-    &__smiley{
-      @media (min-width: 525px) {
-        display: none;
-        visibility: hidden;
-      }
-    }
+  }
 
-  &__content{
+  &__content {
     flex: 1;
     width: 100%;
     @media (min-width: 526px) {
@@ -51,37 +58,41 @@
       padding-top: 40px;
     }
   }
-    &__form{
-      @media (min-width: 526px) {
-        display: flex;
-        flex-flow: row;
-        justify-content: space-between;
-        width: 100%;
-      }
-    }
-    &__form-field{
-      padding: 15px 0;
-      @media (min-width: 525px) {
-        margin-right: 100px;
-      }
-    }
-
-    &__terms{
-      padding-top: 25px;
-      @media (min-width: 525px) {
-        padding-top: 57px;
-      }
+  &__form {
+    @media (min-width: 526px) {
       display: flex;
-      align-items: baseline;
-      .checkboxfield{ font-size: 16px; }
-      .checkboxfield__checkmark{ top: 2px; }
-      a{
-        text-decoration: underline;
-        cursor: pointer;
-      }
+      flex-flow: row;
+      justify-content: space-between;
+      width: 100%;
     }
+  }
+  &__form-field {
+    padding: 15px 0;
+    @media (min-width: 525px) {
+      margin-right: 100px;
+    }
+  }
 
-  &__bottom{
+  &__terms {
+    padding-top: 25px;
+    @media (min-width: 525px) {
+      padding-top: 57px;
+    }
+    display: flex;
+    align-items: baseline;
+    .checkboxfield {
+      font-size: 16px;
+    }
+    .checkboxfield__checkmark {
+      top: 2px;
+    }
+    a {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+  &__bottom {
     flex: 0 0 120px;
     flex-flow: column;
     align-items: center;
@@ -94,20 +105,20 @@
       align-items: flex-start;
     }
   }
-    &__dots{
-      @media (min-width: 526px) {
-        margin-right: 15px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      @media (max-width: 525px) {
-        padding-top: 30px;
-      }
+  &__dots {
+    @media (min-width: 526px) {
+      margin-right: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
+    @media (max-width: 525px) {
+      padding-top: 30px;
+    }
+  }
 }
 
-.wemunity-icon{
+.wemunity-icon {
   position: absolute;
   top: 20px;
   left: 20px;
