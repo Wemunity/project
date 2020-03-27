@@ -1,0 +1,66 @@
+.dots{
+  display: flex;
+  height: 49px;
+  @media (max-width: 526px){ height: auto; }
+  align-items: center;
+  // background-color: pink;
+  &__dot{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: $blue;
+
+    font-size: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 15px;
+    border: 2px solid $blue;
+    @media (max-width: 767px){
+      width: 8px;
+      height: 8px;
+      background-color: $blue;
+      border: none;
+      font-size: 0;
+      margin-right: 20px;
+    }
+    &:last-of-type{
+      margin-right: 0;
+    }
+  }
+  &__dot-active{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+
+    font-size: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 15px;
+    border: 2px solid $blue;
+
+    color: #FFF;
+    background-color: $blue;
+    @media (max-width: 767px){
+      margin-right: 20px;
+      width: 30px;
+      border-radius: 4px;
+      height: 8px;
+      background-color: $blue;
+      border: none;
+      font-size: 0;
+    }
+    &:last-of-type{
+      margin-right: 0;
+    }
+  }
+}

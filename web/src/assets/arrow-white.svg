@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="17.354" height="12.134" viewBox="0 0 17.354 12.134">
+  <g id="arrow" transform="translate(-228.495 -571.791)">
+    <g id="Rounded" transform="translate(245.849 583.925) rotate(-180)">
+      <path id="Path_6" data-name="Path 6" d="M12.955,2.86h0a.808.808,0,0,0-1.145,0L6.437,8.234a.644.644,0,0,0,0,.912l5.373,5.373a.808.808,0,0,0,1.145,0h0a.808.808,0,0,0,0-1.145L8.273,8.686,12.961,4A.806.806,0,0,0,12.955,2.86Z" transform="translate(-6.248 -2.622)" fill="#fff"/>
+    </g>
+    <line id="Line_3" data-name="Line 3" x2="15.134" transform="translate(244.379 577.749) rotate(-180)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1.5"/>
+  </g>
+</svg>

@@ -1,10 +1,29 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+@import './_variables';
+@import './_mixins';
+@import './_fonts';
 
 @import './introModule';
 @import './socialModule';
 @import './featureModule';
 @import './supportModule';
 @import './footer';
+@import './button';
+@import './formfield';
+@import './datefield';
+@import './checkbox';
+@import './radiobutton';
+@import './dots';
+@import './bits/react-tags';
+@import './onboarding/signup';
+@import './onboarding/signup1';
+@import './onboarding/signup2';
+@import './onboarding/signup3';
+@import './onboarding/signup4';
+@import './onboarding/signup5';
+@import './onboarding/welcome';
+@import './tasks';
+@import './terms';
 
 html {
   padding: 0;
@@ -22,15 +41,21 @@ body {
   overflow-x: hidden;
 }
 
+*{ box-sizing: border-box; }
+
 h1,
 h2,
 h3,
 h4,
 h5,
-h6,
+h6 {
+  font-family: 'SpaceGrotesk SemiBold', sans-serif;
+}
+
 p,
 span {
-  font-family: 'Poppins', sans-serif;
+  // font-family: 'Poppins', sans-serif;
+  font-family: 'SpaceGrotesk', sans-serif;
 }
 
 h1,
