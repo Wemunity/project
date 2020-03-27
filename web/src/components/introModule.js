@@ -1,7 +1,5 @@
 import React from 'react';
 import coronaPattern from '../assets/corona_pattern.svg';
-import Button from './bits/button';
-
 
 const BlockContent = require('@sanity/block-content-to-react');
 
@@ -19,7 +17,6 @@ const IntroModule = ({ m }) => {
         <div className="intro-module__text">
           {m && m[0].text && <BlockContent blocks={m[0].text} />}
         </div>
-        <Button text={'Sign up'} light={false} link={'/signup'}/>
       </div>
     </div>
   );
