@@ -45,6 +45,7 @@ const Signup2 = props => {
 
   return (
     <div className="signup2">
+    {showTerms ? <Terms onClick={handleShowTerms} /> : null}
       <img className="wemunity-icon" src={WemunityIconLight} alt="Ø" />
       <div className="signup2__wrapper">
         {errors.terms && !onBoardingState.agreeTerms && (
@@ -88,9 +89,11 @@ const Signup2 = props => {
             <span onClick={handleShowTerms}>
               &nbsp;<a>terms and conditions</a>
             </span>
-            {showTerms ? <Terms onClick={handleShowTerms} /> : null}
+
           </div>
+
         </div>
+
         <div className="signup2__bottom">
           <Button
             text={'Next'}

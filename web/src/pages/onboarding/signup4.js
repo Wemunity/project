@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, getElementById } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import ImageUploader from "react-images-upload";
 import { Redirect } from 'react-router-dom';
 import {
+  setPicture,
   setName,
   setLocation,
   setAge,
@@ -17,7 +18,6 @@ import RadioButton from '../../components/bits/radiobutton';
 import CrossIcon from '../../assets/cross-icon-blue.svg';
 import WemunityIconDark from '../../assets/wemunity-icon-dark.svg';
 
-//When did you start showing symptoms?
 
 const Signup4 = props => {
   const onBoardingState = useSelector(state => state.onboarding);
@@ -31,6 +31,13 @@ const Signup4 = props => {
   const [pictures, setPictures] = useState([]);
   const onDrop = picture => {
     setPictures([...pictures, picture]);
+    console.log(picture[0]);
+    if ( picture[0] !== undefined ) {
+      var imgFile = URL.createObjectURL(picture[0]);
+      console.log(imgFile);
+      dispatch(setPicture(imgFile));
+    }
+    else { dispatch(setPicture(undefined)); }
   };
 
   const handleValidation = () => {
@@ -65,10 +72,11 @@ const Signup4 = props => {
               withLabel={false}
               withIcon={false}
               onChange={onDrop}
-              imgExtension={[".jpg", ".gif", ".png", ".gif"]}
+              imgExtension={[".jpg", ".jpeg", ".gif", ".png", ".gif"]}
               maxFileSize={5242880}
               singleImage={true}
               withPreview={true}
+              errorClass="errors"
             />
           </div>
           <div className="signup4__image-text">
@@ -76,7 +84,6 @@ const Signup4 = props => {
           </div>
         </div>
         <div className="signup4__content">
-
           <div className="signup4__form">
             <div
               className={`signup4__form-field ${errorState.name &&
