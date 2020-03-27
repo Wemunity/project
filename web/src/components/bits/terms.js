@@ -1,9 +1,7 @@
-import React, { setState } from 'react';
+import React from 'react';
 import CrossIcon from '../../assets/cross-icon2.svg';
-import Signup2 from '../../pages/onboarding/signup2';
 
 const Terms = props => {
-  const text = props.text;
 
   const onCrossClick = (event) => {
     props.onClick && props.onClick(event.target.name)
@@ -12,7 +10,7 @@ const Terms = props => {
   return (
     <div className="terms">
       <div className="terms__wrapper">
-        <img onClick={onCrossClick} name="cross" className="terms__cross" src={CrossIcon} alt="x"/>
+        <img onClick={onCrossClick} name="cross" className="terms__cross" src={CrossIcon} alt="x" style={{cursor:'pointer'}}/>
 
         <div className="terms__text">
           <span>These are the terms<br/>

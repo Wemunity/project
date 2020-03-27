@@ -1,4 +1,4 @@
-import React, { useState, getElementById } from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import ImageUploader from "react-images-upload";
 import { Redirect } from 'react-router-dom';
@@ -15,7 +15,6 @@ import Dots from '../../components/bits/dots';
 import Button from '../../components/bits/button';
 import RadioButton from '../../components/bits/radiobutton';
 
-import CrossIcon from '../../assets/cross-icon-blue.svg';
 import WemunityIconDark from '../../assets/wemunity-icon-dark.svg';
 
 

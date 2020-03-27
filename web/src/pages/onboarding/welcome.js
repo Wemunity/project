@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import Button from '../../components/bits/button';
 
@@ -10,7 +10,6 @@ import WemunityIconDark from '../../assets/wemunity-icon-dark.svg';
 const Welcome = props => {
 
   const onBoardingState = useSelector(state => state.onboarding);
-  const dispatch = useDispatch();
 
   console.dir(onBoardingState);
 
