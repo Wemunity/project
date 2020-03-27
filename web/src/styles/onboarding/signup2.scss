@@ -1,14 +1,15 @@
-.signup2{
+.signup2 {
   background-color: $dark-blue;
   width: 100vw;
-  color: #FFF;
+  color: #fff;
   background-image: url('../../assets/corona_pattern.svg');
   background-repeat: no-repeat;
   @media (min-width: 768px) {
     background-image: url('../../assets/corona-pattern-light-desktop.svg');
   }
 
-  &__wrapper{
+  &__wrapper {
+    position: relative;
     @include container;
     display: flex;
     flex-flow: column;
@@ -18,9 +19,16 @@
       width: 100%;
       align-items: flex-start;
     }
-
   }
-  &__top{
+
+  &__error {
+    position: absolute;
+    top: 150px;
+    color: rgb(250, 104, 104);
+    font-size: 1.4rem;
+  }
+
+  &__top {
     flex: 0 0 300px;
     @media (max-width: 767px) {
       flex: 0 0 310px;
@@ -40,7 +48,7 @@
       }
     }
 
-  &__content{
+  &__content {
     flex: 1;
     width: 100%;
     @media (min-width: 768px) {
@@ -66,6 +74,7 @@
       }
     }
 
+
     &__terms{
       padding-top: 25px;
       @media (min-width: 768px) {
@@ -80,8 +89,15 @@
         cursor: pointer;
       }
     }
+    .checkboxfield__checkmark {
+      top: 2px;
+    }
+    a {
+      text-decoration: underline;
+      cursor: pointer;
+    }
 
-  &__bottom{
+  &__bottom {
     flex: 0 0 120px;
     flex-flow: column;
     align-items: center;
@@ -104,10 +120,14 @@
       @media (max-width: 767px) {
         padding-top: 30px;
       }
+
+    @media (max-width: 525px) {
+      padding-top: 30px;
     }
+  }
 }
 
-.wemunity-icon{
+.wemunity-icon {
   position: absolute;
   top: 20px;
   left: 20px;

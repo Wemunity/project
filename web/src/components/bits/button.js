@@ -12,14 +12,44 @@ const Button = props => {
   var textColor = light ? '#0043FF' : '#FFF';
 
   return (
-    <Link to={link} style={{textDecoration:'none'}}>
-      <div className="button" style={{backgroundColor:backgroundColor, color:textColor}}>
-        <div className="button__content">
-          <span>{text}</span>
-          {arrow === true ? <img className="button__arrow" src={light === true ? ArrowBlue : ArrowWhite} alt="->"/> : null}
-        </div>
-      </div>
-    </Link>
+    <>
+      {props.handleValidation ? (
+        <button
+          onClick={props.handleValidation}
+          className="button"
+          style={{ backgroundColor: backgroundColor, color: textColor }}
+        >
+          <div className="button__content">
+            <span>{text}</span>
+            {arrow === true ? (
+              <img
+                className="button__arrow"
+                src={light === true ? ArrowBlue : ArrowWhite}
+                alt="->"
+              />
+            ) : null}
+          </div>
+        </button>
+      ) : (
+        <Link to={link} style={{ textDecoration: 'none' }}>
+          <div
+            className="button"
+            style={{ backgroundColor: backgroundColor, color: textColor }}
+          >
+            <div className="button__content">
+              <span>{text}</span>
+              {arrow === true ? (
+                <img
+                  className="button__arrow"
+                  src={light === true ? ArrowBlue : ArrowWhite}
+                  alt="->"
+                />
+              ) : null}
+            </div>
+          </div>
+        </Link>
+      )}
+    </>
   );
 };
 
