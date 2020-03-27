@@ -3,6 +3,7 @@ const initialState = {
   agreeTerms: false,
   symptomStartDate: null,
   symptomEndDate: null,
+  picture: null,
   name: "",
   location: "",
   age: "",
@@ -17,6 +18,7 @@ const initialState = {
 const SET_SYMPTOM_START_DATE = 'SET_SYMPTOM_START_DATE';
 const SET_SYMPTOM_END_DATE = 'SET_SYMPTOM_END_DATE';
 const SET_AGREE_TERMS = 'SET_AGREE_TERMS';
+const SET_PICTURE = 'SET_PICTURE';
 const SET_NAME = 'SET_NAME';
 const SET_AGE = 'SET_AGE';
 const SET_LOCATION = 'SET_LOCATION';
@@ -40,6 +42,11 @@ export const setSymptomEndDate = (symptomEndDate) => ({
 export const setAgreeTerms = (agreeTerms) => ({
   type: SET_AGREE_TERMS,
   agreeTerms
+});
+
+export const setPicture = (picture) => ({
+  type: SET_PICTURE,
+  picture
 });
 
 export const setName = (name) => ({
@@ -95,6 +102,9 @@ export default (state = initialState, action:any) => {
     case SET_AGREE_TERMS:
       return { ...state, agreeTerms: action.agreeTerms };
 
+    case SET_PICTURE:
+      return { ...state, picture: action.picture };
+
     case SET_NAME:
       return { ...state, name: action.name };
 
@@ -118,7 +128,7 @@ export default (state = initialState, action:any) => {
 
     case SET_PROFESSIONAL_EXPERIENCES:
       return { ...state, professionalExperiences: action.experiences };
-      
+
     default:
       return state;
   }

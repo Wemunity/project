@@ -1,4 +1,4 @@
-import React, { useState, setState } from 'react';
+import React, { useState } from 'react';
 
 import LocationIcon from '../assets/location-icon.svg';
 import CrossIcon from '../assets/cross-icon2.svg';
@@ -80,7 +80,7 @@ const Tasks = props => {
               tags.map((value, key) => {
                 return <div className="tasks__tagelement" key={key}>
                   <span>{value}</span>
-                  <img className="tasks__tagelement-icon" src={CrossIcon}/>
+                  <img className="tasks__tagelement-icon" src={CrossIcon} alt=""/>
                 </div>
               })
             }

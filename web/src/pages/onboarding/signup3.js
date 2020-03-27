@@ -5,12 +5,9 @@ import Button from '../../components/bits/button';
 import Dots from '../../components/bits/dots';
 import ImmunityExplanation from '../../components/bits/immunityExplanation';
 
-import CoronapatternDark from '../../assets/corona_pattern_dark.svg';
 import Smileysmile from '../../assets/smiley_smile.svg';
-import Dots2 from '../../assets/dots2.svg';
 import WemunityIconDark from '../../assets/wemunity-icon-dark.svg';
 
-//When did you start showing symptoms?
 
 const Signup3 = props => {
   const onBoardingState = useSelector(state => state.onboarding);

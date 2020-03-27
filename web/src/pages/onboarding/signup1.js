@@ -1,11 +1,15 @@
 import React from 'react';
+
 import Button from '../../components/bits/button';
+
 import Bankid from '../../assets/bankid-logo.png';
+import WemunityIconDark from '../../assets/wemunity-icon-dark.svg';
 //log in or sign up
 
 const Signup1 = props => {
   return (
     <div className="signup1">
+      <img className="wemunity-icon" src={WemunityIconDark} alt="Ø"/>
       <div className="signup1__wrapper">
         <div className="signup1__content">
           <img className="bankid" src={Bankid} alt="BankID"/>
@@ -14,7 +18,7 @@ const Signup1 = props => {
               <Button text={'Sign up'} light={false} link={'/signup/2'} arrow={true}/>
             </div>
             <div className="signup1__button">
-              <Button text={'Sign in'} light={true} link={'/signup/2'} arrow={true}/>
+              <Button text={'Sign in'} light={true} link={''} arrow={true}/>
             </div>
           </div>
         </div>

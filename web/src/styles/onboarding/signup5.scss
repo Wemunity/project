@@ -8,7 +8,7 @@
     display: flex;
     flex-flow: column;
     height: 100vh;
-    @media (min-width: 525px) {
+    @media (min-width: 768px) {
       // flex-flow: row;
       width: 100%;
       align-items: flex-start;
@@ -20,7 +20,7 @@
     justify-content: center;
     align-items: center;
     font-size: 24px;
-    @media (max-width: 525px) {
+    @media (max-width: 767px) {
       flex: 0 0 210px;
       justify-content: flex-start;
     }
@@ -29,7 +29,7 @@
   &__content{
     flex: 1;
     width: 100%;
-    @media (min-width: 526px) {
+    @media (min-width: 768px) {
       @include innercontainer;
       display: flex;
       justify-content: space-between;
@@ -39,7 +39,7 @@
       padding: 10px 0;
     }
     &__radiofield{
-      @media (max-width: 526px) {
+      @media (max-width: 767px) {
         padding-top: 20px;
       }
     }
@@ -49,7 +49,7 @@
     flex-flow: column;
     align-items: center;
     display: flex;
-    @media (min-width: 525px) {
+    @media (min-width: 768px) {
       width: 100%;
       flex: 0 0 160px;
       flex-flow: row-reverse;
@@ -58,13 +58,13 @@
     }
   }
     &__dots{
-      @media (min-width: 526px) {
+      @media (min-width: 768px) {
         margin-right: 15px;
         display: flex;
         justify-content: center;
         align-items: center;
       }
-      @media (max-width: 525px) {
+      @media (max-width: 767px) {
         padding-top: 30px;
       }
     }
@@ -94,7 +94,7 @@
 
     input {
       @include spaceGrotesk;
-      font-size: $font-size;
+      font-size: $font-size-xl;
       padding: 8px;
       background: none;
       border-bottom: 1px solid #090039;
@@ -106,11 +106,11 @@
       background-color: $white;
       border: none;
       height: 28px;
-      border-radius: 10px;
+      border-radius: 14px;
       padding: 2px 12px;
 
       &:after {
-        color: $black;
+        color: $dark-blue;
       }
     }
 

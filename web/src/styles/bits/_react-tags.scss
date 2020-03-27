@@ -36,6 +36,9 @@
 
 .react-tags__selected-tag:after {
   content: '\2715';
+
+  // background-image: url('../../assets/cross-icon2.svg');
+
   color: #AAA;
   margin-left: 8px;
 }
@@ -43,6 +46,7 @@
 .react-tags__selected-tag:hover,
 .react-tags__selected-tag:focus {
   border-color: #B1B1B1;
+  outline: none;
 }
 
 .react-tags__search {

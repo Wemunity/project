@@ -19,6 +19,9 @@ import WemunityIconLight from '../../assets/wemunity-icon-light.svg';
 const Signup2 = props => {
   const onBoardingState = useSelector(state => state.onboarding);
   const dispatch = useDispatch();
+
+  console.dir(onBoardingState);
+
   const [showTerms, setShowTerms] = useState(false);
   const [redirect, setRedirect] = useState(false);
   const [errors, setErrors] = useState(false);
@@ -28,9 +31,9 @@ const Signup2 = props => {
     setShowTerms(!showTerms);
   };
 
-  const onDateChange = date => {
-    console.log(date);
-  };
+  // const onDateChange = date => {
+  //   console.log(date);
+  // };
 
   const handleValidation = () => {
     if (onBoardingState.agreeTerms) {
@@ -45,6 +48,7 @@ const Signup2 = props => {
 
   return (
     <div className="signup2">
+    {showTerms ? <Terms onClick={handleShowTerms} /> : null}
       <img className="wemunity-icon" src={WemunityIconLight} alt="Ø" />
       <div className="signup2__wrapper">
         {errors.terms && !onBoardingState.agreeTerms && (
@@ -68,7 +72,7 @@ const Signup2 = props => {
             <div className="signup2__form-field">
               <DateField
                 value={onBoardingState.symptomEndDate}
-                onChange={e => dispatch(setSymptomEndDate(e))}
+                onChange={e => {dispatch(setSymptomEndDate(e))}}
                 lightText={true}
                 topText={'When did you last show symptoms?'}
                 arrow={true}
@@ -86,11 +90,13 @@ const Signup2 = props => {
               />
             </div>
             <span onClick={handleShowTerms}>
-              &nbsp;<a>terms and conditions</a>
+              &nbsp;<button>terms and conditions</button>
             </span>
-            {showTerms ? <Terms onClick={handleShowTerms} /> : null}
           </div>
+
+
         </div>
+
         <div className="signup2__bottom">
           <Button
             text={'Next'}

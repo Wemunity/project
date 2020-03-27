@@ -31,22 +31,6 @@
     }
   }
 
-    &__image{
-      width: 93px;
-      height: 93px;
-      border-radius: 100%;
-      background-color: #FFF;
-    }
-    &__add-icon{
-
-    }
-    &__image-text{
-      font-size: 1em;
-      display: flex;
-      align-items: center;
-      padding-left: 20px;
-    }
-
   &__content{
     flex: 1;
     width: 100%;
@@ -85,8 +69,14 @@
   &__profileimage{
     width: 89px;
     height: 89px;
-    border-radius: 100%;
-    background-color: #FFF;
+    display: flex;
+    align-items: center;
+    // border-radius: 100%;
+    // background-color: #FFF;
+    img {
+      width: inherit;
+      clip-path: circle(45% at center);
+    }
     @media (min-width: 526px) {
       display: none;
     }

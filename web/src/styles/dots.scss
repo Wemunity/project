@@ -20,7 +20,7 @@
 
     margin-right: 15px;
     border: 2px solid $blue;
-    @media (max-width: 526px){
+    @media (max-width: 767px){
       width: 8px;
       height: 8px;
       background-color: $blue;
@@ -50,7 +50,7 @@
 
     color: #FFF;
     background-color: $blue;
-    @media (max-width: 526px){
+    @media (max-width: 767px){
       margin-right: 20px;
       width: 30px;
       border-radius: 4px;
