@@ -8,7 +8,7 @@
     display: flex;
     flex-flow: column;
     height: 100vh;
-    @media (min-width: 525px) {
+    @media (min-width: 768px) {
       // flex-flow: row;
       width: 100%;
       align-items: flex-start;
@@ -19,7 +19,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    @media (max-width: 525px) {
+    @media (max-width: 767px) {
       flex: 0 0 210px;
       justify-content: flex-start;
     }
@@ -45,12 +45,12 @@
   &__content{
     flex: 1;
     width: 100%;
-    @media (min-width: 526px) {
+    @media (min-width: 768px) {
       @include innercontainer;
     }
   }
     &__form{
-      @media (min-width: 526px) {
+      @media (min-width: 768px) {
         display: flex;
         justify-content: space-between;
         margin-bottom: 50px;
@@ -68,7 +68,7 @@
       flex-flow: column;
       align-items: center;
       display: flex;
-      @media (min-width: 525px) {
+      @media (min-width: 768px) {
         width: 100%;
         flex: 0 0 160px;
         flex-flow: row-reverse;
@@ -77,14 +77,54 @@
       }
     }
       &__dots{
-        @media (min-width: 526px) {
+        @media (min-width: 768px) {
           margin-right: 15px;
           display: flex;
           justify-content: center;
           align-items: center;
         }
-        @media (max-width: 525px) {
+        @media (max-width: 767px) {
           padding-top: 30px;
         }
       }
     }
+
+.imageUploader {
+
+  .fileContainer {
+    background-image: url('../../assets/cross-icon-blue.svg');
+    
+
+    background: #FFF;
+    box-shadow: none;
+    height: 93px;
+    width: 93px;
+    border-radius: 100%;
+    &:hover{
+      box-shadow: 0 3px 8px rgba(8,0,206,0.16);
+    }
+
+    .chooseFileButton{
+      background: none;
+      color: $blue;
+      font-size: 0;
+      transform: translateY(-4px);
+
+      &:hover{
+        background: none;
+      }
+    }
+    .uploadPictureContainer{
+      margin: 0;
+      border: none;
+      box-shadow: none;
+      background: none;
+    }
+    .deleteImage{
+      background-color: $dark-blue;
+      // @include SpaceGrotesk;
+      font-family: 'SpaceGrotesk';
+      font-size: 16px;
+    }
+  }
+}

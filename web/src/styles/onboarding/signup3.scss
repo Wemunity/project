@@ -5,7 +5,7 @@
   color: #FFF;
   background-image: url('../../assets/corona_pattern_dark.svg');
   background-repeat: no-repeat;
-  @media (min-width: 525px) {
+  @media (min-width: 768px) {
     background-image: url('../../assets/corona-pattern-dark-desktop.svg');
   }
 
@@ -14,7 +14,7 @@
     display: flex;
     flex-flow: column;
     height: 100vh;
-    @media (min-width: 525px) {
+    @media (min-width: 768px) {
       // flex-flow: row;
       width: 100%;
       align-items: flex-start;
@@ -23,7 +23,7 @@
 
   &__top{
     flex: 0 0 90px;
-    @media (max-width: 525px) {
+    @media (max-width: 767px) {
       flex: 0 0 310px;
       display: flex;
       justify-content: center;
@@ -31,10 +31,10 @@
     }
   }
     &__smiley{
-      @media (max-width: 525px) {
+      @media (max-width: 767px) {
         transform: translateY(-30%);
       }
-      @media (min-width: 525px) {
+      @media (min-width: 768px) {
         position: absolute;
         bottom: 188px;
         left: 166px;
@@ -46,7 +46,7 @@
     width: 100%;
     color: $dark-blue;
     font-size: 24px;
-    @media (min-width: 525px) {
+    @media (min-width: 768px) {
       // @include innercontainer;
       max-width: 600px;
     }
@@ -64,13 +64,13 @@
       text-decoration: underline;
       cursor: pointer;
     }
-    @media (max-width: 525px) {
+    @media (max-width: 767px) {
       // display: flex;
       // flex-flow: column;
       // justify-content: center;
       text-align: center;
     }
-    @media (min-width: 526px) {
+    @media (min-width: 768px) {
       display: flex;
       align-items: center;
       h1{ margin-right: 20px; }
@@ -82,7 +82,7 @@
     flex-flow: column;
     align-items: center;
     display: flex;
-    @media (min-width: 525px) {
+    @media (min-width: 768px) {
       width: 100%;
       flex: 0 0 160px;
       flex-flow: row-reverse;
@@ -91,13 +91,13 @@
     }
   }
     &__dots{
-      @media (min-width: 526px) {
+      @media (min-width: 768px) {
         margin-right: 15px;
         display: flex;
         justify-content: center;
         align-items: center;
       }
-      @media (max-width: 525px) {
+      @media (max-width: 767px) {
         padding-top: 30px;
       }
     }

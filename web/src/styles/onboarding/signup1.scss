@@ -21,7 +21,7 @@
     // padding-bottom: 20px;
     display: flex;
     flex-direction: column;
-    @media (min-width: 525px) {
+    @media (min-width: 768px) {
       flex-direction: row;
     }
   }

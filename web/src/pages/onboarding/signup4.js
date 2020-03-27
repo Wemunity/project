@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import ImageUploader from "react-images-upload";
 
 import { setName, setLocation, setAge, setDriversLicense } from '../../state/onboarding';
 
@@ -17,6 +18,11 @@ import WemunityIconDark from '../../assets/wemunity-icon-dark.svg';
 
 const Signup4 = props => {
 
+  const [pictures, setPictures] = useState([]);
+  const onDrop = picture => {
+    setPictures([...pictures, picture]);
+  };
+
   const onBoardingState = useSelector(state => state.onboarding)
   const dispatch = useDispatch()
 
@@ -27,12 +33,23 @@ const Signup4 = props => {
       <img className="wemunity-icon" src={WemunityIconDark} alt="Ø"/>
       <div className="signup4__wrapper">
         <div className="signup4__top">
-          <div className="signup4__profileimage">
-            <img src={CrossIcon} alt="+"/>
+          <div className="imageUploader">
+            <ImageUploader
+              {...props}
+              buttonText="+"
+              withLabel={false}
+              withIcon={false}
+              onChange={onDrop}
+              imgExtension={[".jpg", ".gif", ".png", ".gif"]}
+              maxFileSize={5242880}
+              singleImage={true}
+              withPreview={true}
+            />
           </div>
           <div className="signup4__image-text"><span>Upload profile picture</span></div>
         </div>
         <div className="signup4__content">
+
           <div className="signup4__form">
             <div className="signup4__form-field">
               <FormField value={onBoardingState.name} topText={'My name'} placeholderText={'Jon Doe'} onChange={(e) => dispatch(setName(e.target.value))}/>
@@ -61,6 +78,7 @@ const Signup4 = props => {
 
 export default Signup4;
 
+// <img src={CrossIcon} alt="+"/>
 // export default connect(
 //   state => ({ onboardingState: state.onboarding})
 // )(Signup4);
