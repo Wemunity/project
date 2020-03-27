@@ -66,7 +66,7 @@ const Signup5 = props => {
                 <ReactTags
                   tags={onboardingState.professionalExperiences}
                   suggestions={suggestions}
-                  placeholder={'Start typing...'}
+                  placeholder={'Carpenter, Nurse ...'}
                   handleDelete={handleDelete.bind(this)}
                   handleAddition={handleAddition.bind(this)} />)
               : null
