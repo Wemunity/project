@@ -1,6 +1,7 @@
 .signup4 {
   background-color: $gray-white;
   width: 100vw;
+  min-height: 100vh;
   color: $dark-blue;
 
   &__wrapper {
@@ -99,25 +100,23 @@
         align-items: flex-start;
       }
     }
-      &__dots{
-        @media (min-width: 768px) {
-          margin-right: 15px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        @media (max-width: 767px) {
-          padding-top: 30px;
-        }
+    &__dots {
+      @media (min-width: 768px) {
+        margin-right: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      @media (max-width: 767px) {
+        padding-top: 30px;
       }
     }
   }
+}
 
 .imageUploader {
-
-
-  .errors{
-    background-color: #FFF;
+  .errors {
+    background-color: #fff;
     width: 100%;
     height: 93px;
     border-radius: 100%;
@@ -128,8 +127,7 @@
     font-family: 'SpaceGrotesk';
     padding: 0 5px;
   }
-  .fileUploader{
-
+  .fileUploader {
   }
   .fileContainer {
     background-image: url('../../assets/cross-icon-blue.svg');
@@ -139,11 +137,11 @@
     height: 93px;
     width: 93px;
     border-radius: 100%;
-    &:hover{
-      box-shadow: 0 3px 8px rgba(8,0,206,0.16);
+    &:hover {
+      box-shadow: 0 3px 8px rgba(8, 0, 206, 0.16);
     }
 
-    .chooseFileButton{
+    .chooseFileButton {
       background: none;
       margin: 0;
       color: $blue;
@@ -151,18 +149,16 @@
       width: 25px;
       height: 25px;
       position: absolute;
-      &:hover{
+      &:hover {
         background: none;
       }
     }
 
-    .uploadPicturesWrapper{
+    .uploadPicturesWrapper {
       // width: 100%;
       // height: 100%;
-
     }
-    .uploadPictureContainer{
-
+    .uploadPictureContainer {
       margin: 0;
       width: 93px;
       height: 93px;
@@ -172,19 +168,19 @@
       box-shadow: none;
       background: none;
       animation: none;
-      img{
+      img {
         // border-radius: 100%;
         clip-path: circle(45% at center);
         // width: 50px;
       }
     }
-    .deleteImage{
-      background-color: #FFF;
+    .deleteImage {
+      background-color: #fff;
       font-family: 'SpaceGrotesk';
       // font-size: 16px;
       font-size: 0;
       color: $dark-blue;
-      transform: translate(-5px,5px);
+      transform: translate(-5px, 5px);
       z-index: 10;
       background-image: url('../../assets/cross-icon2.svg');
       background-position: center;
