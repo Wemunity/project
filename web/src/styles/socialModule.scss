@@ -18,7 +18,7 @@
   &__content {
     padding: 0 4%;
     max-width: 900px;
-    margin: 70px auto 0;
+    margin: 70px auto 100px;
     @media (min-width: 1650px) {
       max-width: 1100px;
       padding: 0 4% 100px;
@@ -58,19 +58,40 @@
     }
   }
 
-  &__buttons {
+  &__main{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    margin-top: 30px;
+    @media (max-width: 525px) {
+      flex-direction: column;
+    }
+
+  &__iframe{
+    width: 350px;
+    height: 450px;
+    @media (max-width: 525px) {
+      width: 300px;
+      height: auto;
+    }
+  }
+
+  }
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    // justify-content: space-between;
     flex-wrap: wrap;
     max-width: 470px;
-    margin-top: 70px;
+    // margin-top: 70px;
+    margin-left: 78px;
     @media (min-width: 1650px) {
       max-width: 550px;
     }
     @media (max-width: 525px) {
       margin-bottom: 50px;
       max-width: 100%;
+      margin-left: 0;
+      margin-top: 30px;
     }
   }
 
@@ -87,7 +108,7 @@
       padding: 8px 20px;
     }
     @media (max-width: 525px) {
-      width: 100%;
+      // width: 100%;
       display: flex;
       justify-content: space-between;
       flex-direction: row;
