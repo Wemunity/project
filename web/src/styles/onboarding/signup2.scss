@@ -1,6 +1,7 @@
 .signup2 {
   background-color: $dark-blue;
   width: 100vw;
+  min-height: 100vh;
   color: #fff;
   background-image: url('../../assets/corona_pattern.svg');
   background-repeat: no-repeat;
@@ -13,7 +14,7 @@
     @include container;
     display: flex;
     flex-flow: column;
-    height: 100vh;
+    min-height: 100vh;
     @media (min-width: 768px) {
       // flex-flow: row;
       width: 100%;
@@ -38,15 +39,14 @@
     }
   }
 
-    &__corona-image{
-
+  &__corona-image {
+  }
+  &__smiley {
+    @media (min-width: 768px) {
+      display: none;
+      visibility: hidden;
     }
-    &__smiley{
-      @media (min-width: 768px) {
-        display: none;
-        visibility: hidden;
-      }
-    }
+  }
 
   &__content {
     flex: 1;
@@ -59,52 +59,55 @@
       padding-top: 40px;
     }
   }
-    &__form{
-      @media (min-width: 768px) {
-        display: flex;
-        flex-flow: row;
-        justify-content: space-between;
-        width: 100%;
-      }
-    }
-    &__form-field{
-      padding: 15px 0;
-      @media (min-width: 768px) {
-        margin-right: 100px;
-      }
-    }
-
-
-    &__terms{
-      padding-top: 25px;
-      @media (min-width: 768px) {
-        padding-top: 57px;
-      }
+  &__form {
+    @media (min-width: 768px) {
       display: flex;
-      align-items: baseline;
-      .checkboxfield{ font-size: 16px; }
-      .checkboxfield__checkmark{ top: 2px; }
-      button{
-        font-family: 'SpaceGrotesk';
-        background: none;
-        text-decoration: underline;
-        cursor: pointer;
-        border: none;
-        color: #FFF;
-        font-size: 16px;
-        padding: 0;
-        &:focus{
-          outline: none;
-        }
-      }
+      flex-flow: row;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+  &__form-field {
+    padding: 15px 0;
+    @media (min-width: 768px) {
+      margin-right: 100px;
+    }
+  }
+
+  &__terms {
+    padding-top: 25px;
+    @media (min-width: 768px) {
+      padding-top: 57px;
+    }
+    display: flex;
+    align-items: baseline;
+    .checkboxfield {
+      font-size: 16px;
     }
     .checkboxfield__checkmark {
       top: 2px;
     }
-    a {
+    button {
+      font-family: 'SpaceGrotesk';
+      background: none;
       text-decoration: underline;
       cursor: pointer;
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      padding: 0;
+      &:focus {
+        outline: none;
+      }
     }
+  }
+  .checkboxfield__checkmark {
+    top: 2px;
+  }
+  a {
+    text-decoration: underline;
+    cursor: pointer;
+  }
 
   &__bottom {
     flex: 0 0 120px;
@@ -119,16 +122,16 @@
       align-items: flex-start;
     }
   }
-    &__dots{
-      @media (min-width: 768px) {
-        margin-right: 15px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      @media (max-width: 767px) {
-        padding-top: 30px;
-      }
+  &__dots {
+    @media (min-width: 768px) {
+      margin-right: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    @media (max-width: 767px) {
+      padding-top: 30px;
+    }
 
     @media (max-width: 525px) {
       padding-top: 30px;

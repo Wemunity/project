@@ -32,7 +32,7 @@
 
   &__content {
     padding: 150px 4% 50px;
-    max-width: 900px;
+    max-width: calc(900px + 8%);
     margin: 0 auto;
     @media (min-width: 1650px) {
       padding: 175px 4% 60px;
@@ -85,7 +85,7 @@
       }
     }
   }
-  .button{
+  .button {
     width: 140px;
   }
 }
