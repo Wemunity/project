@@ -8,7 +8,7 @@ import Signup3 from '../pages/onboarding/signup3';
 import Signup4 from '../pages/onboarding/signup4';
 import Signup5 from '../pages/onboarding/signup5';
 import Welcome from '../pages/onboarding/welcome';
-import Profile from '../pages/onboarding/profile';
+import Profile from '../pages/profile';
 import Tasks from '../pages/tasks';
 
 const AppRouter = () => (

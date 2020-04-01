@@ -1,0 +1,97 @@
+.certificate{
+  max-width: 350px;
+  background-color: #FFF;
+  border-radius: 9px;
+  box-shadow: 0 7px 16px rgba(8, 0, 206, 0.16);
+
+  @media (max-width: 768px){
+    margin-bottom: 60px;
+  }
+
+
+  &__wrapper{
+    padding: 20px 20px;
+    position: relative;
+
+  }
+
+  &__top{
+    display: flex;
+    padding-bottom: 40px;
+    @media (max-width: 768px){
+      padding-bottom: 0;
+    }
+  }
+
+  &__icon{
+    width: 95px;
+    height: 95px;
+    background-color: #B3FF96;
+    border-radius: 100%;
+  }
+
+  &__text{
+    display: flex;
+    flex-flow: column;
+    // align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+    span{
+      font-family: 'SpaceGrotesk SemiBold';
+      font-size: 16px;
+    }
+    &-title{
+      font-family: 'SpaceGrotesk SemiBold';
+      font-size: 16px;
+    }
+    &-name{
+      font-family: 'SpaceGrotesk';
+      font-size: 24px;
+    }
+  }
+
+  &__expand-button{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    // float: right;
+    // align-self: flex-end;
+    // transform: translateY(-20px);
+    width: 26px;
+    height: 26px;
+    // margin-bottom: 10px;
+    background-color: $blue;
+    border-radius: 100%;
+    transform: rotate(90deg);
+
+    background-image: url('../../assets/arrow-white.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    @media (min-width: 768px){
+      display: none;
+    }
+
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &__content{
+    span{
+      font-size: 16px;
+      line-height: 1em;
+    }
+    opacity: 0;
+    max-height: 0;
+    transition: max-height 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+
+    @media (min-width: 768px){
+      padding-top: 0;
+      padding-bottom: 0;
+      opacity: 1;
+      max-height: 300px;
+    }
+  }
+
+
+}
