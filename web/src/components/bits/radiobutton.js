@@ -3,7 +3,6 @@ import React from 'react';
 import Questionbubble from '../../assets/question-bubble.svg';
 
 const RadioButton = props => {
-  const text = props.text;
 
   const onRadioChange = (event) => {
     props.onChange && props.onChange(event.target.value === "true" ? true : false)
@@ -12,8 +11,8 @@ const RadioButton = props => {
   return (
     <div className="radiofield">
       <div className="radiofield__text-wrapper">
-        <span>{text}</span>
-        <img src={Questionbubble} alt="?"></img>
+        <span>{props.text}</span>
+        { props.questionBubble ? <img src={Questionbubble} alt="?"></img> : null}
       </div>
       <form>
         <div className="radiofield__wrapper">

@@ -1,0 +1,164 @@
+.profile{
+  background-color: $gray-white;
+  color: $dark-blue;
+  width: 100vw;
+  min-height: 100vh;
+  color: $dark-blue;
+  // background-image: url('../assets/corona_pattern_dark.svg');
+  // background-repeat: no-repeat;
+  // @media (min-width: 768px) {
+  //   background-image: url('../assets/corona-pattern-dark-desktop.svg');
+  // }
+
+  &__wrapper{
+    @include container;
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+    @media (min-width: 768px) {
+      // flex-flow: row;
+      width: 100%;
+      align-items: flex-start;
+    }
+  }
+
+  &__top{
+    flex: 0 0 120px;
+    margin-top: 80px;
+    span{
+      font-size: 24px;
+      font-weight: 600;
+      margin-left: 15px;
+    }
+    @media (max-width: 767px) {
+      flex: 0 0 100px;
+      margin-top: 40px;
+    }
+
+  }
+
+  &__user{
+    display: flex;
+    align-items: center;
+    span{
+      font-size: 24px;
+      font-weight: 600;
+      margin-left: 15px;
+    }
+  }
+
+  &__user-image{
+    width: 72px;
+    clip-path: circle(45% at center);
+
+    @media (max-width: 767px) {
+      width: 52px;
+    }
+  }
+
+  &__content{
+    flex: 1;
+    width: 100%;
+    color: $dark-blue;
+    font-size: 24px;
+
+    @media (min-width: 768px) {
+      // @include innercontainer;
+      margin-left: 90px;
+      margin-right: 90px;
+      max-width: 855px;
+      display: flex;
+    }
+  }
+
+  &__certificate{
+    margin-right: 55px;
+    display: flex;
+    @media (max-width: 768px){
+      margin-right: 0;
+      // flex: 1;
+      // align-items: stretch;
+      // height: 100%;
+    }
+    @media (min-width: 768px){
+      height: 433px;
+    }
+  }
+
+  &__settings{
+    @media (min-width: 768px){
+      width: 400px;
+      // max-width: 400px;
+    }
+  }
+
+  &__setting{
+    margin-bottom: 35px;
+
+    // &:last-of-type{
+    //   margin-bottom: 0;
+    // }
+  }
+
+  &__setting-headline{
+    margin-bottom: 0px;
+    span{
+      font-size: 16px;
+      font-weight: 600;
+      margin-top: 0;
+    }
+  }
+
+  &__add-experience-button{
+    font-family: 'SpaceGrotesk SemiBold';
+    background: none;
+    background-color: $blue;
+    width: auto;
+    height: 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    color: #fff;
+    font-size: 12px;
+    padding: 0 10px 0 15px;
+    &:focus {
+      outline: none;
+    }
+    img{
+      transform: translateY(1.5px);
+    }
+  }
+
+  &__delete-data{
+    color: red;
+    font-size: 16px;
+    text-align: center;
+    padding-top: 70px;
+  }
+
+  &__bottom{
+    flex: 0 0 120px;
+
+    @media (min-width: 768px) {
+
+    }
+  }
+}
+
+.react-tags{
+  flex-flow: column;
+  margin: 0;
+
+  &__selected-tag{
+    // height: 24px;
+  }
+  &__suggestions{
+    z-index: 100;
+    width: 100%;
+  }
+}
+
+.checkboxfield{
+  margin-bottom: 8px;
+}

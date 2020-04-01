@@ -109,8 +109,7 @@
   border: none;
   height: 28px;
   border-radius: 14px;
-  padding: 2px 12px;
-
+  padding: 2px 30px 2px 12px;
   &:after {
     color: $dark-blue;
   }
@@ -123,6 +122,7 @@
   color: $dark-blue;
   display: inline-block;
   vertical-align: top;
+  transform: translateY(15%);
 }
 
 .experience {
