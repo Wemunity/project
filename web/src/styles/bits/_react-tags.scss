@@ -28,6 +28,7 @@
   border: 1px solid #D1D1D1;
   border-radius: 2px;
   background: #F1F1F1;
+  position: relative;
 
   /* match the font styles */
   font-size: inherit;
@@ -35,12 +36,12 @@
 }
 
 .react-tags__selected-tag:after {
-  content: '\2715';
-
-  // background-image: url('../../assets/cross-icon2.svg');
-
-  color: #AAA;
+  // content: '\2715';
+  content: url('../../assets/cross-icon2.svg');
+  // color: #AAA;
   margin-left: 8px;
+  position: absolute;
+  top: -5px;
 }
 
 .react-tags__selected-tag:hover,

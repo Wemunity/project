@@ -82,12 +82,13 @@
     }
     opacity: 0;
     max-height: 0;
-    transition: max-height 0.2s ease-in-out;
-    transition: opacity 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    // transition: max-height 0.3s ease-in-out;
+    // transition: opacity 0.3s ease-in-out;
 
     @media (min-width: 768px){
-      padding-top: 0;
-      padding-bottom: 0;
+      // padding-top: 0;
+      // padding-bottom: 0;
       opacity: 1;
       max-height: 300px;
     }

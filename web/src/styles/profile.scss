@@ -80,10 +80,16 @@
       // align-items: stretch;
       // height: 100%;
     }
+    @media (min-width: 768px){
+      height: 433px;
+    }
   }
 
   &__settings{
-
+    @media (min-width: 768px){
+      width: 400px;
+      // max-width: 400px;
+    }
   }
 
   &__setting{
@@ -124,6 +130,12 @@
     }
   }
 
+  &__delete-data{
+    color: red;
+    font-size: 16px;
+    text-align: center;
+    padding-top: 70px;
+  }
 
   &__bottom{
     flex: 0 0 120px;
@@ -132,4 +144,21 @@
 
     }
   }
+}
+
+.react-tags{
+  flex-flow: column;
+  margin: 0;
+
+  &__selected-tag{
+    // height: 24px;
+  }
+  &__suggestions{
+    z-index: 100;
+    width: 100%;
+  }
+}
+
+.checkboxfield{
+  margin-bottom: 8px;
 }
