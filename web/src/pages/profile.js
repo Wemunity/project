@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import ReactTags from 'react-tag-autocomplete';
+import ImageUploader from "react-images-upload";
 
 import {
   setBasicSocialCare,
@@ -21,6 +22,7 @@ import {
   setContactCall,
   setPhoneNumber,
   setLocation,
+  setPicture,
 } from '../state/onboarding';
 import { experiences } from '../config/professionalExperiences';
 
@@ -49,6 +51,18 @@ const Signup3 = props => {
   //   // dispatch(setProfessionalExperience(val));
   // };
 
+  const [pictures, setPictures] = useState([]);
+  const onDrop = picture => {
+    setPictures([...pictures, picture]);
+    console.log(picture[0]);
+    if ( picture[0] !== undefined ) {
+      var imgFile = URL.createObjectURL(picture[0]);
+      console.log(imgFile);
+      dispatch(setPicture(imgFile));
+    }
+    else { dispatch(setPicture(undefined)); }
+  };
+
   const suggestions = experiences;
 
   const handleDelete = i => {
@@ -69,7 +83,21 @@ const Signup3 = props => {
       <div className="profile__wrapper">
         <div className="profile__top">
           <div className="profile__user">
-            <img className="profile__user-image" src={User} alt="user image"></img>
+            <div className="imageUploader">
+              <ImageUploader
+                {...props}
+                buttonText="+"
+                withLabel={false}
+                withIcon={false}
+                onChange={onDrop}
+                imgExtension={[".jpg", ".jpeg", ".gif", ".png", ".gif"]}
+                maxFileSize={5242880}
+                singleImage={true}
+                withPreview={true}
+                errorClass="errors"
+              />
+            </div>
+            {/* <img className="profile__user-image" src={User} alt="user image"></img> */}
             <span>Farao Frisk</span>
           </div>
         </div>

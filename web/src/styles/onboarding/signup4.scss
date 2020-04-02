@@ -118,7 +118,7 @@
   .errors {
     background-color: #fff;
     width: 100%;
-    height: 93px;
+    height: 76px;
     border-radius: 100%;
     display: flex;
     align-items: center;
@@ -134,8 +134,8 @@
     background-position: center;
     background-repeat: no-repeat;
     box-shadow: none;
-    height: 93px;
-    width: 93px;
+    height: 76px;
+    width: 76px;
     border-radius: 100%;
     &:hover {
       box-shadow: 0 3px 8px rgba(8, 0, 206, 0.16);
@@ -160,8 +160,8 @@
     }
     .uploadPictureContainer {
       margin: 0;
-      width: 93px;
-      height: 93px;
+      width: 76px;
+      height: 76px;
       padding: 0;
       // margin: 3px;
       border: none;
@@ -175,6 +175,8 @@
       }
     }
     .deleteImage {
+      width: 25px;
+      height: 25px;
       background-color: #fff;
       font-family: 'SpaceGrotesk';
       // font-size: 16px;
@@ -185,7 +187,7 @@
       background-image: url('../../assets/cross-icon2.svg');
       background-position: center;
       background-repeat: no-repeat;
-      background-size: 10px;
+      background-size: 7px;
     }
   }
 }
