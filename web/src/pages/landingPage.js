@@ -6,8 +6,9 @@ import SocialModule from '../components/socialModule.js';
 import FeatureModule from '../components/featureModule.js';
 import SupportModule from '../components/supportModule.js';
 import Footer from '../components/footer.js';
+import NavBar from '../components/navbar.js'
 
-function LandingPage() {
+function LandingPage(props) {
   const [moduleData, setModuleData] = useState([]);
 
   useEffect(() => {
@@ -26,6 +27,7 @@ function LandingPage() {
   }, []);
   return (
     <div className="App">
+      <NavBar {...props} theme="dark" />
       <IntroModule m={moduleData.introModule} />
       <SocialModule m={moduleData.socialModule} />
       <FeatureModule m={moduleData.featureModule} />
