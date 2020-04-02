@@ -3,11 +3,12 @@
   top: 0;
   width: 100vw;
   min-height: 100px;
-  padding: 0 5%;
+  padding: 0 10% 0 5%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  font-size: $font-size;
 
   &__logo {
     display: flex;
@@ -18,36 +19,50 @@
       height: 35px;
       margin-right: 15px;
     }
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 
   &__links {
-    width: 40%;
     display: flex;
     flex-flow: row;
     justify-content: space-between;
     list-style: none;
-    margin-right: 100px;
   }
 
   &__link {
-  color: white;
+  margin: 0 15px;
   text-decoration: none;
+  white-space: nowrap;
     &:hover {
       font-weight: bold;
-    }
-
-    &:visited {
-      color: white;
     }
   }
 }
 
 .light {
-  background: #fff;
-  color: #090039;
+  background: $white;
+  color: $dark-blue;
+
+  &:visited {
+      color: $dark-blue;
+    }
 }
 
 .dark {
-  background: #090039;
-  color: #fff;
+  background: $dark-blue;
+  color: $white;
+
+  &:visited {
+      color: $white;
+    }
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.test path {
+  fill: #fff;
 }

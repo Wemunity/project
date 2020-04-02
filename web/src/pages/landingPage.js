@@ -27,7 +27,7 @@ function LandingPage(props) {
   }, []);
   return (
     <div className="App">
-      <NavBar {...props} />
+      <NavBar {...props} theme="dark" />
       <IntroModule m={moduleData.introModule} />
       <SocialModule m={moduleData.socialModule} />
       <FeatureModule m={moduleData.featureModule} />
