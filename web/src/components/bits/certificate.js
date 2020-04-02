@@ -4,8 +4,6 @@ import CertificateIconApproved from '../../assets/certificate-icon-approved.svg'
 import CertificateIconPending from '../../assets/certificate-icon-pending.svg';
 import CertificateIconDeclined from '../../assets/certificate-icon-declined.svg';
 
-
-
 const Certificate = props => {
   // const immunityStatus = 1; // 0: pending, 1: approved, -1: declined
   const determineImmunityStatus = (val) => {

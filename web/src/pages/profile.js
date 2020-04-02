@@ -8,12 +8,13 @@ import {
   setDailyChores,
   setProfessionalExperience,
   setProfessionalExperiences,
-  setDriversLicense,
-  setDriversLicenseCar,
-  setDriversLicenseBus,
-  setDriversLicenseTruck,
-  setDriversLicenseMinibus,
+  setHasDriversLicense,
+  // setDriversLicenseCar,
+  // setDriversLicenseBus,
+  // setDriversLicenseTruck,
+  // setDriversLicenseMinibus,
   setDriversLicenses,
+  setCanContact,
   setContactDaytime,
   setContactNighttime,
   setContactAnytime,
@@ -40,17 +41,32 @@ import CrossIconWhite from '../assets/cross-icon-white.svg';
 const Signup3 = props => {
   const onboardingState = useSelector(state => state.onboarding);
   const dispatch = useDispatch();
-
   console.dir(onboardingState);
 
-  // const [addExperience, setAddExperience] = useState(false);
+  // drivers license states
+  // const [driversLicense, setDriversLicense] = useState(false);
+  const updateLicenses = (name, value) => {
+    const licenses = onboardingState.driversLicenses;
+    if (name === "car") { licenses.car = value }
+    if (name === "bus") { licenses.bus = value }
+    if (name === "truck") { licenses.truck = value }
+    if (name === "minibus") { licenses.minibus = value }
+    if (name === "all") {
+      licenses.car = value;
+      licenses.bus = value;
+      licenses.truck = value;
+      licenses.minibus = value;
+    }
+    dispatch(setDriversLicenses(licenses));
+  }
 
-  // const onButtonClick = () => {
-  //   setAddExperience(!addExperience);
-  //   // console.log(val);
-  //   // dispatch(setProfessionalExperience(val));
-  // };
+  const [viewDataAccess, setViewDataAccess] = useState(false);
+  const handleViewDataAccess = () => {
+    setViewDataAccess(!viewDataAccess);
+    console.log(viewDataAccess);
+  }
 
+  // profile picture
   const [pictures, setPictures] = useState([]);
   const onDrop = picture => {
     setPictures([...pictures, picture]);
@@ -63,8 +79,8 @@ const Signup3 = props => {
     else { dispatch(setPicture(undefined)); }
   };
 
+  // React-tags
   const suggestions = experiences;
-
   const handleDelete = i => {
     const ts = onboardingState.professionalExperiences.slice(0);
     ts.splice(i, 1);
@@ -98,15 +114,41 @@ const Signup3 = props => {
               />
             </div>
             {/* <img className="profile__user-image" src={User} alt="user image"></img> */}
-            <span>Farao Frisk</span>
+            <div className="profile__user-head">
+              <span>Farao Frisk</span>
+              <div className="profile__access-data">
+                <span onClick={handleViewDataAccess}>Who can see my data?</span>
+              </div>
+            </div>
           </div>
         </div>
         <div className="profile__content">
-          <div className="profile__certificate">
-            <Certificate
-              immunityStatus={1}
-            />
-          </div>
+          { viewDataAccess ?
+            <div className="profile__certificate">
+              <div className="profile__view-data">
+                <div className="profile__view-data-wrapper">
+                  <div className="profile__view-data-close" onClick={handleViewDataAccess}/>
+                  <div className="profile__view-data-text">
+                    <span>These are the organisations that have access to your data and can contact you. </span>
+                  </div>
+                  <Checkbox
+                    text="Aker sykehus"
+                    caption=""
+                    // value={}
+                    // onChange={val => dispatch(setBasicSocialCare(val))}
+                  />
+                </div>
+              </div>
+            </div>
+            :
+            <>
+              <div className="profile__certificate">
+                <Certificate
+                  immunityStatus={1}
+                />
+              </div>
+            </>
+          }
           <div className="profile__settings">
             <div className="profile__setting">
               <div className="profile__setting-headline">
@@ -157,106 +199,138 @@ const Signup3 = props => {
                 <span>I have my drivers license</span>
               </div>
               <RadioButton
-                value={onboardingState.driversLicense}
-                onChange={val => dispatch(setDriversLicense(val))}
+                value={onboardingState.hasDriversLicense}
+                onChange={val => {
+                  val ? dispatch(setHasDriversLicense(val))
+                  :
+                  dispatch(setHasDriversLicense(false));
+                  updateLicenses("all", false);
+                }}
               />
-              { onboardingState.driversLicense ? <>
+              { onboardingState.hasDriversLicense ? <>
+                <div className="profile__setting-headline">
+                  <span>Which one(s)?</span>
+                </div>
                 <Checkbox
                   text="Car"
                   caption=""
-                  value={onboardingState.driversLicenseCar}
-                  onChange={val => dispatch(setDriversLicenseCar(val))}
+                  value={onboardingState.driversLicenses.car}
+                  onChange={val => updateLicenses("car", val)}
                 />
                 <Checkbox
                   text="Bus"
                   caption=""
-                  value={onboardingState.driversLicenseBus}
-                  onChange={val => dispatch(setDriversLicenseBus(val))}
+                  value={onboardingState.driversLicenses.bus}
+                  onChange={val => updateLicenses("bus", val)}
                 />
                 <Checkbox
                   text="Truck"
                   caption=""
-                  value={onboardingState.driversLicenseTruck}
-                  onChange={val => dispatch(setDriversLicenseTruck(val))}
+                  value={onboardingState.driversLicenses.truck}
+                  onChange={val => updateLicenses("truck", val)}
                 />
                 <Checkbox
                   text="Minibus"
                   caption=""
-                  value={onboardingState.driversLicenseMinibus}
-                  onChange={val => dispatch(setDriversLicenseMinibus(val))}
+                  value={onboardingState.driversLicenses.minibus}
+                  onChange={val => updateLicenses("minibus", val)}
                 /> </>
                : null
               }
             </div>
             <div className="profile__setting">
               <div className="profile__setting-headline">
-                <span>You can contact me</span>
+                <span>Can authorities or organisations in your area contact you for help?</span>
               </div>
-              <Checkbox
-                text="Anytime"
-                caption=""
-                value={onboardingState.contactAnytime}
-                // onChange={val => handleContactTime(val)}
+              <RadioButton
+                value={onboardingState.canContact}
                 onChange={val => {
-                  dispatch(setContactAnytime(val));
-                  dispatch(setContactDaytime(val));
-                  dispatch(setContactNighttime(val));
+                  val ? dispatch(setCanContact(val))
+                  :
+                  dispatch(setCanContact(false));
+                  dispatch(setContactAnytime(false));
+                  dispatch(setContactDaytime(false));
+                  dispatch(setContactNighttime(false));
+                  dispatch(setContactSMS(false));
+                  dispatch(setContactEmail(false));
+                  dispatch(setContactCall(false));
                 }}
               />
-              { onboardingState.contactAnytime ?
-                null : <>
-                  <Checkbox
-                    text="Daytime"
-                    caption=""
-                    value={onboardingState.contactDaytime}
-                    onChange={val => {
-                      dispatch(setContactDaytime(val));
-                      if (val && onboardingState.contactNighttime) {
-                        dispatch(setContactAnytime(true));
-                      }
-                    }}
-                  />
-                  <Checkbox
-                    text="Nighttime"
-                    caption=""
-                    value={onboardingState.contactNighttime}
-                    onChange={val => {
-                      dispatch(setContactNighttime(val));
-                      if (onboardingState.contactDaytime && val) {
-                        dispatch(setContactAnytime(true));
-                      }
-                    }}
-                  />
-                </>
-              }
+            </div>
+            { onboardingState.canContact ? <>
+              <div className="profile__setting">
+                <div className="profile__setting-headline">
+                  <span>You can contact me</span>
+                </div>
+                <Checkbox
+                  text="Anytime"
+                  caption=""
+                  value={onboardingState.contactAnytime}
+                  onChange={val => {
+                    dispatch(setContactAnytime(val));
+                    dispatch(setContactDaytime(val));
+                    dispatch(setContactNighttime(val));
+                  }}
+                />
+                { onboardingState.contactAnytime ?
+                  null : <>
+                    <Checkbox
+                      text="Daytime"
+                      caption=""
+                      value={onboardingState.contactDaytime}
+                      onChange={val => {
+                        dispatch(setContactDaytime(val));
+                        if (val && onboardingState.contactNighttime) {
+                          dispatch(setContactAnytime(true));
+                        }
+                      }}
+                    />
+                    <Checkbox
+                      text="Nighttime"
+                      caption=""
+                      value={onboardingState.contactNighttime}
+                      onChange={val => {
+                        dispatch(setContactNighttime(val));
+                        if (onboardingState.contactDaytime && val) {
+                          dispatch(setContactAnytime(true));
+                        }
+                      }}
+                    />
+                  </>
+                }
 
-            </div>
-            <div className="profile__setting">
-              <div className="profile__setting-headline">
-                <span>You can contact me on</span>
               </div>
-              <Checkbox
-                text="SMS"
-                caption=""
-                value={onboardingState.contactSMS}
-                // onChange={val => handleContactTime(val)}
-                onChange={val => dispatch(setContactSMS(val))}
-              />
-              <Checkbox
-                text="Email"
-                caption=""
-                value={onboardingState.contactEmail}
-                // onChange={val => handleContactTime(val)}
-                onChange={val => dispatch(setContactEmail(val))}
-              />
-              <Checkbox
-                text="Call me"
-                caption=""
-                value={onboardingState.contactCall}
-                // onChange={val => handleContactTime(val)}
-                onChange={val => dispatch(setContactCall(val))}
-              />
-            </div>
+              <div className="profile__setting">
+                <div className="profile__setting-headline">
+                  <span>You can contact me on</span>
+                </div>
+                <Checkbox
+                  text="SMS"
+                  caption=""
+                  value={onboardingState.contactSMS}
+                  // onChange={val => handleContactTime(val)}
+                  onChange={val => dispatch(setContactSMS(val))}
+                />
+                <Checkbox
+                  text="Email"
+                  caption=""
+                  value={onboardingState.contactEmail}
+                  // onChange={val => handleContactTime(val)}
+                  onChange={val => dispatch(setContactEmail(val))}
+                />
+                <Checkbox
+                  text="Call me"
+                  caption=""
+                  value={onboardingState.contactCall}
+                  // onChange={val => handleContactTime(val)}
+                  onChange={val => dispatch(setContactCall(val))}
+                />
+              </div>
+            </> : () => {
+              dispatch(setContactAnytime(false));
+            }
+            }
+
             <div className="profile__setting">
               <div className="profile__setting-headline">
                 <span>My phone number is</span>

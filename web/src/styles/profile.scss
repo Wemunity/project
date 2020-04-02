@@ -57,6 +57,18 @@
     }
   }
 
+  &__user-head{
+  }
+
+  &__access-data{
+    span{
+      text-decoration: underline;
+      height: 14px;
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+
   &__content{
     flex: 1;
     width: 100%;
@@ -71,6 +83,49 @@
       display: flex;
     }
   }
+
+  &__view-data{
+    max-width: 350px;
+    background-color: #FFF;
+    border-radius: 9px;
+    box-shadow: 0 7px 16px rgba(8, 0, 206, 0.16);
+
+    @media (max-width: 768px){
+      margin-bottom: 60px;
+    }
+
+    .checkboxfield__checkmark{
+      background-color: $gray-white;
+    }
+  }
+  &__view-data-wrapper{
+    padding: 20px 20px;
+    position: relative;
+  }
+
+  &__view-data-close{
+    width: 26px;
+    height: 26px;
+    background-color: $blue;
+    border-radius: 100%;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    background-image: url('../assets/cross-icon-white.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotate(45deg);
+  }
+  &__view-data-text{
+    padding-top: 30px;
+    padding-bottom: 20px;
+    span{
+      line-height: normal;
+      font-size: 24px;
+      color: $dark-blue;
+    }
+  }
+
 
   &__certificate{
     margin-right: 55px;

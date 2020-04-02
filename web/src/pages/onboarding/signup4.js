@@ -7,7 +7,7 @@ import {
   setName,
   setLocation,
   setAge,
-  setDriversLicense
+
 } from '../../state/onboarding';
 
 import FormField from '../../components/bits/formfield';
@@ -137,7 +137,7 @@ const Signup4 = props => {
             <RadioButton
               value={onBoardingState.driversLicense}
               text="I have my drivers license"
-              onChange={val => dispatch(setDriversLicense(val))}
+              // onChange={val => dispatch(setDriversLicense(val))}
             />
           </div>
         </div>
