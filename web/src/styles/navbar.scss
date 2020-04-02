@@ -120,6 +120,7 @@
   flex-flow: column;
   font-size: $font-size-xl;
   z-index: 102;
+
   @media (min-width: 769px) {
       display: none;
    }

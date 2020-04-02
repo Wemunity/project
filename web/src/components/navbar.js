@@ -39,6 +39,11 @@ export default function NavBar(props) {
 }
 
 function SideBar(props) {
+   if (props.menuOpen) {
+      document.body.style.position = "fixed"
+   } else {
+      document.body.style.position = "initial"
+   }
    return (
       <div className={`sidebar ${props.menuOpen ? "opened" : ""} ${props.theme === "dark" ? "dark" : "light"}`}>
          <nav className="navbar__links sidebar__links">
