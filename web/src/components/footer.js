@@ -22,18 +22,23 @@ const Footer = ({ m }) => {
         </div>
         <div className="footer__column">
           <h4>Contact</h4>
-          <span>Anders Waage Nilsen</span>
-          <span>anders@new.no</span>
+          <span>contact@wemunity.org</span>
 
           <h4>Social</h4>
           <a
             className="footer__link"
-            href="https://www.facebook.com/groups/wemunity"
+            href="https://www.facebook.com/wemunity/"
           >
             <span>Facebook</span>
           </a>
           <a className="footer__link" href="https://github.com/Wemunity">
             <span>Github</span>
+          </a>
+          <a className="footer__link" href="https://www.linkedin.com/company/wemunity/">
+            <span>Linkedin</span>
+          </a>
+          <a className="footer__link" href="https://www.instagram.com/wemunity/">
+            <span>Instagram</span>
           </a>
         </div>
       </div>

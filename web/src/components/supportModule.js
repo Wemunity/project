@@ -30,7 +30,7 @@ const SupportModule = ({ m }) => {
             ))}
         </div>
         <span className="support-module__email">
-          Email <a href="mailto:anders@new.no">anders@new.no</a> if you want to
+          Email <a href="mailto:contact@wemunity.org">contact@wemunity.org</a> if you want to
           take part
         </span>
       </div>
