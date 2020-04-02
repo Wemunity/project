@@ -3,7 +3,7 @@
   color: $dark-blue;
   width: 100vw;
   min-height: 100vh;
-  color: #fff;
+
 
   &__wrapper {
     @include container;
@@ -42,16 +42,53 @@
     }
   }
 
+  &__terms {
+    padding-top: 25px;
+    @media (min-width: 768px) {
+      padding-top: 4px;
+      padding-right: 30px;
+    }
+    display: flex;
+    align-items: baseline;
+    .checkboxfield {
+      font-size: 16px;
+    }
+    .checkboxfield__checkmark {
+      top: 2px;
+    }
+    button {
+      font-family: 'SpaceGrotesk';
+      background: none;
+      text-decoration: underline;
+      cursor: pointer;
+      border: none;
+      color: $blue;
+      font-size: 16px;
+      padding: 0;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  .checkboxfield__checkmark {
+    top: 2px;
+  }
+  a {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
   &__bottom {
     flex: 0 0 297px;
     flex-flow: column;
     align-items: center;
     display: flex;
+    padding-bottom: 40px;
     @media (min-width: 525px) {
       width: 100%;
       flex: 0 0 160px;
-      flex-flow: row-reverse;
-      justify-content: flex-start;
+      flex-flow: row;
+      justify-content: flex-end;
       align-items: flex-start;
     }
   }
@@ -92,5 +129,12 @@
 
   &__dots {
     padding-top: 30px;
+  }
+
+  &__error {
+    // position: absolute;
+    // top: 150px;
+    color: rgb(250, 104, 104);
+    font-size: 14px;
   }
 }
