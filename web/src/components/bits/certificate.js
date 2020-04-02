@@ -21,7 +21,7 @@ const Certificate = props => {
   const determineCertificateText = (val) => {
     if (val === 1) {
       let certificateText1 = 'You have tested positive for antibodies by ';
-      let hospital = 'vestre sykehus'
+      let hospital = 'vestre sykehus at 06.04.2020'
       let certificateText2 = '. This will most likely give immunity.';
       let certificateText3 = 'Immunity is issued on the background of completed blood samples and adequate time in quarantine. ';
       let certificateText4 = 'Get more info.'

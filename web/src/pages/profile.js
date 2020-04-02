@@ -64,6 +64,18 @@ const Signup3 = props => {
   const handleViewDataAccess = () => {
     setViewDataAccess(!viewDataAccess);
     console.log(viewDataAccess);
+    // const viewData = document.getElementById('viewData');
+    // console.log(viewData);
+    // if (viewDataAccess) {
+    //   viewData.style.maxHeight = '135px';
+    //   viewData.style.opacity = '0';
+    //   viewData.style.padding = '0 0';
+    // }
+    // else {
+    //   viewData.style.maxHeight = '300px';
+    //   viewData.style.opacity = '1';
+    //   viewData.style.padding = '25px 0';
+    // }
   }
 
   // profile picture
@@ -124,15 +136,41 @@ const Signup3 = props => {
         </div>
         <div className="profile__content">
           { viewDataAccess ?
-            <div className="profile__certificate">
+            <div className="profile__view-data-outter">
               <div className="profile__view-data">
-                <div className="profile__view-data-wrapper">
+                <div id={"viewData"} className="profile__view-data-wrapper">
                   <div className="profile__view-data-close" onClick={handleViewDataAccess}/>
                   <div className="profile__view-data-text">
                     <span>These are the organisations that have access to your data and can contact you. </span>
                   </div>
+                  <span style={{fontSize: "16px"}}><b>Health</b></span>
                   <Checkbox
                     text="Aker sykehus"
+                    caption=""
+                    // value={}
+                    // onChange={val => dispatch(setBasicSocialCare(val))}
+                  />
+                  <Checkbox
+                    text="Donald Trump"
+                    caption=""
+                    // value={}
+                    // onChange={val => dispatch(setBasicSocialCare(val))}
+                  />
+                  <Checkbox
+                    text="Donald Trump"
+                    caption=""
+                    // value={}
+                    // onChange={val => dispatch(setBasicSocialCare(val))}
+                  />
+                  <span style={{fontSize: "16px"}}><b>Services</b></span>
+                  <Checkbox
+                    text="McDonalds"
+                    caption=""
+                    // value={}
+                    // onChange={val => dispatch(setBasicSocialCare(val))}
+                  />
+                  <Checkbox
+                    text="9gag"
                     caption=""
                     // value={}
                     // onChange={val => dispatch(setBasicSocialCare(val))}
@@ -152,7 +190,7 @@ const Signup3 = props => {
           <div className="profile__settings">
             <div className="profile__setting">
               <div className="profile__setting-headline">
-                <span>I am able to help with:</span>
+                <span>What do you want to help with?</span>
               </div>
               <Checkbox
                 text="Basic social care"
@@ -169,7 +207,7 @@ const Signup3 = props => {
             </div>
             <div className="profile__setting">
               <div className="profile__setting-headline">
-                <span>I have professional experience with:</span>
+                <span>What do you have professional experience with?</span>
               </div>
               {/*
               <div className="react-tags__selected">
@@ -196,7 +234,7 @@ const Signup3 = props => {
             </div>
             <div className="profile__setting">
               <div className="profile__setting-headline">
-                <span>I have my drivers license</span>
+                <span>Do you have a drivers license?</span>
               </div>
               <RadioButton
                 value={onboardingState.hasDriversLicense}
@@ -260,7 +298,7 @@ const Signup3 = props => {
             { onboardingState.canContact ? <>
               <div className="profile__setting">
                 <div className="profile__setting-headline">
-                  <span>You can contact me</span>
+                  <span>When is a good time for you?</span>
                 </div>
                 <Checkbox
                   text="Anytime"
@@ -302,7 +340,7 @@ const Signup3 = props => {
               </div>
               <div className="profile__setting">
                 <div className="profile__setting-headline">
-                  <span>You can contact me on</span>
+                  <span>How do you want to be contacted?</span>
                 </div>
                 <Checkbox
                   text="SMS"
@@ -333,17 +371,17 @@ const Signup3 = props => {
 
             <div className="profile__setting">
               <div className="profile__setting-headline">
-                <span>My phone number is</span>
+                <span>Your phone number</span>
               </div>
               <FormField
                 value={onboardingState.phoneNumber}
-                placeholderText={'815 493 00'}
+                placeholderText={'(+47) 815 493 00'}
                 onChange={e => dispatch(setPhoneNumber(e.target.value))}
               />
             </div>
             <div className="profile__setting">
               <div className="profile__setting-headline">
-                <span>I live at</span>
+                <span>Where do you live?</span>
               </div>
               <FormField
                 value={onboardingState.location}

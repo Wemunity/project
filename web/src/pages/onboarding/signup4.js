@@ -1,155 +1,149 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import ImageUploader from "react-images-upload";
 import { Redirect } from 'react-router-dom';
+
 import {
-  setPicture,
-  setName,
-  setLocation,
-  setAge,
-
+  setCanContact,
+  setContactDaytime,
+  setContactNighttime,
+  setContactAnytime,
+  setContactSMS,
+  setContactEmail,
+  setContactCall,
+  setPhoneNumber,
 } from '../../state/onboarding';
+import { experiences } from '../../config/professionalExperiences';
 
+import ReactTags from 'react-tag-autocomplete';
 import FormField from '../../components/bits/formfield';
-import Dots from '../../components/bits/dots';
 import Button from '../../components/bits/button';
+import Checkbox from '../../components/bits/checkbox';
 import RadioButton from '../../components/bits/radiobutton';
 
-import WemunityIconDark from '../../assets/wemunity-icon-dark.svg';
+import Dots from '../../components/bits/dots';
 
+import WemunityIconDark from '../../assets/wemunity-icon-dark.svg';
+//When did you start showing symptoms?
 
 const Signup4 = props => {
-  const onBoardingState = useSelector(state => state.onboarding);
+  const [redirect, setRedirect] = useState(null);
+
+
+  const onboardingState = useSelector(state => state.onboarding);
   const dispatch = useDispatch();
+  console.dir(onboardingState);
 
-  console.dir(onBoardingState);
-
-  const [errorState, setErrorState] = useState({});
-  const [redirect, setRedirect] = useState(false);
-
-  const [pictures, setPictures] = useState([]);
-  const onDrop = picture => {
-    setPictures([...pictures, picture]);
-    console.log(picture[0]);
-    if ( picture[0] !== undefined ) {
-      var imgFile = URL.createObjectURL(picture[0]);
-      console.log(imgFile);
-      dispatch(setPicture(imgFile));
-    }
-    else { dispatch(setPicture(undefined)); }
-  };
-
-  const handleValidation = () => {
-    let errors = {};
-    if (onBoardingState.name.trim() === '') {
-      errors = { ...errors, name: 'This field cant be empty' };
-    }
-    if (onBoardingState.location.trim() === '') {
-      errors = { ...errors, location: 'This field cant be empty' };
-    }
-    if (onBoardingState.age.trim() === '') {
-      errors = { ...errors, age: 'This field cant be empty' };
-    }
-
-    const errorCheck = Object.keys(errors);
-    if (errorCheck.length === 0) {
-      setRedirect(<Redirect push to="/signup/5" />);
-    } else {
-      setErrorState(errors);
-    }
-  };
-
-  useEffect(() => {
-    if (!onBoardingState.agreeTerms) {
-      setRedirect(<Redirect push to="/signup/2" />);
-    }
-  }, [onBoardingState.agreeTerms]);
 
   return (
     <div className="signup4">
       <img className="wemunity-icon" src={WemunityIconDark} alt="Ø" />
       <div className="signup4__wrapper">
         <div className="signup4__top">
-          <div className="imageUploader">
-            <ImageUploader
-              {...props}
-              buttonText="+"
-              withLabel={false}
-              withIcon={false}
-              onChange={onDrop}
-              imgExtension={[".jpg", ".jpeg", ".gif", ".png", ".gif"]}
-              maxFileSize={5242880}
-              singleImage={true}
-              withPreview={true}
-              errorClass="errors"
-            />
-          </div>
-          <div className="signup4__image-text">
-            <span>Upload profile picture</span>
-          </div>
+          <span>Can the authorities or organisations contact you for help?</span>
         </div>
         <div className="signup4__content">
-          <div className="signup4__form">
-            <div
-              className={`signup4__form-field ${errorState.name &&
-                'signup4__form-field--paddingTop'}`}
-            >
-              {errorState.name && (
-                <span className="signup4__error">{errorState.name}</span>
-              )}
-              <FormField
-                value={onBoardingState.name}
-                topText={'My name'}
-                placeholderText={'Jon Doe'}
-                onChange={e => dispatch(setName(e.target.value))}
-              />
-            </div>
-            <div
-              className={`signup4__form-field ${errorState.location &&
-                'signup4__form-field--paddingTop'}`}
-            >
-              {errorState.location && (
-                <span className="signup4__error">{errorState.location}</span>
-              )}
-              <FormField
-                value={onBoardingState.location}
-                topText={'Where do you live?'}
-                placeholderText={'Tøyen'}
-                onChange={e => dispatch(setLocation(e.target.value))}
-              />
-            </div>
-            <div
-              className={`signup4__form-field ${errorState.age &&
-                'signup4__form-field--paddingTop'}`}
-            >
-              {errorState.age && (
-                <span className="signup4__error">{errorState.age}</span>
-              )}
-              <FormField
-                value={onBoardingState.age}
-                topText={'How old are you?'}
-                placeholderText={'30'}
-                onChange={e => dispatch(setAge(e.target.value))}
-              />
-            </div>
-          </div>
-          <div className="signup4__radiofield">
+          <div className="signup4__field">
             <RadioButton
-              value={onBoardingState.driversLicense}
-              text="I have my drivers license"
-              // onChange={val => dispatch(setDriversLicense(val))}
+              value={onboardingState.canContact}
+              onChange={val => {
+                val ? dispatch(setCanContact(val))
+                :
+                dispatch(setCanContact(false));
+                dispatch(setContactAnytime(false));
+                dispatch(setContactDaytime(false));
+                dispatch(setContactNighttime(false));
+                dispatch(setContactSMS(false));
+                dispatch(setContactEmail(false));
+                dispatch(setContactCall(false));
+              }}
+            />
+          </div>
+          { onboardingState.canContact ? <>
+            <div className="signup4__field">
+              <div className="signup4__field-headline">
+                When is a good time for you?
+              </div>
+              <Checkbox
+                text="Anytime"
+                caption=""
+                value={onboardingState.contactAnytime}
+                onChange={val => {
+                  dispatch(setContactAnytime(val));
+                  dispatch(setContactDaytime(val));
+                  dispatch(setContactNighttime(val));
+                }}
+              />
+              { onboardingState.contactAnytime ?
+                null : <>
+                  <Checkbox
+                    text="Daytime"
+                    caption=""
+                    value={onboardingState.contactDaytime}
+                    onChange={val => {
+                      dispatch(setContactDaytime(val));
+                      if (val && onboardingState.contactNighttime) {
+                        dispatch(setContactAnytime(true));
+                      }
+                    }}
+                  />
+                  <Checkbox
+                    text="Nighttime"
+                    caption=""
+                    value={onboardingState.contactNighttime}
+                    onChange={val => {
+                      dispatch(setContactNighttime(val));
+                      if (onboardingState.contactDaytime && val) {
+                        dispatch(setContactAnytime(true));
+                      }
+                    }}
+                  />
+                </>
+              }
+            </div>
+            <div className="signup4__field">
+              <div className="signup4__field-headline">
+                How do you want to be contacted?
+              </div>
+              <Checkbox
+                text="SMS"
+                caption=""
+                value={onboardingState.contactSMS}
+                // onChange={val => handleContactTime(val)}
+                onChange={val => dispatch(setContactSMS(val))}
+              />
+              <Checkbox
+                text="Email"
+                caption=""
+                value={onboardingState.contactEmail}
+                // onChange={val => handleContactTime(val)}
+                onChange={val => dispatch(setContactEmail(val))}
+              />
+              <Checkbox
+                text="Call me"
+                caption=""
+                value={onboardingState.contactCall}
+                // onChange={val => handleContactTime(val)}
+                onChange={val => dispatch(setContactCall(val))}
+              />
+            </div>
+          </> : () => {
+            dispatch(setContactAnytime(false));
+          }
+          }
+          <div className="signup4__field">
+            <div className="signup4__field-headline">
+              Your phone number
+            </div>
+            <FormField
+              value={onboardingState.phoneNumber}
+              placeholderText={'(+47) 815 493 00'}
+              onChange={e => dispatch(setPhoneNumber(e.target.value))}
             />
           </div>
         </div>
         <div className="signup4__bottom">
-          <Button
-            handleValidation={handleValidation}
-            text={'Next'}
-            light={false}
-            link={'/signup/5'}
-          />
-          {redirect}
-          <div className="signup3__dots">
+          <Button text={'Next'} light={false} link={'/signup/5'} />
+          <div className="signup4__dots">
             <Dots active="3" />
           </div>
         </div>

@@ -23,8 +23,9 @@ const Signup1 = props => {
           </div>
         </div>
         <div className="signup1__bottom">
-            <span style={{fontSize:'11px'}}><b>New user? Sign up here</b></span><br/>
+            {/* <span style={{fontSize:'11px'}}><b>New user? Sign up here</b></span><br/>
             <span style={{fontSize:'10px'}}>By creating an account, you agree to our <br/>Terms of Service and Privacy Policy</span>
+            */}
         </div>
       </div>
     </div>
