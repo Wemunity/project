@@ -58,6 +58,8 @@ const Signup4 = props => {
                 dispatch(setContactSMS(false));
                 dispatch(setContactEmail(false));
                 dispatch(setContactCall(false));
+                dispatch(setPhoneNumber(''));
+                dispatch(setEmail(''));
               }}
             />
           </div>
