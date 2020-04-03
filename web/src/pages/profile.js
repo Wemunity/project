@@ -14,10 +14,14 @@ import {
   setContactDaytime,
   setContactNighttime,
   // setContactMorning,
+  setHelpFulltime,
+  setHelpSometimes,
+  setHelpNotmuch,
   setContactSMS,
   setContactEmail,
   setContactCall,
   setPhoneNumber,
+  setEmail,
   setLocation,
   setPicture,
 } from '../state/onboarding';
@@ -287,6 +291,8 @@ const Signup3 = props => {
                   dispatch(setContactSMS(false));
                   dispatch(setContactEmail(false));
                   dispatch(setContactCall(false));
+                  dispatch(setPhoneNumber(''));
+                  dispatch(setEmail(''));
                 }}
               />
             </div>
@@ -306,6 +312,29 @@ const Signup3 = props => {
                   caption=""
                   value={onboardingState.contactNighttime}
                   onChange={val => dispatch(setContactNighttime(val))}
+                />
+              </div>
+              <div className="profile__setting">
+                <div className="profile__setting-headline">
+                  <span>How much can you help?</span>
+                </div>
+                <Checkbox
+                  text="Fulltime"
+                  caption=""
+                  value={onboardingState.helpFulltime}
+                  onChange={val => dispatch(setHelpFulltime(val))}
+                />
+                <Checkbox
+                  text="Sometimes"
+                  caption=""
+                  value={onboardingState.helpSometimes}
+                  onChange={val => dispatch(setHelpSometimes(val))}
+                />
+                <Checkbox
+                  text="Not very much"
+                  caption=""
+                  value={onboardingState.helpNotmuch}
+                  onChange={val => dispatch(setHelpNotmuch(val))}
                 />
               </div>
               <div className="profile__setting">
@@ -336,17 +365,32 @@ const Signup3 = props => {
               </div>
             </> : null
             }
-
-            <div className="profile__setting">
-              <div className="profile__setting-headline">
-                <span>Your phone number</span>
+            { onboardingState.contactSMS || onboardingState.contactCall ?
+              <div className="profile__setting">
+                <div className="profile__setting-headline">
+                  <span>Your phone number</span>
+                </div>
+                <FormField
+                  value={onboardingState.phoneNumber}
+                  placeholderText={'(+47) 815 493 00'}
+                  onChange={e => dispatch(setPhoneNumber(e.target.value))}
+                />
               </div>
-              <FormField
-                value={onboardingState.phoneNumber}
-                placeholderText={'(+47) 815 493 00'}
-                onChange={e => dispatch(setPhoneNumber(e.target.value))}
-              />
-            </div>
+            : null
+            }
+            { onboardingState.contactEmail ?
+              <div className="profile__setting">
+                <div className="profile__setting-headline">
+                  <span>Your email</span>
+                </div>
+                <FormField
+                  value={onboardingState.email}
+                  placeholderText={'chill@my.place'}
+                  onChange={e => dispatch(setEmail(e.target.value))}
+                />
+              </div>
+              : null
+             }
             <div className="profile__setting">
               <div className="profile__setting-headline">
                 <span>Where do you live?</span>
