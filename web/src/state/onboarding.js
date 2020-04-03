@@ -8,6 +8,7 @@ const initialState = {
   location: "",
   age: "",
   phoneNumber: "",
+  email: "",
   hasDriversLicense: false,
   driversLicenses: {
     car: false,
@@ -16,12 +17,15 @@ const initialState = {
     minibus: false,
   },
   canContact: false,
+  // contactMorning: false,
   contactDaytime: false,
   contactNighttime: false,
-  contactAnytime: false,
   contactSMS: false,
   contactEmail: false,
   contactCall: false,
+  helpFulltime: false,
+  helpSometimes: false,
+  helpNotmuch: false,
   socialCare: false,
   dailyChores: false,
   professionalExperience: false,
@@ -36,6 +40,7 @@ const SET_PICTURE = 'SET_PICTURE';
 const SET_NAME = 'SET_NAME';
 const SET_AGE = 'SET_AGE';
 const SET_PHONE_NUMBER = 'SET_PHONE_NUMBER';
+const SET_EMAIL = 'SET_EMAIL';
 const SET_LOCATION = 'SET_LOCATION';
 const SET_HAS_DRIVERS_LICENSE = 'SET_HAS_DRIVERS_LICENSE';
 const SET_DRIVERS_LICENSE_CAR = 'SET_DRIVERS_LICENSE_CAR';
@@ -46,10 +51,13 @@ const SET_DRIVERS_LICENSES = 'SET_DRIVERS_LICENSES';
 const SET_CAN_CONTACT = 'SET_CAN_CONTACT';
 const SET_CONTACT_DAYTIME = 'SET_CONTACT_DAYTIME';
 const SET_CONTACT_NIGHTTIME = 'SET_CONTACT_NIGHTTIME';
-const SET_CONTACT_ANYTIME = 'SET_CONTACT_ANYTIME';
+// const SET_CONTACT_MORNING = 'SET_CONTACT_MORNING';
 const SET_CONTACT_SMS = 'SET_CONTACT_SMS';
 const SET_CONTACT_EMAIL = 'SET_CONTACT_EMAIL';
 const SET_CONTACT_CALL = 'SET_CONTACT_CALL';
+const SET_HELP_FULLTIME = 'SET_HELP_FULLTIME';
+const SET_HELP_SOMETIMES = 'SET_HELP_SOMETIMES';
+const SET_HELP_NOTMUCH = 'SET_HELP_NOTMUCH';
 const SET_BASIC_SOCIAL_CARE = 'SET_BASIC_SOCIAL_CARE';
 const SET_DAILY_CHORES = 'SET_DAILY_CHORES';
 const SET_PROFESSIONAL_EXPERIENCE = 'SET_PROFESSIONAL_EXPERIENCE';
@@ -94,6 +102,11 @@ export const setAge = (age) => ({
 export const setPhoneNumber = (phoneNumber) => ({
   type: SET_PHONE_NUMBER,
   phoneNumber
+});
+
+export const setEmail = (email) => ({
+  type: SET_EMAIL,
+  email
 });
 
 export const setHasDriversLicense = (hasDriversLicense) => ({
@@ -141,10 +154,10 @@ export const setContactNighttime = (contactNighttime) => ({
   contactNighttime
 });
 
-export const setContactAnytime = (contactAnytime) => ({
-  type: SET_CONTACT_ANYTIME,
-  contactAnytime
-});
+// export const setContactMorning = (contactMorning) => ({
+//   type: SET_CONTACT_MORNING,
+//   contactMorning
+// });
 
 export const setContactSMS = (contactSMS) => ({
   type: SET_CONTACT_SMS,
@@ -159,6 +172,21 @@ export const setContactEmail = (contactEmail) => ({
 export const setContactCall = (contactCall) => ({
   type: SET_CONTACT_CALL,
   contactCall
+});
+
+export const setHelpFulltime = (helpFulltime) => ({
+  type: SET_HELP_FULLTIME,
+  helpFulltime
+});
+
+export const setHelpSometimes = (helpSometimes) => ({
+  type: SET_HELP_SOMETIMES,
+  helpSometimes
+});
+
+export const setHelpNotmuch = (helpNotmuch) => ({
+  type: SET_HELP_NOTMUCH,
+  helpNotmuch
 });
 
 export const setBasicSocialCare = (socialCare) => ({
@@ -209,6 +237,9 @@ export default (state = initialState, action:any) => {
     case SET_PHONE_NUMBER:
       return { ...state, phoneNumber: action.phoneNumber };
 
+    case SET_EMAIL:
+      return { ...state, email: action.email };
+
     case SET_HAS_DRIVERS_LICENSE:
       return { ...state, hasDriversLicense: action.hasDriversLicense };
 
@@ -236,8 +267,8 @@ export default (state = initialState, action:any) => {
     case SET_CONTACT_NIGHTTIME:
       return { ...state, contactNighttime: action.contactNighttime };
 
-    case SET_CONTACT_ANYTIME:
-      return { ...state, contactAnytime: action.contactAnytime };
+    // case SET_CONTACT_MORNING:
+    //   return { ...state, contactMorning: action.contactMorning };
 
     case SET_CONTACT_SMS:
       return { ...state, contactSMS: action.contactSMS };
@@ -247,6 +278,15 @@ export default (state = initialState, action:any) => {
 
     case SET_CONTACT_CALL:
       return { ...state, contactCall: action.contactCall };
+
+    case SET_HELP_FULLTIME:
+      return { ...state, helpFulltime: action.helpFulltime };
+
+    case SET_HELP_SOMETIMES:
+      return { ...state, helpSometimes: action.helpSometimes };
+
+    case SET_HELP_NOTMUCH:
+      return { ...state, helpNotmuch: action.helpNotmuch };
 
     case SET_BASIC_SOCIAL_CARE:
       return { ...state, socialCare: action.socialCare };

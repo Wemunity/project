@@ -6,11 +6,15 @@ import {
   setCanContact,
   setContactDaytime,
   setContactNighttime,
-  setContactAnytime,
+  // setContactMorning,
   setContactSMS,
   setContactEmail,
   setContactCall,
+  setHelpFulltime,
+  setHelpSometimes,
+  setHelpNotmuch,
   setPhoneNumber,
+  setEmail
 } from '../../state/onboarding';
 import { experiences } from '../../config/professionalExperiences';
 
@@ -49,7 +53,6 @@ const Signup4 = props => {
                 val ? dispatch(setCanContact(val))
                 :
                 dispatch(setCanContact(false));
-                dispatch(setContactAnytime(false));
                 dispatch(setContactDaytime(false));
                 dispatch(setContactNighttime(false));
                 dispatch(setContactSMS(false));
@@ -63,83 +66,102 @@ const Signup4 = props => {
               <div className="signup4__field-headline">
                 When is a good time for you?
               </div>
-              <Checkbox
-                text="Anytime"
-                caption=""
-                value={onboardingState.contactAnytime}
-                onChange={val => {
-                  dispatch(setContactAnytime(val));
-                  dispatch(setContactDaytime(val));
-                  dispatch(setContactNighttime(val));
-                }}
-              />
-              { onboardingState.contactAnytime ?
-                null : <>
-                  <Checkbox
-                    text="Daytime"
-                    caption=""
-                    value={onboardingState.contactDaytime}
-                    onChange={val => {
-                      dispatch(setContactDaytime(val));
-                      if (val && onboardingState.contactNighttime) {
-                        dispatch(setContactAnytime(true));
-                      }
-                    }}
-                  />
-                  <Checkbox
-                    text="Nighttime"
-                    caption=""
-                    value={onboardingState.contactNighttime}
-                    onChange={val => {
-                      dispatch(setContactNighttime(val));
-                      if (onboardingState.contactDaytime && val) {
-                        dispatch(setContactAnytime(true));
-                      }
-                    }}
-                  />
-                </>
-              }
+              <div className="signup4__checkboxes">
+                <Checkbox
+                  text="Daytime"
+                  caption=""
+                  value={onboardingState.contactDaytime}
+                  onChange={val => dispatch(setContactDaytime(val))}
+                />
+                <Checkbox
+                  text="Nighttime"
+                  caption=""
+                  value={onboardingState.contactNighttime}
+                  onChange={val => dispatch(setContactNighttime(val))}
+                />
+              </div>
+            </div>
+            <div className="signup4__field">
+              <div className="signup4__field-headline">
+                How much can you help?
+              </div>
+              <div className="signup4__checkboxes">
+                <Checkbox
+                  text="Fulltime"
+                  caption=""
+                  value={onboardingState.helpFulltime}
+                  onChange={val => dispatch(setHelpFulltime(val))}
+                />
+                <Checkbox
+                  text="Sometimes"
+                  caption=""
+                  value={onboardingState.helpSometimes}
+                  onChange={val => dispatch(setHelpSometimes(val))}
+                />
+                <Checkbox
+                  text="Not very much"
+                  caption=""
+                  value={onboardingState.helpNotmuch}
+                  onChange={val => dispatch(setHelpNotmuch(val))}
+                />
+              </div>
             </div>
             <div className="signup4__field">
               <div className="signup4__field-headline">
                 How do you want to be contacted?
               </div>
-              <Checkbox
-                text="SMS"
-                caption=""
-                value={onboardingState.contactSMS}
-                // onChange={val => handleContactTime(val)}
-                onChange={val => dispatch(setContactSMS(val))}
-              />
-              <Checkbox
-                text="Email"
-                caption=""
-                value={onboardingState.contactEmail}
-                // onChange={val => handleContactTime(val)}
-                onChange={val => dispatch(setContactEmail(val))}
-              />
-              <Checkbox
-                text="Call me"
-                caption=""
-                value={onboardingState.contactCall}
-                // onChange={val => handleContactTime(val)}
-                onChange={val => dispatch(setContactCall(val))}
-              />
+              <div className="signup4__checkboxes">
+                <Checkbox
+                  text="SMS"
+                  caption=""
+                  value={onboardingState.contactSMS}
+                  // onChange={val => handleContactTime(val)}
+                  onChange={val => dispatch(setContactSMS(val))}
+                />
+                <Checkbox
+                  text="Email"
+                  caption=""
+                  value={onboardingState.contactEmail}
+                  // onChange={val => handleContactTime(val)}
+                  onChange={val => dispatch(setContactEmail(val))}
+                />
+                <Checkbox
+                  text="Call me"
+                  caption=""
+                  value={onboardingState.contactCall}
+                  // onChange={val => handleContactTime(val)}
+                  onChange={val => dispatch(setContactCall(val))}
+                />
+              </div>
+              { onboardingState.contactSMS || onboardingState.contactCall ?
+                <div className="signup4__field">
+                  <div className="signup4__field-headline">
+                    Your phone number
+                  </div>
+                  <FormField
+                    value={onboardingState.phoneNumber}
+                    placeholderText={'(+47) 815 493 00'}
+                    onChange={e => dispatch(setPhoneNumber(e.target.value))}
+                  />
+                </div>
+                : null
+               }
+               { onboardingState.contactEmail ?
+                 <div className="signup4__field">
+                   <div className="signup4__field-headline">
+                     Your email
+                   </div>
+                   <FormField
+                     value={onboardingState.email}
+                     placeholderText={'chill@my.place'}
+                     onChange={e => dispatch(setEmail(e.target.value))}
+                   />
+                 </div>
+                 : null
+                }
             </div>
-          </> : () => {
-            dispatch(setContactAnytime(false));
+          </> : null
           }
-          }
-          <div className="signup4__field">
-            <div className="signup4__field-headline">
-              Your phone number
-            </div>
-            <FormField
-              value={onboardingState.phoneNumber}
-              placeholderText={'(+47) 815 493 00'}
-              onChange={e => dispatch(setPhoneNumber(e.target.value))}
-            />
-          </div>
         </div>
         <div className="signup4__bottom">
           <Button text={'Next'} light={false} link={'/signup/5'} />

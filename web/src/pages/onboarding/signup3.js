@@ -114,37 +114,39 @@ const Signup3 = props => {
                 Which one(s)?
               </div>
               <div className="signup3__licenses">
-                <div className="signup3__checkboxfield">
-                  <Checkbox
-                    text="Car"
-                    caption=""
-                    value={onboardingState.driversLicenses.car}
-                    onChange={val => updateLicenses("car", val)}
-                  />
-                </div>
-                <div className="signup3__checkboxfield">
-                  <Checkbox
-                    text="Bus"
-                    caption=""
-                    value={onboardingState.driversLicenses.bus}
-                    onChange={val => updateLicenses("bus", val)}
-                  />
-                </div>
-                <div className="signup3__checkboxfield">
-                  <Checkbox
-                    text="Truck"
-                    caption=""
-                    value={onboardingState.driversLicenses.truck}
-                    onChange={val => updateLicenses("truck", val)}
-                  />
-                </div>
-                <div className="signup3__checkboxfield">
-                  <Checkbox
-                    text="Minibus"
-                    caption=""
-                    value={onboardingState.driversLicenses.minibus}
-                    onChange={val => updateLicenses("minibus", val)}
-                  />
+                <div className="signup4__checkboxes">
+                  <div className="signup3__checkboxfield">
+                    <Checkbox
+                      text="Car"
+                      caption=""
+                      value={onboardingState.driversLicenses.car}
+                      onChange={val => updateLicenses("car", val)}
+                    />
+                  </div>
+                  <div className="signup3__checkboxfield">
+                    <Checkbox
+                      text="Bus"
+                      caption=""
+                      value={onboardingState.driversLicenses.bus}
+                      onChange={val => updateLicenses("bus", val)}
+                    />
+                  </div>
+                  <div className="signup3__checkboxfield">
+                    <Checkbox
+                      text="Truck"
+                      caption=""
+                      value={onboardingState.driversLicenses.truck}
+                      onChange={val => updateLicenses("truck", val)}
+                    />
+                  </div>
+                  <div className="signup3__checkboxfield">
+                    <Checkbox
+                      text="Minibus"
+                      caption=""
+                      value={onboardingState.driversLicenses.minibus}
+                      onChange={val => updateLicenses("minibus", val)}
+                    />
+                  </div>
                 </div>
               </div>
             </>
@@ -167,29 +169,37 @@ const Signup3 = props => {
                 What is your experience?
               </div>
               <div className="signup3__default-professions">
-                <div className="signup3__checkboxfield">
-                  <Checkbox
-                    text="Nurse"
-                    caption=""
-                    // value={onboardingState.driversLicenses.minibus}
-                    // onChange={val => updateLicenses("minibus", val)}
-                  />
-                </div>
-                <div className="signup3__checkboxfield">
-                  <Checkbox
-                    text="Doctor"
-                    caption=""
-                    // value={onboardingState.driversLicenses.minibus}
-                    // onChange={val => updateLicenses("minibus", val)}
-                  />
-                </div>
-                <div className="signup3__checkboxfield">
-                  <Checkbox
-                    text="Janitor"
-                    caption=""
-                    // value={onboardingState.driversLicenses.minibus}
-                    // onChange={val => updateLicenses("minibus", val)}
-                  />
+                <div className="signup4__checkboxes">
+                  <div className="signup3__checkboxfield">
+                    <Checkbox
+                      text="Nurse"
+                      caption=""
+                      // value={onboardingState.driversLicenses.minibus}
+                      // onChange={val => {
+                      //   val ? (
+                      //     handleAddition.bind(this),
+                      //     console.log(this)
+                      //   )
+                      //   : (handleDelete.bind(this))
+                      // }}
+                    />
+                  </div>
+                  <div className="signup3__checkboxfield">
+                    <Checkbox
+                      text="Doctor"
+                      caption=""
+                      // value={onboardingState.driversLicenses.minibus}
+                      // onChange={val => updateLicenses("minibus", val)}
+                    />
+                  </div>
+                  <div className="signup3__checkboxfield">
+                    <Checkbox
+                      text="Janitor"
+                      caption=""
+                      // value={onboardingState.driversLicenses.minibus}
+                      // onChange={val => updateLicenses("minibus", val)}
+                    />
+                  </div>
                 </div>
               </div>
               <ReactTags
