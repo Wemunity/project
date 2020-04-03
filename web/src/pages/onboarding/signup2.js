@@ -143,7 +143,7 @@ const Signup2 = props => {
             link={'/signup/3'}
           />
           {redirect}
-          <div className="signup3__dots">
+          <div className="signup2__dots">
             <Dots active="1" />
           </div>
         </div>

@@ -9,15 +9,11 @@ import {
   setProfessionalExperience,
   setProfessionalExperiences,
   setHasDriversLicense,
-  // setDriversLicenseCar,
-  // setDriversLicenseBus,
-  // setDriversLicenseTruck,
-  // setDriversLicenseMinibus,
   setDriversLicenses,
   setCanContact,
   setContactDaytime,
   setContactNighttime,
-  setContactAnytime,
+  // setContactMorning,
   setContactSMS,
   setContactEmail,
   setContactCall,
@@ -286,7 +282,6 @@ const Signup3 = props => {
                   val ? dispatch(setCanContact(val))
                   :
                   dispatch(setCanContact(false));
-                  dispatch(setContactAnytime(false));
                   dispatch(setContactDaytime(false));
                   dispatch(setContactNighttime(false));
                   dispatch(setContactSMS(false));
@@ -301,42 +296,17 @@ const Signup3 = props => {
                   <span>When is a good time for you?</span>
                 </div>
                 <Checkbox
-                  text="Anytime"
+                  text="Daytime"
                   caption=""
-                  value={onboardingState.contactAnytime}
-                  onChange={val => {
-                    dispatch(setContactAnytime(val));
-                    dispatch(setContactDaytime(val));
-                    dispatch(setContactNighttime(val));
-                  }}
+                  value={onboardingState.contactDaytime}
+                  onChange={val => dispatch(setContactDaytime(val))}
                 />
-                { onboardingState.contactAnytime ?
-                  null : <>
-                    <Checkbox
-                      text="Daytime"
-                      caption=""
-                      value={onboardingState.contactDaytime}
-                      onChange={val => {
-                        dispatch(setContactDaytime(val));
-                        if (val && onboardingState.contactNighttime) {
-                          dispatch(setContactAnytime(true));
-                        }
-                      }}
-                    />
-                    <Checkbox
-                      text="Nighttime"
-                      caption=""
-                      value={onboardingState.contactNighttime}
-                      onChange={val => {
-                        dispatch(setContactNighttime(val));
-                        if (onboardingState.contactDaytime && val) {
-                          dispatch(setContactAnytime(true));
-                        }
-                      }}
-                    />
-                  </>
-                }
-
+                <Checkbox
+                  text="Nighttime"
+                  caption=""
+                  value={onboardingState.contactNighttime}
+                  onChange={val => dispatch(setContactNighttime(val))}
+                />
               </div>
               <div className="profile__setting">
                 <div className="profile__setting-headline">
@@ -364,9 +334,7 @@ const Signup3 = props => {
                   onChange={val => dispatch(setContactCall(val))}
                 />
               </div>
-            </> : () => {
-              dispatch(setContactAnytime(false));
-            }
+            </> : null
             }
 
             <div className="profile__setting">

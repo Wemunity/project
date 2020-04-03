@@ -86,11 +86,14 @@
     align-items: center;
     display: flex;
     @media (min-width: 768px) {
-      width: 100%;
+      // width: 100%;
       flex: 0 0 160px;
       flex-flow: row-reverse;
       justify-content: flex-start;
       align-items: flex-start;
+      position: fixed;
+      bottom: 15%;
+      right: 12%;
     }
   }
   &__dots {
@@ -99,6 +102,9 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      @media (max-width: 1000px) {
+        display: none;
+      }
     }
     @media (max-width: 767px) {
       padding-top: 30px;
