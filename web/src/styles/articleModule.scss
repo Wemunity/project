@@ -1,22 +1,26 @@
 .article-module {
-  padding: 6%;
   display: flex;
   justify-content: space-between;
   flex-flow: row wrap;
+  padding: 0 20%;
+
+  @media (max-width: 768px) {
+    padding: 0;
+  }
 
   &__article{
     display: flex;
     flex-flow: column;
-    justify-content: center;
-    align-items: center;
     color: $dark-blue;
-    width: 25vw;
+    width: 20vw;
 
-      img {
-      rotate: 90deg;
-      height: 275px;
-      width: 400px;
-      object-fit: contain;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
+    img {
+      height: 50%;
+      object-fit: fill;
     }
 
     h4 {
@@ -29,6 +33,7 @@
 
     a {
       color: $dark-blue;
+      font-weight: bold;
       :visited {
         color: $dark-blue;
       }

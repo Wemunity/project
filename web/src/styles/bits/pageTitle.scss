@@ -1,0 +1,16 @@
+.pageTitle {
+  color: $dark-blue;
+  margin: 0 20%;
+
+  @media (max-width: 768px) {
+    margin: 0 6%;
+  }
+
+  h5 {
+    width: 50%;
+
+    @media (max-width: 768px) {
+      width: 70%;
+    }
+  }
+}
