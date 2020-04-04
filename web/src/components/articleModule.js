@@ -5,7 +5,7 @@ export default function ArticleModule(props) {
   return (
     <div className="article-module">
       {props.articles &&
-        props.articles.map(article => <Article key={article.key} article={article} />)}
+        props.articles.map((article, index) => <Article key={article.key} index={index} article={article} />)}
     </div>
   )
 }

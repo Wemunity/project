@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import client from '../lib/sanity';
 import NavBar from '../components/navbar'
 import PageTitle from '../components/bits/pageTitle'
 import ArticleModule from '../components/articleModule'
@@ -45,10 +46,20 @@ export default function PressPage(props) {
     source: "BBC",
     link: "https://www.bbc.com/news/entertainment-arts-52149055"
   }]
+  const [moduleData, setModuleData] = useState([]);
+
+  useEffect(() => {
+    const query = `*[_type == "press"]`;
+
+    client.fetch(query).then(data => {
+      setModuleData(data[0]);
+    });
+  }, []);
   const title = {
     title: "Press",
     subtitle: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare laoreet consequat. Morbi aliquet velit non lacinia egestas. Etiam neque purus, auctor ac tortor vel, viverra."
   }
+  console.log(moduleData)
   return (
     <div className="pressPage">
       <NavBar {...props} theme="light" />

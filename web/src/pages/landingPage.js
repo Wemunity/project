@@ -25,7 +25,6 @@ function LandingPage(props) {
       setModuleData(data[0]);
     });
   }, []);
-  console.log(moduleData)
   return (
     <div className="App">
       <NavBar {...props} theme="dark" />

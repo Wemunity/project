@@ -5,6 +5,10 @@
   padding: 0 20%;
 
   @media (max-width: 768px) {
+    padding: 0 6%;
+  }
+
+  @media (max-width: 411px) {
     padding: 0;
   }
 
@@ -12,12 +16,6 @@
     display: flex;
     flex-flow: column;
     color: $dark-blue;
-    width: 30%;
-    height: 30vw;
-
-    @media (max-width: 768px) {
-      width: 100%;
-    }
 
     img {
       height: 50%;
@@ -39,5 +37,34 @@
         color: $dark-blue;
       }
     }
+
+    @media (max-width: 411px) {
+      h4,
+      span,
+      a {
+        margin: 0 6%;
+      }
+    }
+  }
+}
+
+.sm {
+  width: 30%;
+}
+
+.lg {
+  width: 48%;
+}
+
+.sm,
+.lg {
+  height: 500px;
+  @media (max-width: 768px) {
+    width: 48%;
+    height: 450px;
+  }
+
+  @media (max-width: 411px) {
+    width: 100%;
   }
 }
