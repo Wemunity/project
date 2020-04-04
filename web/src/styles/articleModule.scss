@@ -1,0 +1,37 @@
+.article-module {
+  padding: 6%;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+
+  &__article{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    color: $dark-blue;
+    width: 25vw;
+
+      img {
+      rotate: 90deg;
+      height: 275px;
+      width: 400px;
+      object-fit: contain;
+    }
+
+    h4 {
+      font-size: $font-size;
+    }
+
+    span {
+      font-weight: bold;
+    }
+
+    a {
+      color: $dark-blue;
+      :visited {
+        color: $dark-blue;
+      }
+    }
+  }
+}
