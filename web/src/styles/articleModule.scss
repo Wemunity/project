@@ -12,7 +12,8 @@
     display: flex;
     flex-flow: column;
     color: $dark-blue;
-    width: 20vw;
+    width: 30%;
+    height: 30vw;
 
     @media (max-width: 768px) {
       width: 100%;
