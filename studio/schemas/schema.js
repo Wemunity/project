@@ -9,8 +9,15 @@ import socialModule from './socialModule';
 import featureModule from './featureModule';
 import features from './features';
 import supporters from './supporters';
+import donator from './donator';
 import supportModule from './supportModule';
+import donationModule from './donationModule';
 import footerModule from './footerModule';
+import page from './page';
+import pressPage from './pressPage';
+import support from './supportPage';
+import pressTeaser from './pressTeaser';
+import buttonLink from './buttonLink';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -24,8 +31,15 @@ export default createSchema({
     socialModule,
     featureModule,
     supportModule,
+    donationModule,
     footerModule,
     features,
-    supporters
+    supporters,
+    donator,
+    page,
+    pressPage,
+    pressTeaser,
+    support,
+    buttonLink,
   ])
 });
