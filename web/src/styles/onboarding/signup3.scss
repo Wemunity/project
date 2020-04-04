@@ -1,14 +1,8 @@
 .signup3 {
   background-color: $gray-white;
-  color: $dark-blue;
   width: 100vw;
   min-height: 100vh;
-  color: #fff;
-  background-image: url('../../assets/corona_pattern_dark.svg');
-  background-repeat: no-repeat;
-  @media (min-width: 768px) {
-    background-image: url('../../assets/corona-pattern-dark-desktop.svg');
-  }
+  color: $dark-blue;
 
   &__wrapper {
     @include container;
@@ -21,62 +15,79 @@
       align-items: flex-start;
     }
   }
-
   &__top {
-    flex: 0 0 90px;
+    flex: 0 0 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    max-width: 585px;
     @media (max-width: 767px) {
-      flex: 0 0 310px;
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-    }
-  }
-  &__smiley {
-    @media (max-width: 767px) {
-      transform: translateY(-30%);
-    }
-    @media (min-width: 768px) {
-      position: absolute;
-      bottom: 188px;
-      left: 166px;
+      flex: 0 0 210px;
+      justify-content: flex-start;
     }
   }
 
   &__content {
     flex: 1;
-    width: 100%;
-    color: $dark-blue;
-    font-size: 24px;
+    max-width: 80%;
     @media (min-width: 768px) {
-      // @include innercontainer;
-      max-width: 600px;
+      @include innercontainer;
+      // display: flex;
+      justify-content: space-between;
+    }
+    // span{
+    //   font-family: 'SpaceGrotesk SemiBold'
+    // }
+  }
+  &__field{
+    padding-bottom: 40px;
+  }
+
+  &__field-headline{
+    font-family: 'SpaceGrotesk SemiBold';
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  &__checkboxes{
+    // padding-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__help{
+    @media (min-width: 768px) {
+      display: flex;
     }
   }
 
-  &__explanation {
-    color: $blue;
-    h1 {
-      font-size: 50px;
-      margin: 10px 0;
+  &__checkboxfield {
+    padding: 0 40px 0 0;
+    @media (max-width: 768px) {
+      padding-bottom: 5px;
+      &:last-of-type{
+        padding-bottom: 0;
+      }
     }
-    span {
-      font-size: 16px;
-      line-height: normal;
-      text-decoration: underline;
-      cursor: pointer;
-    }
+  }
+  &__radiofield {
+    padding-bottom: 20px;
     @media (max-width: 767px) {
-      // display: flex;
-      // flex-flow: column;
-      // justify-content: center;
-      text-align: center;
+      // padding-top: 20px;
+
     }
+  }
+
+  &__licenses{
     @media (min-width: 768px) {
       display: flex;
-      align-items: center;
-      h1 {
-        margin-right: 20px;
-      }
+    }
+  }
+
+  &__default-professions{
+    @media (min-width: 768px) {
+      display: flex;
     }
   }
 
@@ -86,11 +97,14 @@
     align-items: center;
     display: flex;
     @media (min-width: 768px) {
-      width: 100%;
+      // width: 100%;
       flex: 0 0 160px;
       flex-flow: row-reverse;
       justify-content: flex-start;
       align-items: flex-start;
+      position: fixed;
+      bottom: 15%;
+      right: 12%;
     }
   }
   &__dots {
@@ -99,9 +113,73 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      @media (max-width: 1000px) {
+        display: none;
+      }
     }
     @media (max-width: 767px) {
       padding-top: 30px;
     }
   }
+
+
+.react-tags {
+  display: flex;
+  flex-flow: column-reverse;
+  align-items: center;
+  padding: 0;
+  margin: 20px 0;
+  border: none;
+  max-width: 360px;
+}
+
+.react-tags__selected {
+  flex: 1;
+  width: 100%;
+}
+
+.react-tags__search {
+  flex: 1;
+  width: 100%;
+
+  .react-tags__search-input,
+  input {
+    width: 100% !important;
+  }
+
+  input {
+    @include spaceGrotesk;
+    font-size: $font-size-xl;
+    padding: 8px;
+    background: none;
+    border-bottom: 1px solid #090039;
+    color: $dark-blue;
+  }
+}
+
+.react-tags__selected-tag {
+  // height: 28px;
+  // border-radius: 14px;
+  // padding: 2px 30px 2px 12px;
+  &:after {
+    color: $dark-blue;
+    transform: translateY(8px);
+  }
+}
+
+.react-tags__selected-tag-name {
+  @include spaceGroteskSemiBold;
+  font-size: $font-size-s;
+  line-height: 1.2em;
+  color: $dark-blue;
+  display: inline-block;
+  vertical-align: top;
+  transform: translateY(-2%);
+}
+
+.experience {
+  width: 100%;
+  padding-top: 30px;
+  height: 200px;
+}
 }

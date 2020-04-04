@@ -1,16 +1,16 @@
-.signup5 {
-  background-color: $dark-blue;
+.signup52 {
+  background-color: $gray-white;
+  color: $dark-blue;
   width: 100vw;
   min-height: 100vh;
   color: #fff;
-  background-image: url('../../assets/corona_pattern.svg');
+  background-image: url('../../assets/corona_pattern_dark.svg');
   background-repeat: no-repeat;
   @media (min-width: 768px) {
-    background-image: url('../../assets/corona-pattern-light-desktop.svg');
+    background-image: url('../../assets/corona-pattern-dark-desktop.svg');
   }
 
   &__wrapper {
-    position: relative;
     @include container;
     display: flex;
     flex-flow: column;
@@ -22,15 +22,8 @@
     }
   }
 
-  &__error {
-    position: absolute;
-    top: 150px;
-    color: rgb(250, 104, 104);
-    font-size: 1.4rem;
-  }
-
   &__top {
-    flex: 0 0 300px;
+    flex: 0 0 90px;
     @media (max-width: 767px) {
       flex: 0 0 310px;
       display: flex;
@@ -38,43 +31,54 @@
       align-items: flex-end;
     }
   }
-
-  &__corona-image {
-  }
   &__smiley {
+    @media (max-width: 767px) {
+      transform: translateY(-30%);
+    }
     @media (min-width: 768px) {
-      display: none;
-      visibility: hidden;
+      position: absolute;
+      bottom: 188px;
+      left: 166px;
     }
   }
 
   &__content {
     flex: 1;
     width: 100%;
+    color: $dark-blue;
+    font-size: 24px;
     @media (min-width: 768px) {
-      @include innercontainer;
-      // padding: 300px 100px;
+      // @include innercontainer;
+      max-width: 600px;
+    }
+  }
+
+  &__explanation {
+    color: $blue;
+    h1 {
+      font-size: 50px;
+      margin: 10px 0;
+    }
+    span {
+      font-size: 16px;
+      line-height: normal;
+      text-decoration: underline;
+      cursor: pointer;
     }
     @media (max-width: 767px) {
-      padding-top: 40px;
+      // display: flex;
+      // flex-flow: column;
+      // justify-content: center;
+      text-align: center;
     }
-  }
-  &__form {
     @media (min-width: 768px) {
       display: flex;
-      flex-flow: row;
-      justify-content: space-between;
-      width: 100%;
+      align-items: center;
+      h1 {
+        margin-right: 20px;
+      }
     }
   }
-  &__form-field {
-    padding: 15px 0;
-    @media (min-width: 768px) {
-      margin-right: 100px;
-    }
-  }
-
-
 
   &__bottom {
     flex: 0 0 120px;
@@ -105,18 +109,5 @@
     @media (max-width: 767px) {
       padding-top: 30px;
     }
-
-    @media (max-width: 525px) {
-      padding-top: 30px;
-    }
-  }
-}
-
-.wemunity-icon {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  @media (max-width: 768px) {
-    display: none;
   }
 }

@@ -1,26 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import ReactTags from 'react-tag-autocomplete';
+import ImageUploader from "react-images-upload";
 
 import {
   setBasicSocialCare,
   setDailyChores,
   setProfessionalExperience,
   setProfessionalExperiences,
-  setDriversLicense,
-  setDriversLicenseCar,
-  setDriversLicenseBus,
-  setDriversLicenseTruck,
-  setDriversLicenseMinibus,
+  setHasDriversLicense,
   setDriversLicenses,
+  setCanContact,
   setContactDaytime,
   setContactNighttime,
-  setContactAnytime,
+  // setContactMorning,
+  setHelpFulltime,
+  setHelpSometimes,
+  setHelpNotmuch,
   setContactSMS,
   setContactEmail,
   setContactCall,
   setPhoneNumber,
+  setEmail,
   setLocation,
+  setPicture,
 } from '../state/onboarding';
 import { experiences } from '../config/professionalExperiences';
 
@@ -38,19 +41,58 @@ import CrossIconWhite from '../assets/cross-icon-white.svg';
 const Signup3 = props => {
   const onboardingState = useSelector(state => state.onboarding);
   const dispatch = useDispatch();
-
   console.dir(onboardingState);
 
-  // const [addExperience, setAddExperience] = useState(false);
+  // drivers license states
+  // const [driversLicense, setDriversLicense] = useState(false);
+  const updateLicenses = (name, value) => {
+    const licenses = onboardingState.driversLicenses;
+    if (name === "car") { licenses.car = value }
+    if (name === "bus") { licenses.bus = value }
+    if (name === "truck") { licenses.truck = value }
+    if (name === "minibus") { licenses.minibus = value }
+    if (name === "all") {
+      licenses.car = value;
+      licenses.bus = value;
+      licenses.truck = value;
+      licenses.minibus = value;
+    }
+    dispatch(setDriversLicenses(licenses));
+  }
 
-  // const onButtonClick = () => {
-  //   setAddExperience(!addExperience);
-  //   // console.log(val);
-  //   // dispatch(setProfessionalExperience(val));
-  // };
+  const [viewDataAccess, setViewDataAccess] = useState(false);
+  const handleViewDataAccess = () => {
+    setViewDataAccess(!viewDataAccess);
+    console.log(viewDataAccess);
+    // const viewData = document.getElementById('viewData');
+    // console.log(viewData);
+    // if (viewDataAccess) {
+    //   viewData.style.maxHeight = '135px';
+    //   viewData.style.opacity = '0';
+    //   viewData.style.padding = '0 0';
+    // }
+    // else {
+    //   viewData.style.maxHeight = '300px';
+    //   viewData.style.opacity = '1';
+    //   viewData.style.padding = '25px 0';
+    // }
+  }
 
+  // profile picture
+  const [pictures, setPictures] = useState([]);
+  const onDrop = picture => {
+    setPictures([...pictures, picture]);
+    console.log(picture[0]);
+    if ( picture[0] !== undefined ) {
+      var imgFile = URL.createObjectURL(picture[0]);
+      console.log(imgFile);
+      dispatch(setPicture(imgFile));
+    }
+    else { dispatch(setPicture(undefined)); }
+  };
+
+  // React-tags
   const suggestions = experiences;
-
   const handleDelete = i => {
     const ts = onboardingState.professionalExperiences.slice(0);
     ts.splice(i, 1);
@@ -69,20 +111,86 @@ const Signup3 = props => {
       <div className="profile__wrapper">
         <div className="profile__top">
           <div className="profile__user">
-            <img className="profile__user-image" src={User} alt="user image"></img>
-            <span>Farao Frisk</span>
+            <div className="imageUploader">
+              <ImageUploader
+                {...props}
+                buttonText="+"
+                withLabel={false}
+                withIcon={false}
+                onChange={onDrop}
+                imgExtension={[".jpg", ".jpeg", ".gif", ".png", ".gif"]}
+                maxFileSize={5242880}
+                singleImage={true}
+                withPreview={true}
+                errorClass="errors"
+              />
+            </div>
+            {/* <img className="profile__user-image" src={User} alt="user image"></img> */}
+            <div className="profile__user-head">
+              <span>Farao Frisk</span>
+              <div className="profile__access-data">
+                <span onClick={handleViewDataAccess}>Who can see my data?</span>
+              </div>
+            </div>
           </div>
         </div>
         <div className="profile__content">
-          <div className="profile__certificate">
-            <Certificate
-              immunityStatus={1}
-            />
-          </div>
+          { viewDataAccess ?
+            <div className="profile__view-data-outter">
+              <div className="profile__view-data">
+                <div id={"viewData"} className="profile__view-data-wrapper">
+                  <div className="profile__view-data-close" onClick={handleViewDataAccess}/>
+                  <div className="profile__view-data-text">
+                    <span>These are the organisations that have access to your data and can contact you. </span>
+                  </div>
+                  <span style={{fontSize: "16px"}}><b>Health</b></span>
+                  <Checkbox
+                    text="Aker sykehus"
+                    caption=""
+                    // value={}
+                    // onChange={val => dispatch(setBasicSocialCare(val))}
+                  />
+                  <Checkbox
+                    text="Donald Trump"
+                    caption=""
+                    // value={}
+                    // onChange={val => dispatch(setBasicSocialCare(val))}
+                  />
+                  <Checkbox
+                    text="Donald Trump"
+                    caption=""
+                    // value={}
+                    // onChange={val => dispatch(setBasicSocialCare(val))}
+                  />
+                  <span style={{fontSize: "16px"}}><b>Services</b></span>
+                  <Checkbox
+                    text="McDonalds"
+                    caption=""
+                    // value={}
+                    // onChange={val => dispatch(setBasicSocialCare(val))}
+                  />
+                  <Checkbox
+                    text="9gag"
+                    caption=""
+                    // value={}
+                    // onChange={val => dispatch(setBasicSocialCare(val))}
+                  />
+                </div>
+              </div>
+            </div>
+            :
+            <>
+              <div className="profile__certificate">
+                <Certificate
+                  immunityStatus={1}
+                />
+              </div>
+            </>
+          }
           <div className="profile__settings">
             <div className="profile__setting">
               <div className="profile__setting-headline">
-                <span>I am able to help with:</span>
+                <span>What do you want to help with?</span>
               </div>
               <Checkbox
                 text="Basic social care"
@@ -99,7 +207,7 @@ const Signup3 = props => {
             </div>
             <div className="profile__setting">
               <div className="profile__setting-headline">
-                <span>I have professional experience with:</span>
+                <span>What do you have professional experience with?</span>
               </div>
               {/*
               <div className="react-tags__selected">
@@ -126,122 +234,166 @@ const Signup3 = props => {
             </div>
             <div className="profile__setting">
               <div className="profile__setting-headline">
-                <span>I have my drivers license</span>
+                <span>Do you have a drivers license?</span>
               </div>
               <RadioButton
-                value={onboardingState.driversLicense}
-                onChange={val => dispatch(setDriversLicense(val))}
+                value={onboardingState.hasDriversLicense}
+                onChange={val => {
+                  val ? dispatch(setHasDriversLicense(val))
+                  :
+                  dispatch(setHasDriversLicense(false));
+                  updateLicenses("all", false);
+                }}
               />
-              { onboardingState.driversLicense ? <>
+              { onboardingState.hasDriversLicense ? <>
+                <div className="profile__setting-headline">
+                  <span>Which one(s)?</span>
+                </div>
                 <Checkbox
                   text="Car"
                   caption=""
-                  value={onboardingState.driversLicenseCar}
-                  onChange={val => dispatch(setDriversLicenseCar(val))}
+                  value={onboardingState.driversLicenses.car}
+                  onChange={val => updateLicenses("car", val)}
                 />
                 <Checkbox
                   text="Bus"
                   caption=""
-                  value={onboardingState.driversLicenseBus}
-                  onChange={val => dispatch(setDriversLicenseBus(val))}
+                  value={onboardingState.driversLicenses.bus}
+                  onChange={val => updateLicenses("bus", val)}
                 />
                 <Checkbox
                   text="Truck"
                   caption=""
-                  value={onboardingState.driversLicenseTruck}
-                  onChange={val => dispatch(setDriversLicenseTruck(val))}
+                  value={onboardingState.driversLicenses.truck}
+                  onChange={val => updateLicenses("truck", val)}
                 />
                 <Checkbox
                   text="Minibus"
                   caption=""
-                  value={onboardingState.driversLicenseMinibus}
-                  onChange={val => dispatch(setDriversLicenseMinibus(val))}
+                  value={onboardingState.driversLicenses.minibus}
+                  onChange={val => updateLicenses("minibus", val)}
                 /> </>
                : null
               }
             </div>
             <div className="profile__setting">
               <div className="profile__setting-headline">
-                <span>You can contact me</span>
+                <span>Can authorities or organisations in your area contact you for help?</span>
               </div>
-              <Checkbox
-                text="Anytime"
-                caption=""
-                value={onboardingState.contactAnytime}
-                // onChange={val => handleContactTime(val)}
+              <RadioButton
+                value={onboardingState.canContact}
                 onChange={val => {
-                  dispatch(setContactAnytime(val));
-                  dispatch(setContactDaytime(val));
-                  dispatch(setContactNighttime(val));
+                  val ? dispatch(setCanContact(val))
+                  :
+                  dispatch(setCanContact(false));
+                  dispatch(setContactDaytime(false));
+                  dispatch(setContactNighttime(false));
+                  dispatch(setContactSMS(false));
+                  dispatch(setContactEmail(false));
+                  dispatch(setContactCall(false));
+                  dispatch(setPhoneNumber(''));
+                  dispatch(setEmail(''));
                 }}
               />
-              { onboardingState.contactAnytime ?
-                null : <>
-                  <Checkbox
-                    text="Daytime"
-                    caption=""
-                    value={onboardingState.contactDaytime}
-                    onChange={val => {
-                      dispatch(setContactDaytime(val));
-                      if (val && onboardingState.contactNighttime) {
-                        dispatch(setContactAnytime(true));
-                      }
-                    }}
-                  />
-                  <Checkbox
-                    text="Nighttime"
-                    caption=""
-                    value={onboardingState.contactNighttime}
-                    onChange={val => {
-                      dispatch(setContactNighttime(val));
-                      if (onboardingState.contactDaytime && val) {
-                        dispatch(setContactAnytime(true));
-                      }
-                    }}
-                  />
-                </>
-              }
-
             </div>
-            <div className="profile__setting">
-              <div className="profile__setting-headline">
-                <span>You can contact me on</span>
+            { onboardingState.canContact ? <>
+              <div className="profile__setting">
+                <div className="profile__setting-headline">
+                  <span>When is a good time for you?</span>
+                </div>
+                <Checkbox
+                  text="Daytime"
+                  caption=""
+                  value={onboardingState.contactDaytime}
+                  onChange={val => dispatch(setContactDaytime(val))}
+                />
+                <Checkbox
+                  text="Nighttime"
+                  caption=""
+                  value={onboardingState.contactNighttime}
+                  onChange={val => dispatch(setContactNighttime(val))}
+                />
               </div>
-              <Checkbox
-                text="SMS"
-                caption=""
-                value={onboardingState.contactSMS}
-                // onChange={val => handleContactTime(val)}
-                onChange={val => dispatch(setContactSMS(val))}
-              />
-              <Checkbox
-                text="Email"
-                caption=""
-                value={onboardingState.contactEmail}
-                // onChange={val => handleContactTime(val)}
-                onChange={val => dispatch(setContactEmail(val))}
-              />
-              <Checkbox
-                text="Call me"
-                caption=""
-                value={onboardingState.contactCall}
-                // onChange={val => handleContactTime(val)}
-                onChange={val => dispatch(setContactCall(val))}
-              />
-            </div>
-            <div className="profile__setting">
-              <div className="profile__setting-headline">
-                <span>My phone number is</span>
+              <div className="profile__setting">
+                <div className="profile__setting-headline">
+                  <span>How much can you help?</span>
+                </div>
+                <Checkbox
+                  text="Fulltime"
+                  caption=""
+                  value={onboardingState.helpFulltime}
+                  onChange={val => dispatch(setHelpFulltime(val))}
+                />
+                <Checkbox
+                  text="Sometimes"
+                  caption=""
+                  value={onboardingState.helpSometimes}
+                  onChange={val => dispatch(setHelpSometimes(val))}
+                />
+                <Checkbox
+                  text="Not very much"
+                  caption=""
+                  value={onboardingState.helpNotmuch}
+                  onChange={val => dispatch(setHelpNotmuch(val))}
+                />
               </div>
-              <FormField
-                value={onboardingState.phoneNumber}
-                placeholderText={'815 493 00'}
-                onChange={e => dispatch(setPhoneNumber(e.target.value))}
-              />
-            </div>
+              <div className="profile__setting">
+                <div className="profile__setting-headline">
+                  <span>How do you want to be contacted?</span>
+                </div>
+                <Checkbox
+                  text="SMS"
+                  caption=""
+                  value={onboardingState.contactSMS}
+                  // onChange={val => handleContactTime(val)}
+                  onChange={val => dispatch(setContactSMS(val))}
+                />
+                <Checkbox
+                  text="Email"
+                  caption=""
+                  value={onboardingState.contactEmail}
+                  // onChange={val => handleContactTime(val)}
+                  onChange={val => dispatch(setContactEmail(val))}
+                />
+                <Checkbox
+                  text="Call me"
+                  caption=""
+                  value={onboardingState.contactCall}
+                  // onChange={val => handleContactTime(val)}
+                  onChange={val => dispatch(setContactCall(val))}
+                />
+              </div>
+            </> : null
+            }
+            { onboardingState.contactSMS || onboardingState.contactCall ?
+              <div className="profile__setting">
+                <div className="profile__setting-headline">
+                  <span>Your phone number</span>
+                </div>
+                <FormField
+                  value={onboardingState.phoneNumber}
+                  placeholderText={'(+47) 815 493 00'}
+                  onChange={e => dispatch(setPhoneNumber(e.target.value))}
+                />
+              </div>
+            : null
+            }
+            { onboardingState.contactEmail ?
+              <div className="profile__setting">
+                <div className="profile__setting-headline">
+                  <span>Your email</span>
+                </div>
+                <FormField
+                  value={onboardingState.email}
+                  placeholderText={'chill@my.place'}
+                  onChange={e => dispatch(setEmail(e.target.value))}
+                />
+              </div>
+              : null
+             }
             <div className="profile__setting">
               <div className="profile__setting-headline">
-                <span>I live at</span>
+                <span>Where do you live?</span>
               </div>
               <FormField
                 value={onboardingState.location}

@@ -33,6 +33,7 @@
     @media (max-width: 767px) {
       flex: 0 0 100px;
       margin-top: 40px;
+      margin-bottom: 30px;
     }
 
   }
@@ -56,6 +57,19 @@
     }
   }
 
+  &__user-head{
+  }
+
+  &__access-data{
+    cursor: pointer;
+    span{
+      text-decoration: underline;
+      height: 14px;
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+
   &__content{
     flex: 1;
     width: 100%;
@@ -70,6 +84,86 @@
       display: flex;
     }
   }
+  &__view-data-outter{
+    margin-right: 55px;
+    @media (max-width: 768px){
+      margin-right: 0;
+    }
+  }
+
+  &__view-data{
+    max-width: 350px;
+    background-color: #FFF;
+    border-radius: 9px;
+    box-shadow: 0 7px 16px rgba(8, 0, 206, 0.16);
+
+    @media (max-width: 768px){
+      margin-bottom: 60px;
+    }
+
+    .checkboxfield__checkmark{
+      background-color: $gray-white;
+    }
+  }
+  &__view-data-wrapper{
+    padding: 20px 20px 42px 20px;
+    position: relative;
+    min-height: 135px;
+
+    @media (max-width: 768px){
+      padding-bottom: 60px;
+    }
+    // opacity: 0;
+
+    // animation-name: viewData;
+    // animation-duration: 0.2s;
+    // animation-timing-function: ease-in-out;
+    // animation-direction: alternate;
+    // animation-play-state: running;
+    // animation
+    // // transition: max-height 0.3s ease-in-out;
+    // // transition: opacity 0.3s ease-in-out;
+    // @keyframes viewData{
+    //   from{
+    //     opacity: 0;
+    //     max-height: 135px;}
+    //   to{
+    //     opacity: 1;
+    //     max-height: 300px;}
+    // }
+    @media (min-width: 768px){
+      // padding-top: 0;
+      // padding-bottom: 0;
+      opacity: 1;
+      // max-height: 300px;
+    }
+  }
+
+
+  &__view-data-close{
+    cursor: pointer;
+    width: 26px;
+    height: 26px;
+    background-color: $blue;
+    border-radius: 100%;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    background-image: url('../assets/cross-icon-white.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotate(45deg);
+  }
+  &__view-data-text{
+    padding-top: 30px;
+    padding-bottom: 20px;
+    span{
+      line-height: normal;
+      font-size: 24px;
+      color: $dark-blue;
+    }
+  }
+
 
   &__certificate{
     margin-right: 55px;
