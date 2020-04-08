@@ -9,24 +9,24 @@ const SocialModule = ({ m }) => {
     <div className="module social-module">
       <div className="social-module__content">
         <h2 className="social-module__title">
-          {m && m[0].title && m[0].title}
+          {m && m.title && m.title}
         </h2>
         <div className="social-module__text">
-          {m && m[0].text && <BlockContent blocks={m[0].text} />}
+          {m && m.text && <BlockContent blocks={m.text} />}
         </div>
         <div className="social-module__buttons">
           <a
-            href={m && m[0].buttonBlueUrl}
+            href={m && m.buttonBlueUrl}
             className="social-module__button social-module__button--blue"
           >
-            <span>{m && m[0].buttonBlueText}</span>
+            <span>{m && m.buttonBlueText}</span>
             <img src={facebook} alt="facebook" />
           </a>
           <a
-            href={m && m[0].buttonGreyUrl}
+            href={m && m.buttonGreyUrl}
             className="social-module__button social-module__button--grey"
           >
-            <span>{m && m[0].buttonGreyText}</span>
+            <span>{m && m.buttonGreyText}</span>
             <img src={github} alt="github" />
           </a>
         </div>

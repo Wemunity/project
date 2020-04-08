@@ -7,7 +7,7 @@ const FeatureModule = props => {
     <div className="module feature-module">
       <div className="feature-module__content">
         {props.m &&
-          props.m[0].features.map(f => <Feature key={f._key} feature={f} />)}
+          props.m.features.map(f => <Feature key={f._key} feature={f} />)}
       </div>
     </div>
   );

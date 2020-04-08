@@ -11,14 +11,14 @@ const SupportModule = ({ m }) => {
       <div className="support-module__content">
         <h1 className="support-module__title">
           {' '}
-          {m && m[0].title && m[0].title}
+          {m && m.title && m.title}
         </h1>
         <div className="support-module__text">
-          {m && m[0].text && <BlockContent blocks={m[0].text} />}
+          {m && m.text && <BlockContent blocks={m.text} />}
         </div>
         <div className="support-module__collaborators">
           {m &&
-            m[0].supporters.map(s => (
+            m.supporters.map(s => (
               <img
                 key={s._key}
                 className="feature-module__image"
