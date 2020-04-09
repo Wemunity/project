@@ -4,7 +4,7 @@
   flex-flow: row wrap;
   padding: 0 20%;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     padding: 0 6%;
   }
 
@@ -16,10 +16,10 @@
     display: flex;
     flex-flow: column;
     color: $dark-blue;
-    height: 500px;
+    height: 400px;
     width: 30%;
 
-  @media (max-width: 100px) {
+  @media (max-width: 1000px) {
     width: 48%;
     height: 450px;
   }

@@ -1,16 +1,25 @@
 .pageTitle {
   color: $dark-blue;
-  margin: 0 20%;
+  padding: 0 20% 30px;
 
-  @media (max-width: 768px) {
-    margin: 0 6%;
+  @media (max-width: 1000px) {
+    padding: 0 6% 30px;
+  }
+
+  h1 {
+    margin: 0;
   }
 
   h5 {
     width: 70%;
+    margin: 0;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1000px) {
       width: 70%;
     }
   }
+}
+
+.blue {
+  background-color: $blue-white;
 }

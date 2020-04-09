@@ -2,7 +2,7 @@ import React from 'react'
 import { buildImageObj } from '../../lib/helpers';
 import imageUrlFor from '../../lib/image-url';
 
-export default function Article({ index, article }) {
+export default function Article({ article }) {
   return (
     <div className="article-module__article">
       <img src={imageUrlFor(buildImageObj(article.image)).url()}
@@ -10,7 +10,7 @@ export default function Article({ index, article }) {
       />
       <h4>{article.title}</h4>
       <span>{article.releaseDate} - {article.source}</span>
-      <a href={article.url} target="_blank">
+      <a href={article.url} target="_blank" rel="noopener noreferrer">
         Read more
       </a>
     </div>

@@ -8,32 +8,34 @@ import Footer from '../components/footer';
 
 export default function PressPage(props) {
   const [moduleData, setModuleData] = useState([]);
-  const [footerData, setFooterData] = useState([]);
 
   useEffect(() => {
-    const query = `*[_type == "press"]`;
-    const footerQuery = `*[_type == "footerModule"]`;
+    const query = `{
+      "pressPage": *[_type == "press"],
+      "footerModule": *[_type == "footerModule"],
+    }`;
 
     client.fetch(query).then(data => {
-      setModuleData(data[0]);
-    });
-    client.fetch(footerQuery).then(data => {
-      setFooterData(data);
+      setModuleData(data);
     });
   }, []);
-  console.log(moduleData, footerData)
+  const press = moduleData.length !== 0 && moduleData.pressPage[0]
   return (
-    <div className="pressPage">
+    <div className="press-page">
       <NavBar {...props} theme="light" />
-      {moduleData.length !== 0 &&
-        <PageTitle
-        title={moduleData._id.charAt(0).toUpperCase() + moduleData._id.slice(1)}
-        subtitle={moduleData.abstract}
-        />}
-      <ArticleModule articles={moduleData.articles} />
-      <PressKitModule data={moduleData} />
-      {footerData.length !== 0 &&
-        <Footer m={footerData} />}
+      {press &&
+        <React.Fragment>
+          <PageTitle
+            title={press._id.charAt(0).toUpperCase() + press._id.slice(1)}
+            subtitle={press.abstract}
+            />
+          <ArticleModule articles={press.articles} />
+          <PageTitle subtitle={press.contact} />
+          <PageTitle title={press.pressKitTitle} subtitle={press.pressKitDescription} blue={true} />
+          <PressKitModule data={press} />
+          <Footer m={moduleData.footerModule} />
+        </React.Fragment>
+      }
     </div>
   )
 }
