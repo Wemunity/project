@@ -11,7 +11,7 @@
   font-size: $font-size;
   z-index: 100;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     justify-content: flex-end;
     padding: 0 6%;
   }
@@ -21,7 +21,7 @@
     align-items: center;
     height: 35px;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1000px) {
       display: none;
     }
 
@@ -38,7 +38,7 @@
   align-items: flex-end;
   z-index: 105;
 
-  @media (min-width: 769px) {
+  @media (min-width: 1000px) {
       display: none;
    }
 
@@ -86,7 +86,7 @@
     justify-content: space-between;
     list-style: none;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1000px) {
       flex-flow: column;
       display: none;
     }
@@ -100,7 +100,7 @@
       font-weight: bold;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 1000px) {
       margin: 0;
     }
   }
@@ -121,12 +121,12 @@
   font-size: $font-size-xl;
   z-index: 102;
 
-  @media (min-width: 769px) {
+  @media (min-width: 1001px) {
       display: none;
    }
 
    &__links {
-    @media (max-width: 768px) {
+    @media (max-width: 1000px) {
       display: flex;
       align-items: flex-end;
       height: 45%;

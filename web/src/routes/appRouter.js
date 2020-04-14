@@ -11,6 +11,7 @@ import Signup52 from '../pages/onboarding/signup52';
 import Welcome from '../pages/onboarding/welcome';
 import Profile from '../pages/profile';
 import Tasks from '../pages/tasks';
+import PressPage from '../pages/pressPage.js';
 
 const AppRouter = () => (
   <BrowserRouter>
@@ -27,6 +28,7 @@ const AppRouter = () => (
         <Route path="/welcome" component={Welcome} exact={true} />
         <Route path="/tasks" component={Tasks} exact={true} />
         <Route path="/profile" component={Profile} exact={true} />
+        <Route path="/press" component={PressPage} exact={true} />
       </Switch>
     </div>
   </BrowserRouter>

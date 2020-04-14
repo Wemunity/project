@@ -28,6 +28,9 @@
 @import './tasks';
 @import './terms';
 @import './navbar';
+@import './bits/pageTitle.scss';
+@import './articleModule';
+@import './pressKitModule';
 
 html {
   padding: 0;
@@ -53,6 +56,7 @@ h3,
 h4,
 h5,
 h6 {
+  white-space: pre-wrap;
   font-family: 'SpaceGrotesk SemiBold', sans-serif;
 }
 

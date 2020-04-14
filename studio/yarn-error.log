@@ -1,0 +1,54 @@
+Arguments: 
+  /home/dev/.nvm/versions/node/v10.15.3/bin/node /home/dev/.nvm/versions/node/v10.15.3/lib/node_modules/@sanity/cli/vendor/yarn install --json --non-interactive --ignore-engines --registry https://registry.npmjs.org
+
+PATH: 
+  /home/dev/lfz/project/studio/node_modules/.bin:/home/dev/lfz/project/node_modules/.bin:/home/dev/lfz/node_modules/.bin:/home/dev/node_modules/.bin:/home/node_modules/.bin:/node_modules/.bin:/home/dev/.nvm/versions/node/v10.15.3/bin:/home/dev/.nvm/versions/node/v10.15.3/lib/node_modules/vendor:/home/dev/.nvm/versions/node/v10.15.3/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/dev/.bin
+
+Yarn version: 
+  1.6.0
+
+Node version: 
+  10.15.3
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: ENOENT: no such file or directory, lstat '/home/dev/lfz/project/studio/node_modules/js-yaml/'
+
+npm manifest: 
+  {
+    "name": "wemunity",
+    "private": true,
+    "version": "1.0.0",
+    "description": "",
+    "main": "package.json",
+    "author": "Tony Heimark <Tjh-94@hotmail.com>",
+    "license": "UNLICENSED",
+    "scripts": {
+      "start": "sanity start",
+      "test": "sanity check"
+    },
+    "keywords": [
+      "sanity"
+    ],
+    "dependencies": {
+      "@sanity/base": "^1.149.3",
+      "@sanity/components": "^1.149.3",
+      "@sanity/core": "^1.149.2",
+      "@sanity/default-layout": "^1.149.3",
+      "@sanity/default-login": "^1.149.0",
+      "@sanity/desk-tool": "^1.149.3",
+      "@sanity/vision": "^1.149.0",
+      "prop-types": "^15.6",
+      "react": "^16.2",
+      "react-dom": "^16.2"
+    },
+    "devDependencies": {}
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
