@@ -24,8 +24,8 @@ function LandingPage(props) {
     client.fetch(query)
   )
 
-  if (!error) {
-    return <div className="App">We're sorry, something wrong happened. <a href="mailto:anders@new.no">Let us know about it.</a></div>
+  if (error) {
+    return <div className="App">We're sorry, something wrong happened. <a href="mailto:contact@wemunity.org">Let us know about it.</a></div>
   }
 
   return (

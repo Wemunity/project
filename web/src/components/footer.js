@@ -9,8 +9,8 @@ const Footer = ({ m }) => {
     <div className="module footer">
       <div className="footer__content">
         <div className="footer__column">
-          <h4>{m && m[0].branding && m[0].branding}</h4>
-          {m && m[0].text && <BlockContent blocks={m[0].text} />}
+          <h4>{m && m.branding && m.branding}</h4>
+          {m && m.text && <BlockContent blocks={m.text} />}
         </div>
         <div className="footer__image">
           <img
