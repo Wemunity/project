@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { Fragment } from 'react';
+import useSWR from "swr";
 import client from '../lib/sanity';
 import IntroModule from '../components/introModule.js';
 import '../styles/app.scss';
@@ -8,31 +9,38 @@ import SupportModule from '../components/supportModule.js';
 import Footer from '../components/footer.js';
 import NavBar from '../components/navbar.js'
 
+const query = `
+{
+  "introModule": *[_type == "introModule"][0],
+  "featureModule": *[_type == "featureModule"][0],
+  "socialModule": *[_type == "socialModule"][0],
+  "supportModule": *[_type == "supportModule"][0],
+  "footerModule": *[_type == "footerModule"][0],
+}`;
+
 function LandingPage(props) {
-  const [moduleData, setModuleData] = useState([]);
 
-  useEffect(() => {
-    const query = `*[_type == "introModule"]
-    {_id,
-     "introModule": *[_type == "introModule"],
-     "featureModule": *[_type == "featureModule"],
-      "socialModule": *[_type == "socialModule"],
-     "supportModule": *[_type == "supportModule"],
-     "footerModule": *[_type == "footerModule"],
-    }`;
+  const { data: moduleData, error } = useSWR(query, query =>
+    client.fetch(query)
+  )
 
-    client.fetch(query).then(data => {
-      setModuleData(data[0]);
-    });
-  }, []);
+  if (!error) {
+    return <div className="App">We're sorry, something wrong happened. <a href="mailto:anders@new.no">Let us know about it.</a></div>
+  }
+
   return (
     <div className="App">
       <NavBar {...props} theme="dark" />
-      <IntroModule m={moduleData.introModule} />
-      <SocialModule m={moduleData.socialModule} />
-      <FeatureModule m={moduleData.featureModule} />
-      <SupportModule m={moduleData.supportModule} />
-      <Footer m={moduleData.footerModule} />
+      {
+        /* Suspense can't come soon enough */
+        moduleData ? <Fragment>
+        <IntroModule m={moduleData.introModule} />
+        <SocialModule m={moduleData.socialModule} />
+        <FeatureModule m={moduleData.featureModule} />
+        <SupportModule m={moduleData.supportModule} />
+        <Footer m={moduleData.footerModule} />
+        </Fragment> : <div className="App">Loading</div>
+      }
     </div>
   );
 }
