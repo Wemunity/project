@@ -12,6 +12,10 @@ const hiddenTypes = [
   'footerModule',
   'press',
   'support',
+  'about',
+  'story',
+  'platform',
+  'contentImage',
 ];
 export default () =>
   S.list()
@@ -74,7 +78,7 @@ export default () =>
             ])
         ),
         S.listItem()
-            .title("Press Page")
+            .title("Press")
             .child(
                 S.editor()
                     .id('press')
@@ -82,12 +86,36 @@ export default () =>
                     .documentId("press")
             ),
         S.listItem()
-            .title("Support & partners page")
+            .title("Partners & Support")
             .child(
                 S.editor()
                     .id('support')
                     .schemaType("support")
                     .documentId("support")
+            ),
+        S.listItem()
+            .title("About")
+            .child(
+                S.editor()
+                    .id('about')
+                    .schemaType("about")
+                    .documentId("about")
+            ),
+        S.listItem()
+            .title("The Story")
+            .child(
+                S.editor()
+                    .id('story')
+                    .schemaType("story")
+                    .documentId("story")
+            ),
+        S.listItem()
+            .title("The Platform")
+            .child(
+                S.editor()
+                    .id('platform')
+                    .schemaType("platform")
+                    .documentId("platform")
             ),
       ...S.documentTypeListItems().filter(
         listItem => !hiddenTypes.includes(listItem.getId())

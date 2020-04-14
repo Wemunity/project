@@ -13,11 +13,14 @@ import donator from './donator';
 import supportModule from './supportModule';
 import donationModule from './donationModule';
 import footerModule from './footerModule';
-import page from './page';
+import about from './about';
+import story from './story';
+import platform from './platform';
 import pressPage from './pressPage';
 import support from './supportPage';
 import pressTeaser from './pressTeaser';
 import buttonLink from './buttonLink';
+import contentImage from './contentImage';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -36,10 +39,13 @@ export default createSchema({
     features,
     supporters,
     donator,
-    page,
+    about,
+    story,
+    platform,
     pressPage,
     pressTeaser,
     support,
     buttonLink,
+    contentImage,
   ])
 });
