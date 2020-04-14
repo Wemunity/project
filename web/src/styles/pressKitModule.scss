@@ -2,6 +2,8 @@
   background-color: $blue-white;
   width: 100%;
   padding: 0 20%;
+  display: flex;
+  flex-flow: row wrap;
 
   @media (max-width: 768px) {
     padding: 0 6%;
@@ -11,8 +13,13 @@
     padding: 0;
   }
 
+  &_container {
+    width: 100%;
+    margin-top: 10px;
+  }
+
   &_image {
-    width: 48%;
+    width: 100%;
   }
 
   &_button {
@@ -20,7 +27,16 @@
     color: $white;
     position: relative;
     bottom: 70px;
-    left: 10px;
+    left: 6%;
     width: 20%;
+  }
+
+  &_all {
+    bottom: 0;
+    left: 0;
+
+    @media (max-width: 411px) {
+      left: 6%;
+  }
   }
 }
