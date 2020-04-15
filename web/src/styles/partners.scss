@@ -1,0 +1,41 @@
+.partners {
+  background-color: $dark-blue;
+  width: 100vw;
+
+
+  &__wrapper {
+    @include outtergrid;
+    position: relative;
+    // @media (max-width: 768px){
+    //   padding-left: 35px;
+    //   padding-right: 35px;
+    // }
+  }
+
+  &__donations{
+    background-color: $blue-white;
+
+  }
+  &__donations-title{
+    width: 16.8%;
+    padding-top: 40px;
+    span{
+      font-size: 30px;
+    }
+  }
+
+  &__donations-name{
+    // span{
+    //   font-size: 30px;
+    // }
+
+  }
+
+  &__donations-list{
+    @include DesktopIndentTwoColumnsLeftOneColumnRight;
+  }
+
+  .pageTitle{
+    color: white;
+  }
+}
