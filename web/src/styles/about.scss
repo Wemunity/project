@@ -1,0 +1,128 @@
+.about {
+  background-color: white;
+  width: 100vw;
+  min-height: 100vh;
+  color: $dark-blue;
+
+  &__wrapper {
+    @include outtergrid;
+    position: relative;
+    // @media (max-width: 768px){
+    //   padding-left: 35px;
+    //   padding-right: 35px;
+    // }
+  }
+
+  &__main-image{
+    padding-bottom: 50px;
+    &.fullWidth{
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      margin-left: -50vw;
+      img{
+        width: 100%;
+        // position: absolute;
+        // left: -150px;
+      }
+    }
+    &.normal{
+      @media (max-width: 768px){
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        margin-left: -50vw;
+      }
+      img{
+        width: 100%;
+      }
+    }
+  }
+
+  &__body{
+    @include DesktopIndentTwoColumnsLeftFourColumnsRight;
+
+    // max-width: 690px;
+    // margin: auto;
+  }
+
+  &__body-text{
+    p{
+      line-height: 2em;
+    }
+  }
+
+  &__body-image{
+    padding: 50px 0;
+    width: 100%;
+    position: relative;
+    &.centered{
+      @media (max-width: 768px){
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        margin-left: -50vw;
+      }
+      img{ width: 100%; }
+    }
+    &.left{
+      @media (min-width: 769px){
+        position: relative;
+        left: -15%;
+      }
+      @media (max-width: 768px){
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        margin-left: -50vw;
+      }
+      img{
+        @media (min-width: 769px){ width: 80%; }
+        @media (max-width: 768px){ width: 100%; }
+      }
+    }
+    &.right{
+      @media (min-width: 769px){
+        position: relative;
+        right: -30%;
+      }
+      @media (max-width: 768px){
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        margin-left: -50vw;
+      }
+      img{
+        @media (min-width: 769px){ width: 80%; }
+        @media (max-width: 768px){ width: 100%; }
+      }
+    }
+    &.fullWidth{
+      width: 100vw;
+      // position: relative;
+      // left: 50%;
+      // margin-left: -50vw;
+      @media (max-width: 768px){
+        position: relative;
+        left: 50%;
+        margin-left: -50vw;
+      }
+      @media (min-width: 769px){
+        margin-left: -21.7vw;
+      }
+      img{ width: 100%; }
+    }
+    span{
+      display: block;
+      font-size: 12px;
+      @media (max-width: 768px){
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+  }
+  // .pageTitle{
+  //   padding: 60px 0 30px;
+  // }
+
+}

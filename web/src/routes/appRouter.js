@@ -12,6 +12,10 @@ import Welcome from '../pages/onboarding/welcome';
 import Profile from '../pages/profile';
 import Tasks from '../pages/tasks';
 import PressPage from '../pages/pressPage.js';
+import About from '../pages/about.js';
+import Story from '../pages/story.js';
+import Platform from '../pages/platform.js';
+import GridPage from '../pages/gridPage.js';
 
 const AppRouter = () => (
   <BrowserRouter>
@@ -29,6 +33,11 @@ const AppRouter = () => (
         <Route path="/tasks" component={Tasks} exact={true} />
         <Route path="/profile" component={Profile} exact={true} />
         <Route path="/press" component={PressPage} exact={true} />
+        <Route path="/about" component={About} exact={true} />
+        <Route path="/story" component={Story} exact={true} />
+        <Route path="/platform" component={Platform} exact={true} />
+        <Route path="/grid" component={GridPage} exact={true} />
+
       </Switch>
     </div>
   </BrowserRouter>

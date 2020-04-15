@@ -14,6 +14,64 @@
   padding-right: 90px;
 }
 
+@mixin outtergrid {
+  // width: 100%;
+  max-width: 1640px;
+  margin: 0 $outter-column-width;
+  @media (max-width: 768px){
+    margin-left: 36px;
+    margin-right: 36px;
+  }
+}
+
+@mixin DesktopIndentOneColumn{
+  @media (min-width: 768px){
+    margin-left: $column-width;
+    margin-right: $column-width;
+  }
+}
+
+@mixin DesktopIndentTwoColumns{
+  @media (min-width: 768px){
+    margin-left: calc(2*#{$column-width});
+    margin-right: calc(2*#{$column-width});
+  }
+}
+
+@mixin DesktopIndentThreeColumns{
+  @media (min-width: 768px){
+    margin-left: calc(3*#{$column-width});
+    margin-right: calc(3*#{$column-width});
+  }
+}
+
+@mixin DesktopIndentTwoColumnsLeftOneColumnRight{
+  @media (min-width: 768px){
+    margin-left: calc(2*#{$column-width});
+    margin-right: $column-width;
+  }
+}
+
+@mixin DesktopIndentTwoColumnsLeftFourColumnsRight{
+  @media (min-width: 768px){
+    margin-left: calc(2*#{$column-width});
+    margin-right: calc(4*#{$column-width});
+  }
+}
+
+@mixin DesktopIndentOneColumnLeft{
+  @media (min-width: 768px){
+    margin-left: $column-width
+  }
+}
+
+@mixin DesktopIndentOneColumnRight{
+  @media (min-width: 768px){
+    margin-right: $column-width
+  }
+}
+
+
 @mixin spaceGrotesk {
   font-family: 'SpaceGrotesk';
   font-weight: 400;

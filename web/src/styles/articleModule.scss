@@ -2,7 +2,8 @@
   display: flex;
   justify-content: space-between;
   flex-flow: row wrap;
-  padding: 0 20%;
+  // padding: 0 20%;
+  @include DesktopIndentTwoColumnsLeftOneColumnRight;
 
   @media (max-width: 1000px) {
     padding: 0 6%;
@@ -17,7 +18,7 @@
     flex-flow: column;
     color: $dark-blue;
     height: 400px;
-    width: 30%;
+    width: 32%;
 
   @media (max-width: 1000px) {
     width: 48%;

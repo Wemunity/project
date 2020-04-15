@@ -1,0 +1,20 @@
+.press{
+  background-color: white;
+  width: 100vw;
+  min-height: 100vh;
+  color: $dark-blue;
+
+  &__wrapper {
+    @include outtergrid;
+    position: relative;
+    // @media (max-width: 768px){
+    //   padding-left: 35px;
+    //   padding-right: 35px;
+    // }
+  }
+
+  &__press-kit{
+    background-color: $blue-white;
+    // @include DesktopIndentTwoColumns;
+  }
+}
