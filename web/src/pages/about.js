@@ -31,7 +31,7 @@ function About(props) {
   return (
 
     <div className="about">
-      <Grid show={true}/>
+      <Grid show={false}/>
       <NavBar {...props} theme="light" />
 
       <div className="about__wrapper">

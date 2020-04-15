@@ -23,7 +23,7 @@ export default function PressPage(props) {
   const press = moduleData.length !== 0 && moduleData.pressPage[0]
   return (
     <div className="press">
-      <Grid show={true}/>
+      <Grid show={false}/>
       <NavBar {...props} theme="light" />
       <div className="press__wrapper">
         {press &&
