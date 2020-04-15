@@ -14,6 +14,57 @@
   padding-right: 90px;
 }
 
+@mixin outtergrid {
+  // width: 100%;
+  max-width: 1640px;
+  margin: 0 7.3vw;
+  @media (max-width: 768px){
+    margin-left: 36px;
+    margin-right: 36px;
+  }
+}
+
+@mixin DesktopIndentOneColumn{
+  @media (min-width: 768px){
+    margin-left: 7.2vw;
+    margin-right: 7.2vw;
+  }
+}
+
+@mixin DesktopIndentTwoColumns{
+  @media (min-width: 768px){
+    margin-left: 14.4vw;
+    margin-right: 14.4vw;
+  }
+}
+
+@mixin DesktopIndentThreeColumns{
+  @media (min-width: 768px){
+    margin-left: 21.6vw;
+    margin-right: 21.6vw;
+  }
+}
+
+@mixin DesktopIndentTwoColumnsLeftOneColumnRight{
+  @media (min-width: 768px){
+    margin-left: 14.4vw;
+    margin-right: 7.2vw;
+  }
+}
+
+@mixin DesktopIndentOneColumnLeft{
+  @media (min-width: 768px){
+    margin-left: 7.2vw;
+  }
+}
+
+@mixin DesktopIndentOneColumnRight{
+  @media (min-width: 768px){
+    margin-right: 7.2vw;
+  }
+}
+
+
 @mixin spaceGrotesk {
   font-family: 'SpaceGrotesk';
   font-weight: 400;
