@@ -1,8 +1,16 @@
 .grid{
   font-family: 'SpaceGrotesk SemiBold';
+  position: fixed;
+  // width: 100vw;
+  // height: 100vh;
+  z-index: 100;
+  height: 100%;
+  width: 100%;
+  top:0;
+  left:0;
   &__wrapper{
     @include outtergrid;
-    background-color: $blue-white;
+    // background-color: $blue-white;
     height: 100vh;
     position: relative;
   }

@@ -5,6 +5,7 @@ import PageTitle from '../components/bits/pageTitle'
 import ArticleModule from '../components/articleModule'
 import PressKitModule from '../components/pressKitModule'
 import Footer from '../components/footer';
+import Grid from '../components/bits/grid.js';
 
 export default function PressPage(props) {
   const [moduleData, setModuleData] = useState([]);
@@ -22,6 +23,7 @@ export default function PressPage(props) {
   const press = moduleData.length !== 0 && moduleData.pressPage[0]
   return (
     <div className="press">
+      <Grid show={true}/>
       <NavBar {...props} theme="light" />
       <div className="press__wrapper">
         {press &&

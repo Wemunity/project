@@ -17,7 +17,7 @@
 @mixin outtergrid {
   // width: 100%;
   max-width: 1640px;
-  margin: 0 7.3%;
+  margin: 0 $outter-column-width;
   @media (max-width: 768px){
     margin-left: 36px;
     margin-right: 36px;
@@ -26,48 +26,48 @@
 
 @mixin DesktopIndentOneColumn{
   @media (min-width: 768px){
-    margin-left: 8.4%;
-    margin-right: 8.4%;
+    margin-left: $column-width;
+    margin-right: $column-width;
   }
 }
 
 @mixin DesktopIndentTwoColumns{
   @media (min-width: 768px){
-    margin-left: 16.8%;
-    margin-right: 16.8%;
+    margin-left: calc(2*#{$column-width});
+    margin-right: calc(2*#{$column-width});
   }
 }
 
 @mixin DesktopIndentThreeColumns{
   @media (min-width: 768px){
-    margin-left: 25.2%;
-    margin-right: 25.2%;
+    margin-left: calc(3*#{$column-width});
+    margin-right: calc(3*#{$column-width});
   }
 }
 
 @mixin DesktopIndentTwoColumnsLeftOneColumnRight{
   @media (min-width: 768px){
-    margin-left: 16.8%;
-    margin-right: 8.4%;
+    margin-left: calc(2*#{$column-width});
+    margin-right: $column-width;
   }
 }
 
 @mixin DesktopIndentTwoColumnsLeftFourColumnsRight{
   @media (min-width: 768px){
-    margin-left: 16.8%;
-    margin-right: 33.6%;
+    margin-left: calc(2*#{$column-width});
+    margin-right: calc(4*#{$column-width});
   }
 }
 
 @mixin DesktopIndentOneColumnLeft{
   @media (min-width: 768px){
-    margin-left: 8.4%;
+    margin-left: $column-width
   }
 }
 
 @mixin DesktopIndentOneColumnRight{
   @media (min-width: 768px){
-    margin-right: 8.4%;
+    margin-right: $column-width
   }
 }
 

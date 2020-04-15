@@ -6,6 +6,7 @@ import imageUrlFor from '../lib/image-url';
 
 import Footer from '../components/footer.js';
 import NavBar from '../components/navbar.js';
+import Grid from '../components/bits/grid.js';
 import PageTitle from '../components/bits/pageTitle';
 
 const BlockContent = require('@sanity/block-content-to-react');
@@ -28,9 +29,11 @@ function About(props) {
 
   console.log(data);
   return (
-    <div className="about">
 
+    <div className="about">
+      <Grid show={true}/>
       <NavBar {...props} theme="light" />
+
       <div className="about__wrapper">
         {
           /* Suspense can't come soon enough */
