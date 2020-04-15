@@ -5,12 +5,12 @@
   color: $dark-blue;
 
   &__wrapper {
-    @include container;
+    @include outtergrid;
     position: relative;
-    @media (max-width: 768px){
-      padding-left: 35px;
-      padding-right: 35px;
-    }
+    // @media (max-width: 768px){
+    //   padding-left: 35px;
+    //   padding-right: 35px;
+    // }
   }
 
   &__main-image{
@@ -40,8 +40,10 @@
   }
 
   &__body{
-    max-width: 690px;
-    margin: auto;
+    @include DesktopIndentTwoColumnsLeftFourColumnsRight;
+
+    // max-width: 690px;
+    // margin: auto;
   }
 
   &__body-text{
@@ -97,9 +99,10 @@
     }
     &.fullWidth{
       width: 100vw;
-      position: relative;
-      left: 50%;
-      margin-left: -50vw;
+      // position: relative;
+      // left: 50%;
+      // margin-left: -50vw;
+      margin-left: -21.7vw;
       img{ width: 100%; }
     }
     span{
@@ -111,8 +114,8 @@
       }
     }
   }
-  .pageTitle{
-    padding: 0 0 30px;
-  }
+  // .pageTitle{
+  //   padding: 60px 0 30px;
+  // }
 
 }

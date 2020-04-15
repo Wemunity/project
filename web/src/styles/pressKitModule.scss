@@ -1,9 +1,12 @@
 .press-kit {
   background-color: $blue-white;
-  width: 100%;
-  padding: 0 20%;
+  // width: 100%;
+  // padding: 0 20%;
   display: flex;
   flex-flow: row wrap;
+  // @include outtergrid;
+  @include DesktopIndentTwoColumns;
+  //
 
   @media (max-width: 768px) {
     padding: 0 6%;
@@ -14,8 +17,9 @@
   }
 
   &_container {
-    width: 100%;
+    // width: 100%;
     margin-top: 10px;
+    // @include DesktopIndentTwoColumns;
   }
 
   &_image {

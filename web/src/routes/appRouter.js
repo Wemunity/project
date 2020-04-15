@@ -14,6 +14,7 @@ import Tasks from '../pages/tasks';
 import PressPage from '../pages/pressPage.js';
 import About from '../pages/about.js';
 import Story from '../pages/story.js';
+import Platform from '../pages/platform.js';
 import Grid from '../pages/grid.js';
 
 const AppRouter = () => (
@@ -34,6 +35,7 @@ const AppRouter = () => (
         <Route path="/press" component={PressPage} exact={true} />
         <Route path="/about" component={About} exact={true} />
         <Route path="/story" component={Story} exact={true} />
+        <Route path="/platform" component={Platform} exact={true} />
         <Route path="/grid" component={Grid} exact={true} />
 
       </Switch>

@@ -22,7 +22,8 @@ export default function PressPage(props) {
   const press = moduleData.length !== 0 && moduleData.pressPage[0]
   return (
     <div className="press">
-        <NavBar {...props} theme="light" />
+      <NavBar {...props} theme="light" />
+      <div className="press__wrapper">
         {press &&
           <React.Fragment>
             <PageTitle
@@ -31,11 +32,25 @@ export default function PressPage(props) {
               />
             <ArticleModule articles={press.articles} />
             <PageTitle subtitle={press.contact} />
-            <PageTitle title={press.pressKitTitle} subtitle={press.pressKitDescription} blue={true} />
-            <PressKitModule data={press} />
-            <Footer m={moduleData.footerModule} />
           </React.Fragment>
         }
+      </div>
+      <div className="press__press-kit">
+        <div className="press__wrapper">
+          {press &&
+            <React.Fragment>
+              <PageTitle title={press.pressKitTitle} subtitle={press.pressKitDescription} blue={true} />
+              <PressKitModule data={press} />
+            </React.Fragment>
+          }
+        </div>
+      </div>
+
+      {
+        press ? <React.Fragment>
+        <Footer m={moduleData.footerModule} />
+        </React.Fragment> : <div className="App">Loading</div>
+      }
     </div>
   )
 }

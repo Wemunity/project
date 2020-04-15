@@ -29,9 +29,9 @@ function About(props) {
   console.log(data);
   return (
     <div className="about">
+
       <NavBar {...props} theme="light" />
       <div className="about__wrapper">
-
         {
           /* Suspense can't come soon enough */
           data ? <Fragment>

@@ -4,7 +4,7 @@ export default function PageTitle(props) {
   return (
     <div className={`pageTitle ${props.blue ? "blue" : ""}`}>
         <h1>{props.title}</h1>
-        <h3>{props.subtitle}</h3>
+        <span>{props.subtitle}</span>
     </div>
   )
 }
