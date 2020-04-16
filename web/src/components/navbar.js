@@ -2,12 +2,16 @@ import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import wemunityLogoDark from '../assets/wemunity-icon-dark.svg'
 import wemunityLogoLight from '../assets/wemunity-icon-light.svg'
-import facebookLight from '../assets/facebook-light.svg'
+// import facebookLight from '../assets/facebook-light.svg'
 import facebookDark from '../assets/facebook-dark.svg'
-import instagramLight from '../assets/instagram-light.svg'
+// import instagramLight from '../assets/instagram-light.svg'
 import instagramDark from '../assets/instagram-dark.svg'
-import linkedinLight from '../assets/linkedin-light.svg'
+// import linkedinLight from '../assets/linkedin-light.svg'
 import linkedinDark from '../assets/linkedin-dark.svg'
+
+import facebookLight from '../assets/facebook.svg';
+import instagramLight from '../assets/instagram.svg';
+import linkedinLight from '../assets/linkedin.svg';
 
 export default function NavBar(props) {
    const [menuOpen, setMenuOpen] = useState(false)
@@ -47,6 +51,7 @@ function SideBar(props) {
    return (
       <div className={`sidebar ${props.menuOpen ? "opened" : ""} ${props.theme === "dark" ? "dark" : "light"}`}>
          <nav className="navbar__links sidebar__links">
+            <NavLink to={"/"} className={`navbar__link ${props.location.pathname === "/" ? "bold" : ""} ${props.theme}`}>Home</NavLink>
             <NavLink to={"/about"} className={`navbar__link ${props.location.pathname === "/about" ? "bold" : ""} ${props.theme}`}>About</NavLink>
             <NavLink to={"/press"} className={`navbar__link ${props.location.pathname === "/press" ? "bold" : ""} ${props.theme}`}>Press</NavLink>
             <NavLink to={"/partners"} className={`navbar__link  ${props.location.pathname === "/partners" ? "bold" : ""} ${props.theme}`}>Partners and Support</NavLink>
@@ -55,7 +60,7 @@ function SideBar(props) {
          </nav>
          <div className="sidebar__social">
             <div>
-               <a href="https://www.facebook.com/groups/wemunity">
+               <a href="https://www.facebook.com/wemunity">
                   <img src={props.theme === "dark" ? facebookLight : facebookDark} alt="facebook"/>
                </a>
                <a href="https://www.instagram.com/wemunity/">

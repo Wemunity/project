@@ -27,7 +27,6 @@ function About(props) {
     return <div className="App">We're sorry, something wrong happened. <a href="mailto:contact@wemunity.org">Let us know about it.</a></div>
   }
 
-  console.log(data);
   return (
 
     <div className="about">

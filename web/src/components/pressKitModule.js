@@ -4,7 +4,7 @@ import PressPhoto from './bits/pressPhoto'
 import Button from '../components/bits/button'
 
 export default function PressKitModule({ data }) {
-  console.log(data)
+
   return (
     <div className="press-kit">
       <a

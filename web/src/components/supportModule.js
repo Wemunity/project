@@ -8,7 +8,6 @@ import Button from './bits/button';
 const BlockContent = require('@sanity/block-content-to-react');
 
 const SupportModule = ({ m }) => {
-  console.log(m);
   return (
     <div className="module support-module">
       <div className="support-module__wrapper">

@@ -8,10 +8,6 @@ import Footer from '../components/footer.js';
 import NavBar from '../components/navbar.js';
 import Grid from '../components/bits/grid.js';
 import PageTitle from '../components/bits/pageTitle';
-import SupportModule from '../components/supportModule.js';
-
-
-const BlockContent = require('@sanity/block-content-to-react');
 
 const query = `
 {
@@ -30,7 +26,6 @@ function Partners(props) {
     return <div className="App">We're sorry, something wrong happened. <a href="mailto:contact@wemunity.org">Let us know about it.</a></div>
   }
 
-  console.log(data);
   return (
 
     <div className="partners">
@@ -46,8 +41,42 @@ function Partners(props) {
               title={data.partners.title}
               subtitle={data.partners.abstract}
               />
+              <div className="partners__buttons">
+                {
+                  data.partners.buttonLinks.map((value) => {
+                    return <>
+                      <div className="partners__button">
+                        <a className="button" href={value.url}>
+                          <div className="button__content">
+                            <span>{value.label}</span>
+                          </div>
+                        </a>
+                      </div>
+                      </>
+                  })
+                }
+              </div>
           </div>
-          <SupportModule m={data.supportModule} />
+          <div className="partners__support-module">
+            <div className="partners__support-module__wrapper">
+              <PageTitle
+                title={'Partners and support'}
+                />
+              <div className="partners__support-module__collaborators">
+                {
+                  data.supportModule.supporters.map(s => (
+                    <img
+                      key={s._key}
+                      className="feature-module__image"
+                      src={imageUrlFor(buildImageObj(s.logo))
+                        .width(170)
+                        .url()}
+                      alt={s.title}
+                    />
+                  ))}
+              </div>
+            </div>
+          </div>
           <div className="partners__donations">
             <div className="partners__wrapper">
               <div className="partners__business-donations">
