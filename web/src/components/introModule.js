@@ -1,7 +1,9 @@
 import React from 'react';
 
 import coronaPattern from '../assets/corona_pattern.svg';
-import WemunityLogoLight from '../assets/wemunity-logo-light.svg'
+import WemunityIconWhite from '../assets/wemunity-icon-white.svg'
+import WemunityLogoText from '../assets/wemunity-logo-text-light.svg'
+
 
 import Button from './bits/button';
 import Grid from './bits/grid';
@@ -14,14 +16,15 @@ const BlockContent = require('@sanity/block-content-to-react');
 const IntroModule = ({ m }) => {
   return (
     <div className="module intro-module">
+      <Grid show={false}/>
       <div className="intro-module__wrapper">
-        <Grid show={false}/>
         <div className="intro-module__image">
           <img src={coronaPattern} alt="corona pattern" />
         </div>
         <div className="intro-module__content">
           <div className="intro-module__logo">
-            <img src={WemunityLogoLight} alt="Wemunity logo"/>
+            <img src={WemunityIconWhite} alt="Wemunity logo"/>
+            <img className="intro-module__logo-text" src={WemunityLogoText} alt="Wemunity project"/>
           </div>
           {/*<span className="intro-module__logo">
             {m && m.branding && m.branding}

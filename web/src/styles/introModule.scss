@@ -55,6 +55,8 @@
   }
 
   &__logo {
+    transform: translateX(-70px);
+    display: flex;
     // font-size: 25px;
     // font-weight: 600;
     // @media (min-width: 1650px) {
@@ -63,18 +65,26 @@
     // @media (max-width: 525px) {
     //   font-size: 20px;
     // }
-    @include DesktopIndentOneColumn;
+    @include DesktopIndentTwoColumns;
 
     img{
+      margin-right: 20px;
       // transform: scale(0.8);
       // width: 35%;
-      max-width: 360px;
+      max-width: 270px;
+      max-height: 50px;
     }
     @media (max-width: 768px){
+      transform: translateX(-25px);
       img{
-        width: 100%;
-        transform: translateX(-22px);
+        max-width: 200px;
       }
+    }
+  }
+
+  &__logo-text{
+    @media (max-width: 768px){
+      // transform: scale(0.7) translateX(-70px);
     }
   }
 

@@ -65,12 +65,13 @@
 
   &__text {
     p {
-      font-size: 16px;
+      // font-size: 16px;
+      line-height: 1.5em;
       @media (min-width: 1650px) {
         font-size: 20px;
       }
       @media (max-width: 1100px) {
-        line-height: unset;
+        // line-height: unset;
         font-size: 16px;
       }
     }
