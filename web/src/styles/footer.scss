@@ -42,17 +42,17 @@
 
     h4 {
       font-weight: bold;
-      margin-bottom: 10px;
+      // margin-bottom: 10px;
       font-size: 20px;
       @media (min-width: 1650px) {
         font-size: 25px;
-        margin-bottom: 15px;
+        // margin-bottom: 15px;
       }
     }
 
     p {
       margin-top: 0;
-      line-height: 35px;
+      line-height: 25px;
       @media (min-width: 1650px) {
         font-size: 20px;
       }
@@ -63,6 +63,14 @@
       @media (max-width: 525px) {
         font-size: 18px;
       }
+    }
+  }
+
+  &__column-heading{
+    display: flex;
+    margin-bottom: 10px;
+    @media (min-width: 1650px) {
+      margin-bottom: 15px;
     }
   }
 
@@ -90,6 +98,18 @@
       top: unset;
       bottom: 185px;
     }
+  }
+  &__contact-item{
+    display: flex;
+    margin-bottom: 12px;
+    span{
+      line-height: normal;
+    }
+  }
+
+  &__icon{
+    width: 23px;
+    margin-right: 15px;
   }
 
   &__link {

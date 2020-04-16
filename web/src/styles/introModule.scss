@@ -4,6 +4,11 @@
   position: relative;
   width: 100vw;
 
+  &__wrapper{
+    @include outtergrid;
+    // position: relative;
+  }
+
   &__image {
     position: absolute;
     left: 0;
@@ -31,26 +36,55 @@
   }
 
   &__content {
-    padding: 150px 4% 50px;
-    max-width: calc(900px + 8%);
-    margin: 0 auto;
+    // padding: 150px 4% 50px;
+    padding-top: 150px;
+    padding-bottom: 50px;
+    // max-width: calc(900px + 8%);
+    // margin: 0 auto;
     @media (min-width: 1650px) {
-      padding: 175px 4% 60px;
-      max-width: 1100px;
+      // padding: 175px 4% 60px;
+      // max-width: 1100px;
+      padding-top: 175px;
+      padding-bottom: 60px;
     }
     @media (max-width: 1100px) {
-      padding: 140px 6% 60px;
+      // padding: 140px 6% 60px;
+      padding-top: 140px;
+      padding-bottom: 60px;
     }
   }
 
   &__logo {
-    font-size: 25px;
-    font-weight: 600;
-    @media (min-width: 1650px) {
-      font-size: 30px;
+    transform: translateX(-70px);
+    display: flex;
+    // font-size: 25px;
+    // font-weight: 600;
+    // @media (min-width: 1650px) {
+    //   font-size: 30px;
+    // }
+    // @media (max-width: 525px) {
+    //   font-size: 20px;
+    // }
+    @include DesktopIndentTwoColumns;
+
+    img{
+      margin-right: 20px;
+      // transform: scale(0.8);
+      // width: 35%;
+      max-width: 270px;
+      max-height: 50px;
     }
-    @media (max-width: 525px) {
-      font-size: 20px;
+    @media (max-width: 768px){
+      transform: translateX(-25px);
+      img{
+        max-width: 200px;
+      }
+    }
+  }
+
+  &__logo-text{
+    @media (max-width: 768px){
+      // transform: scale(0.7) translateX(-70px);
     }
   }
 
@@ -87,5 +121,20 @@
   }
   .button {
     width: 140px;
+  }
+
+  .pageTitle{
+    color: white;
+    h1 {
+      font-family: 'SpaceGrotesk';
+      font-weight: 400;
+    }
+    @media (max-width: 525px) {
+      h1 {
+        font-size: 32px;
+        line-height: 1.5em;
+        margin-bottom: 20px;
+      }
+    }
   }
 }

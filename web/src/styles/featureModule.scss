@@ -5,9 +5,15 @@
   min-height: 480px;
   width: 100vw;
 
+  &__wrapper{
+    @include outtergrid;
+    // position: relative;
+  }
+
   &__content {
+    @include DesktopIndentOneColumn;
     max-width: 1100px;
-    padding: 70px 4% 100px;
+    padding: 70px 0 100px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -20,9 +26,9 @@
     @media (max-width: 790px) {
       justify-content: space-around;
     }
-    @media (max-width: 525px) {
+    @media (max-width: 768px) {
       justify-content: space-between;
-      padding: 100px 6% 30px;
+      padding: 100px 0 30px;
     }
   }
 
@@ -32,10 +38,11 @@
     @media (min-width: 1650px) {
       max-width: 280px;
     }
-    @media (max-width: 525px) {
-      max-width: 88%;
+    @media (max-width: 768px) {
+      // max-width: 88%;
+      max-width: 100%;
       text-align: center;
-      margin: 0 auto 60px;
+      margin: 0 0 60px;
     }
   }
 
@@ -58,12 +65,13 @@
 
   &__text {
     p {
-      font-size: 16px;
+      // font-size: 16px;
+      line-height: 1.5em;
       @media (min-width: 1650px) {
         font-size: 20px;
       }
       @media (max-width: 1100px) {
-        line-height: unset;
+        // line-height: unset;
         font-size: 16px;
       }
     }

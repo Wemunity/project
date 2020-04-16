@@ -9,10 +9,10 @@ export default {
       type: 'string'
     },
     {
-      title: 'Text',
-      name: 'text',
-      type: 'array',
-      of: [{ type: 'block' }]
+      title: 'Abstract',
+      name: 'abstract',
+      type: 'text',
+
     },
     {
       title: 'Text for blue button',
@@ -33,6 +33,12 @@ export default {
       title: 'Url for grey button link',
       name: 'buttonGreyUrl',
       type: 'url'
+    },
+    {
+      title: 'Buttons',
+      name: 'buttons',
+      type: 'array',
+      of: [{ type: 'socialButton' }]
     }
   ]
 };
