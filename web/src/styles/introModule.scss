@@ -115,5 +115,16 @@
 
   .pageTitle{
     color: white;
+    h1 {
+      font-family: 'SpaceGrotesk';
+      font-weight: 400;
+    }
+    @media (max-width: 525px) {
+      h1 {
+        font-size: 32px;
+        line-height: 1.5em;
+        margin-bottom: 20px;
+      }
+    }
   }
 }

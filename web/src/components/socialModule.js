@@ -1,4 +1,7 @@
 import React from 'react';
+import { buildImageObj } from '../lib/helpers';
+import imageUrlFor from '../lib/image-url';
+
 import facebook from '../assets/facebook.svg';
 import github from '../assets/github.svg';
 import PageTitle from './bits/pageTitle';
@@ -6,6 +9,7 @@ import PageTitle from './bits/pageTitle';
 const BlockContent = require('@sanity/block-content-to-react');
 
 const SocialModule = ({ m }) => {
+  console.log(m);
   return (
     <div className="module social-module">
       <div className="social-module__wrapper">
@@ -23,20 +27,38 @@ const SocialModule = ({ m }) => {
           </div>
           */}
           <div className="social-module__buttons">
-            <a
-              href={m && m.buttonBlueUrl}
-              className="social-module__button social-module__button--blue"
-            >
-              <span>{m && m.buttonBlueText}</span>
-              <img src={facebook} alt="facebook" />
-            </a>
-            <a
-              href={m && m.buttonGreyUrl}
-              className="social-module__button social-module__button--grey"
-            >
-              <span>{m && m.buttonGreyText}</span>
-              <img src={github} alt="github" />
-            </a>
+            { m.buttons.map((value, key) => {
+                if (value.color === 'dark'){
+                  return <>
+                    <a
+                      key={value._key}
+                      href={value && value.url}
+                      className="social-module__button social-module__button--blue"
+                    >
+                      <span>{value && value.label}</span>
+                      <img src={imageUrlFor(buildImageObj(value && value.icon)).url()}
+                      alt="icon"
+                      />
+                    </a>
+                  </>
+                }
+                else if (value.color === 'light'){
+                  return <>
+                    <a
+
+                      href={value && value.url}
+                      className="social-module__button social-module__button--grey"
+                    >
+                      <span>{value && value.label}</span>
+                      <img src={imageUrlFor(buildImageObj(value && value.icon)).url()}
+                      alt="icon"
+                      />
+                    </a>
+                  </>
+                }
+
+              })
+            }
           </div>
         </div>
       </div>

@@ -68,10 +68,10 @@
     @include DesktopIndentTwoColumns;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    // justify-content: space-between;
     flex-wrap: wrap;
-    max-width: 470px;
-    margin-top: 70px;
+    // max-width: 470px;
+    margin-top: 30px;
     @media (min-width: 1650px) {
       max-width: 550px;
     }
@@ -83,21 +83,24 @@
 
   &__button {
     margin-bottom: 30px;
-    border: none;
-    padding: 10px 20px;
+
+    // border: none;
+    padding: 9px 20px;
     height: 40px;
     border-radius: 20px;
     cursor: pointer;
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
     text-decoration: none;
-    transition: 0.3s;
-    line-height: unset;
-    @media (min-width: 1650px) {
-      padding: 8px 20px;
+    // transition: 0.3s;
+    // line-height: unset;
+    display: flex;
+    align-items: center;
+    @media (min-width: 769px) {
+      // padding: 8px 20px;
+      margin-right: 50px;
     }
-    @media (max-width: 525px) {
+    @media (max-width: 768px) {
       width: 100%;
-      display: flex;
       justify-content: space-between;
       flex-direction: row;
       border-radius: 30px;
@@ -111,20 +114,20 @@
 
     &--blue {
       color: white;
-      background: #090039;
-      transition: 0.3s;
+      background: $dark-blue;
+      // transition: 0.3s;
     }
 
     &--grey {
-      color: #090039;
+      color: $dark-blue;
       background: #e1e1ef;
-      transition: 0.3s;
+      // transition: 0.3s;
     }
 
     span {
       font-family: 'SpaceGrotesk SemiBold';
       font-size: 14px;
-      line-height: unset;
+      // line-height: unset;
       padding-right: 15px;
       @media (min-width: 1650px) {
         font-size: 16px;
@@ -134,14 +137,27 @@
       }
     }
     img {
-      height: 18px;
-      margin-left: 8px;
-      margin-bottom: -4px;
-
+      height: 22px;
+      // margin-left: 8px;
+      // margin-bottom: -4px;
       @media (max-width: 525px) {
-        height: 30px;
-        margin-bottom: unset;
-        margin-top: -1px;
+        // height: 30px;
+        // margin-bottom: unset;
+        // margin-top: -1px;
+      }
+    }
+  }
+  .pageTitle{
+    padding-top: 0;
+    h1 {
+      font-family: 'SpaceGrotesk';
+      font-weight: 400;
+    }
+    @media (max-width: 525px) {
+      h1 {
+        font-size: 32px;
+        line-height: 1.5em;
+        margin-bottom: 20px;
       }
     }
   }
