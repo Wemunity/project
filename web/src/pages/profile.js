@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import ReactTags from 'react-tag-autocomplete';
 import ImageUploader from "react-images-upload";
@@ -6,7 +6,7 @@ import ImageUploader from "react-images-upload";
 import {
   setBasicSocialCare,
   setDailyChores,
-  setProfessionalExperience,
+  // setProfessionalExperience,
   setProfessionalExperiences,
   setHasDriversLicense,
   setDriversLicenses,
@@ -27,7 +27,6 @@ import {
 } from '../state/onboarding';
 import { experiences } from '../config/professionalExperiences';
 
-import Button from '../components/bits/button';
 import Certificate from '../components/bits/certificate';
 import FormField from '../components/bits/formfield';
 import RadioButton from '../components/bits/radiobutton';
@@ -35,8 +34,6 @@ import Checkbox from '../components/bits/checkbox';
 
 
 import WemunityIconDark from '../assets/wemunity-icon-dark.svg';
-import User from '../assets/user.jpeg';
-import CrossIconWhite from '../assets/cross-icon-white.svg';
 
 const Signup3 = props => {
   const onboardingState = useSelector(state => state.onboarding);

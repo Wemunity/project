@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useState } from 'react';
+
 // import { Redirect } from 'react-router-dom';
 import Button from '../../components/bits/button';
 import Dots from '../../components/bits/dots';
@@ -10,7 +10,7 @@ import WemunityIconDark from '../../assets/wemunity-icon-dark.svg';
 
 
 const Signup52 = props => {
-  const onBoardingState = useSelector(state => state.onboarding);
+  // const onBoardingState = useSelector(state => state.onboarding);
   // const [redirect, setRedirect] = useState(null);
   const [showExplanation, setShowExplanation] = useState(false);
 

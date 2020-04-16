@@ -8,7 +8,7 @@ export default function PressPhoto({ image }) {
       <img
         className="press-kit_image"
         src={imageUrlFor(buildImageObj(image)).url()}
-        atl={image._key}/>
+        alt={image._key}/>
       <a
         className="button press-kit_button"
         href={`${image.asset._ref}`}

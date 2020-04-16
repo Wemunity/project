@@ -44,15 +44,15 @@ function Partners(props) {
               <div className="partners__buttons">
                 {
                   data.partners.buttonLinks.map((value) => {
-                    return <>
-                      <div className="partners__button">
+                    return (
+                      <div key={value._key} className="partners__button">
                         <a className="button" href={value.url}>
                           <div className="button__content">
                             <span>{value.label}</span>
                           </div>
                         </a>
                       </div>
-                      </>
+                    )
                   })
                 }
               </div>

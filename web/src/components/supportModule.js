@@ -5,8 +5,6 @@ import imageUrlFor from '../lib/image-url';
 import PageTitle from './bits/pageTitle';
 import Button from './bits/button';
 
-const BlockContent = require('@sanity/block-content-to-react');
-
 const SupportModule = ({ m }) => {
   return (
     <div className="module support-module">

@@ -1,7 +1,5 @@
 import React from 'react';
-import PageTitle from './bits/pageTitle';
 import PressPhoto from './bits/pressPhoto'
-import Button from '../components/bits/button'
 
 export default function PressKitModule({ data }) {
 

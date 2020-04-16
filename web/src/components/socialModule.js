@@ -2,11 +2,7 @@ import React from 'react';
 import { buildImageObj } from '../lib/helpers';
 import imageUrlFor from '../lib/image-url';
 
-import facebook from '../assets/facebook.svg';
-import github from '../assets/github.svg';
 import PageTitle from './bits/pageTitle';
-
-const BlockContent = require('@sanity/block-content-to-react');
 
 const SocialModule = ({ m }) => {
   return (
@@ -28,7 +24,7 @@ const SocialModule = ({ m }) => {
           <div className="social-module__buttons">
             { m.buttons.map((value, key) => {
                 if (value.color === 'dark'){
-                  return <>
+                  return (
                     <a
                       key={value._key}
                       href={value && value.url}
@@ -39,12 +35,12 @@ const SocialModule = ({ m }) => {
                       alt="icon"
                       />
                     </a>
-                  </>
+                  )
                 }
                 else if (value.color === 'light'){
-                  return <>
+                  return (
                     <a
-
+                      key={value._key} 
                       href={value && value.url}
                       className="social-module__button social-module__button--grey"
                     >
@@ -53,7 +49,10 @@ const SocialModule = ({ m }) => {
                       alt="icon"
                       />
                     </a>
-                  </>
+                  )
+                }
+                else {
+                  return null
                 }
 
               })

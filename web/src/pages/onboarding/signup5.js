@@ -1,17 +1,16 @@
-import React, { useState } from 'react';
-import { Redirect } from 'react-router-dom';
+import React from 'react';
+// import { Redirect } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   setSymptomStartDate,
   setSymptomEndDate,
-  setAgreeTerms
 } from '../../state/onboarding';
 
 import DateField from '../../components/bits/datefield';
 import Dots from '../../components/bits/dots';
 import Button from '../../components/bits/button';
-import Checkbox from '../../components/bits/checkbox';
-import Terms from '../../components/bits/terms';
+// import Checkbox from '../../components/bits/checkbox';
+// import Terms from '../../components/bits/terms';
 
 import Smileyneutral from '../../assets/smiley_neutral.svg';
 import WemunityIconLight from '../../assets/wemunity-icon-light.svg';
