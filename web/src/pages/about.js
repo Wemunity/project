@@ -19,7 +19,7 @@ const query = `
 
 function About(props) {
 
-  const { data: data, error } = useSWR(query, query =>
+  const { data, error } = useSWR(query, query =>
     client.fetch(query)
   )
 
