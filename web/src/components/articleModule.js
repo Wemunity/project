@@ -1,6 +1,5 @@
 import React from 'react'
 import Article from '../components/bits/article'
-import PageTitle from './bits/pageTitle'
 
 export default function ArticleModule({ articles }) {
   return (

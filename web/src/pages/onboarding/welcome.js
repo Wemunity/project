@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import {
-  setSymptomStartDate,
-  setSymptomEndDate,
   setAgreeTerms
 } from '../../state/onboarding';
 

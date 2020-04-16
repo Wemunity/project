@@ -11,7 +11,7 @@ const hiddenTypes = [
   'donationModule',
   'footerModule',
   'press',
-  'support',
+  'partners',
   'about',
   'story',
   'platform',
@@ -86,12 +86,12 @@ export default () =>
                     .documentId("press")
             ),
         S.listItem()
-            .title("Partners & Support")
+            .title("Partners and Support")
             .child(
                 S.editor()
-                    .id('support')
-                    .schemaType("support")
-                    .documentId("support")
+                    .id('partners')
+                    .schemaType("partners")
+                    .documentId("partners")
             ),
         S.listItem()
             .title("About")

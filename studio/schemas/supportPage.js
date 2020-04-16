@@ -1,6 +1,6 @@
 export default {
-  name: 'support',
-  title: 'Support & Partners page',
+  name: 'partners',
+  title: 'Partners and support',
   type: 'document',
   __experimental_actions: [/*'create',*/ 'update', /*'delete',*/ 'publish'],
   fields: [
@@ -21,6 +21,18 @@ export default {
       name: 'buttonLinks',
       type: 'array',
       of: [{ type: 'buttonLink' }]
+    },
+    {
+      title: 'Business donations',
+      name: 'businessDonations',
+      type: 'array',
+      of: [{ type: 'string' }],
+    },
+    {
+      title: 'Individual donations',
+      name: 'individualDonations',
+      type: 'array',
+      of: [{ type: 'string' }]
     },
   ]
 };

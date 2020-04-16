@@ -135,7 +135,12 @@
 
    &__social {
     width: 70%;
-
+    a{
+      margin: 0 10px;
+      &:last-of-type{
+        margin-right: 0;
+      }
+    }
     div {
       display: flex;
       flex-flow: row;
@@ -143,8 +148,8 @@
       align-items: center;
     }
     img {
-      height: 3rem;
-      margin: 0 5px;
+      height: 2rem;
+
     }
     h5 {
       text-align: right;

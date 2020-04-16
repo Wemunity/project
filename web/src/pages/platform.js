@@ -18,7 +18,7 @@ const query = `
 
 function Story(props) {
 
-  const { data: data, error } = useSWR(query, query =>
+  const { data, error } = useSWR(query, query =>
     client.fetch(query)
   )
 
@@ -26,7 +26,6 @@ function Story(props) {
     return <div className="App">We're sorry, something wrong happened. <a href="mailto:contact@wemunity.org">Let us know about it.</a></div>
   }
 
-  console.log(data);
   return (
     <div className="about">
       <NavBar {...props} theme="light" />
@@ -42,25 +41,28 @@ function Story(props) {
           {/* <div className={`about__main-image ${data.about.mainImage.position}`}> */}
           <div className={`about__main-image fullWidth`}>
             <img src={imageUrlFor(buildImageObj(data.platform.mainImage.image)).url()}
-            alt="cover image"
+            alt="cover"
             />
           </div>
           <div className="about__body">
             { data.platform.body.map((value, key) => {
                 if (value._type === 'block'){
-                  return <>
-                    <div className="about__body-text">
+                  return (
+                    <div key={value._key} className="about__body-text">
                       <BlockContent blocks={value}/>
                     </div>
-                  </>
+                  )
                 }
                 else if (value._type === 'contentImage'){
-                  return <>
-                    <div className={`about__body-image ${value.position}`}>
-                      <img key={key} src={imageUrlFor(buildImageObj(value.image)).url()}/>
+                  return (
+                    <div key={value._key} className={`about__body-image ${value.position}`}>
+                      <img src={imageUrlFor(buildImageObj(value.image)).url()} alt="content"/>
                       { value.caption ? <span>{value.caption}</span> : null }
                     </div>
-                  </>
+                  )
+                }
+                else {
+                  return null
                 }
 
               })

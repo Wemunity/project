@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Redirect } from 'react-router-dom';
 
 import {
   setCanContact,
@@ -16,9 +15,8 @@ import {
   setPhoneNumber,
   setEmail
 } from '../../state/onboarding';
-import { experiences } from '../../config/professionalExperiences';
 
-import ReactTags from 'react-tag-autocomplete';
+
 import FormField from '../../components/bits/formfield';
 import Button from '../../components/bits/button';
 import Checkbox from '../../components/bits/checkbox';
@@ -30,7 +28,7 @@ import WemunityIconDark from '../../assets/wemunity-icon-dark.svg';
 //When did you start showing symptoms?
 
 const Signup4 = props => {
-  const [redirect, setRedirect] = useState(null);
+  // const [redirect, setRedirect] = useState(null);
 
 
   const onboardingState = useSelector(state => state.onboarding);

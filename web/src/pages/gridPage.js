@@ -1,13 +1,6 @@
-import React, { Fragment } from 'react';
-import useSWR from "swr";
-import client from '../lib/sanity';
-import { buildImageObj } from '../lib/helpers';
-import imageUrlFor from '../lib/image-url';
+import React from 'react';
 
-import Footer from '../components/footer.js';
 import NavBar from '../components/navbar.js';
-import PageTitle from '../components/bits/pageTitle';
-
 
 function GridPage(props) {
   // function mapGrid() {

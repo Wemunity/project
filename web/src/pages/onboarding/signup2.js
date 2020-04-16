@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import ImageUploader from "react-images-upload";
 import { Redirect } from 'react-router-dom';
@@ -13,7 +13,6 @@ import {
 import FormField from '../../components/bits/formfield';
 import Dots from '../../components/bits/dots';
 import Button from '../../components/bits/button';
-import RadioButton from '../../components/bits/radiobutton';
 
 import WemunityIconDark from '../../assets/wemunity-icon-dark.svg';
 

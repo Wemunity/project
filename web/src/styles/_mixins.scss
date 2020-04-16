@@ -72,6 +72,12 @@
   }
 }
 
+@mixin DesktopIndentTwoColumnsLeft{
+  @media (min-width: 768px){
+    margin-left: calc(2*#{$column-width});
+  }
+}
+
 @mixin DesktopIndentOneColumnRight{
   @media (min-width: 768px){
     margin-right: $column-width
