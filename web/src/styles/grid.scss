@@ -49,7 +49,7 @@
     left: 0;
     height: 100vh;
     width: 7.44%;
-    background-color: $dark-blue;
+    background-color: $blue;
     opacity: 0.2;
     margin-right: 0.8%;
   }
@@ -63,7 +63,7 @@
   &__grid-element{
     height: 100vh;
     width: 7.4vw;
-    background-color: $dark-blue;
+    background-color: $blue;
     opacity: 0.2;
     margin-right: 0.8vw;
     &:last-of-type{

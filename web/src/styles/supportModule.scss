@@ -5,17 +5,23 @@
   min-height: 500px;
   width: 100vw;
 
+  &__wrapper{
+    @include outtergrid;
+    // position: relative;
+  }
+
   &__content {
-    padding: 50px 4% 100px;
-    max-width: calc(900px + 8%);
-    margin: 0 auto;
+    @include DesktopIndentTwoColumnsLeftThreeColumnsRight;
+    padding: 50px 0 100px;
+    // max-width: calc(900px + 8%);
+    // margin: 0 auto;
     @media (min-width: 1650px) {
-      padding: 50px 4% 130px;
+      padding: 50px 0 130px;
       max-width: 1100px;
     }
     @media (max-width: 525px) {
       font-size: 18px;
-      padding: 20px 6% 100px;
+      padding: 20px 0 100px;
     }
   }
 
@@ -68,8 +74,8 @@
     }
 
     img {
-      margin-right: 50px;
-      height: 120px;
+      margin-right: 20px;
+      height: 80px;
       width: 170px;
       object-fit: contain;
 
@@ -89,6 +95,31 @@
     @media (max-width: 1100px) {
       line-height: unset;
       font-size: 16px;
+    }
+  }
+
+  &__button-wrapper{
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__button{
+    // max-width: 200px;
+  }
+
+  .pageTitle{
+    margin-left: 0;
+    margin-right: 0;
+    h1 {
+      font-family: 'SpaceGrotesk';
+      font-weight: 400;
+    }
+    @media (max-width: 525px) {
+      h1 {
+        font-size: 32px;
+        line-height: 1.5em;
+        margin-bottom: 20px;
+      }
     }
   }
 }
