@@ -15,7 +15,7 @@ const IntroModule = ({ m }) => {
   return (
     <div className="module intro-module">
       <div className="intro-module__wrapper">
-        <Grid show={true}/>
+        <Grid show={false}/>
         <div className="intro-module__image">
           <img src={coronaPattern} alt="corona pattern" />
         </div>

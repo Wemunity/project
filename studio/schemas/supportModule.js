@@ -9,10 +9,9 @@ export default {
       type: 'string'
     },
     {
-      title: 'Text',
-      name: 'text',
-      type: 'array',
-      of: [{ type: 'block' }]
+      title: 'Abstract',
+      name: 'abstract',
+      type: 'text',
     },
     {
       title: 'Supporters',

@@ -9,7 +9,6 @@ import PageTitle from './bits/pageTitle';
 const BlockContent = require('@sanity/block-content-to-react');
 
 const SocialModule = ({ m }) => {
-  console.log(m);
   return (
     <div className="module social-module">
       <div className="social-module__wrapper">
