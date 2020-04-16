@@ -36,15 +36,15 @@ const Signup52 = props => {
         <div className="signup52__content">
           <span>
             <b>
-              You are most likely immune:
+              Det kan godt hende du er immun:
               <br />
             </b>
-            We will notify you when we have verified your immunity at a hospital
+            Vi kommer til å kalle deg inn og siden sender vi deg en notifikasjon når vi har verfisert din status med helsepersonell.
           </span>
           <div className="signup52__explanation">
             <h1>!</h1>
             <span onClick={handleShowExplanation}>
-              <b>What does it mean to have verified immunity?</b>
+              <b>Hva betyr det å være immun?</b>
             </span>
           </div>
           {showExplanation ? (
@@ -52,7 +52,7 @@ const Signup52 = props => {
           ) : null}
         </div>
         <div className="signup52__bottom">
-          <Button text={'Finish'} light={false} link={'/welcome'} />
+          <Button text={'Ferdig'} light={false} link={'/welcome'} />
           <div className="signup52__dots">
             <Dots active="4" />
           </div>

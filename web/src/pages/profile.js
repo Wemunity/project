@@ -129,7 +129,7 @@ const Signup3 = props => {
             <div className="profile__user-head">
               <span>Farao Frisk</span>
               <div className="profile__access-data">
-                <span onClick={handleViewDataAccess}>Who can see my data?</span>
+                <span onClick={handleViewDataAccess}>Hvem kan se min data?</span>
               </div>
             </div>
           </div>
@@ -141,9 +141,10 @@ const Signup3 = props => {
                 <div id={"viewData"} className="profile__view-data-wrapper">
                   <div className="profile__view-data-close" onClick={handleViewDataAccess}/>
                   <div className="profile__view-data-text">
-                    <span>These are the organisations that have access to your data and can contact you. </span>
+                    <span> Dette er en oversikt over alle bedrifter og organisasjoner som kan kontakte deg og se din data
+                    </span>
                   </div>
-                  <span style={{fontSize: "16px"}}><b>Health</b></span>
+                  <span style={{fontSize: "16px"}}><b>Helse</b></span>
                   <Checkbox
                     text="Aker sykehus"
                     caption=""
@@ -162,7 +163,7 @@ const Signup3 = props => {
                     // value={}
                     // onChange={val => dispatch(setBasicSocialCare(val))}
                   />
-                  <span style={{fontSize: "16px"}}><b>Services</b></span>
+                  <span style={{fontSize: "16px"}}><b>Serviceområder</b></span>
                   <Checkbox
                     text="McDonalds"
                     caption=""
@@ -190,16 +191,16 @@ const Signup3 = props => {
           <div className="profile__settings">
             <div className="profile__setting">
               <div className="profile__setting-headline">
-                <span>What do you want to help with?</span>
+                <span>Hvordan vil du hjelpe til?</span>
               </div>
               <Checkbox
-                text="Basic social care"
+                text="Omsorg"
                 caption=""
                 value={onboardingState.socialCare}
                 onChange={val => dispatch(setBasicSocialCare(val))}
               />
               <Checkbox
-                text="Daily chores"
+                text="Daglige ærend"
                 caption=""
                 value={onboardingState.dailyChores}
                 onChange={val => dispatch(setDailyChores(val))}
@@ -207,7 +208,7 @@ const Signup3 = props => {
             </div>
             <div className="profile__setting">
               <div className="profile__setting-headline">
-                <span>What do you have professional experience with?</span>
+                <span>Hva slags arbeidserfaring har du?</span>
               </div>
               {/*
               <div className="react-tags__selected">
@@ -226,7 +227,7 @@ const Signup3 = props => {
               { <ReactTags
                   tags={onboardingState.professionalExperiences}
                   suggestions={suggestions}
-                  placeholder={'Add another...'}
+                  placeholder={'Annen erfaring..'}
                   handleDelete={handleDelete.bind(this)}
                   handleAddition={handleAddition.bind(this)}
                 />
@@ -234,7 +235,7 @@ const Signup3 = props => {
             </div>
             <div className="profile__setting">
               <div className="profile__setting-headline">
-                <span>Do you have a drivers license?</span>
+                <span>Har du lappen?</span>
               </div>
               <RadioButton
                 value={onboardingState.hasDriversLicense}
@@ -247,28 +248,28 @@ const Signup3 = props => {
               />
               { onboardingState.hasDriversLicense ? <>
                 <div className="profile__setting-headline">
-                  <span>Which one(s)?</span>
+                  <span>Hvilke(n) klasse?</span>
                 </div>
                 <Checkbox
-                  text="Car"
+                  text="Personbil (B)"
                   caption=""
                   value={onboardingState.driversLicenses.car}
                   onChange={val => updateLicenses("car", val)}
                 />
                 <Checkbox
-                  text="Bus"
+                  text="Buss (D, DE)"
                   caption=""
                   value={onboardingState.driversLicenses.bus}
                   onChange={val => updateLicenses("bus", val)}
                 />
                 <Checkbox
-                  text="Truck"
+                  text="Lastebil (C, CE)"
                   caption=""
                   value={onboardingState.driversLicenses.truck}
                   onChange={val => updateLicenses("truck", val)}
                 />
                 <Checkbox
-                  text="Minibus"
+                  text="Traktor (T)"
                   caption=""
                   value={onboardingState.driversLicenses.minibus}
                   onChange={val => updateLicenses("minibus", val)}
@@ -278,7 +279,7 @@ const Signup3 = props => {
             </div>
             <div className="profile__setting">
               <div className="profile__setting-headline">
-                <span>Can authorities or organisations in your area contact you for help?</span>
+                <span>Kan Kommunen kontakte deg for hjelp?</span>
               </div>
               <RadioButton
                 value={onboardingState.canContact}
@@ -299,16 +300,16 @@ const Signup3 = props => {
             { onboardingState.canContact ? <>
               <div className="profile__setting">
                 <div className="profile__setting-headline">
-                  <span>When is a good time for you?</span>
+                  <span>Når på døgnet vil du bli kontaktet?</span>
                 </div>
                 <Checkbox
-                  text="Daytime"
+                  text="Dagtid"
                   caption=""
                   value={onboardingState.contactDaytime}
                   onChange={val => dispatch(setContactDaytime(val))}
                 />
                 <Checkbox
-                  text="Nighttime"
+                  text="Kveldstid"
                   caption=""
                   value={onboardingState.contactNighttime}
                   onChange={val => dispatch(setContactNighttime(val))}
@@ -316,22 +317,22 @@ const Signup3 = props => {
               </div>
               <div className="profile__setting">
                 <div className="profile__setting-headline">
-                  <span>How much can you help?</span>
+                  <span>Hvor mye har du tid til å hjelpe?</span>
                 </div>
                 <Checkbox
-                  text="Fulltime"
+                  text="Fulltid"
                   caption=""
                   value={onboardingState.helpFulltime}
                   onChange={val => dispatch(setHelpFulltime(val))}
                 />
                 <Checkbox
-                  text="Sometimes"
+                  text="Innimellom"
                   caption=""
                   value={onboardingState.helpSometimes}
                   onChange={val => dispatch(setHelpSometimes(val))}
                 />
                 <Checkbox
-                  text="Not very much"
+                  text="Ikke så mye"
                   caption=""
                   value={onboardingState.helpNotmuch}
                   onChange={val => dispatch(setHelpNotmuch(val))}
@@ -339,7 +340,7 @@ const Signup3 = props => {
               </div>
               <div className="profile__setting">
                 <div className="profile__setting-headline">
-                  <span>How do you want to be contacted?</span>
+                  <span>Hvordan vil du bli kontaktet?</span>
                 </div>
                 <Checkbox
                   text="SMS"
@@ -356,7 +357,7 @@ const Signup3 = props => {
                   onChange={val => dispatch(setContactEmail(val))}
                 />
                 <Checkbox
-                  text="Call me"
+                  text="Ring meg"
                   caption=""
                   value={onboardingState.contactCall}
                   // onChange={val => handleContactTime(val)}
@@ -368,7 +369,7 @@ const Signup3 = props => {
             { onboardingState.contactSMS || onboardingState.contactCall ?
               <div className="profile__setting">
                 <div className="profile__setting-headline">
-                  <span>Your phone number</span>
+                  <span>Ditt telefonnummer</span>
                 </div>
                 <FormField
                   value={onboardingState.phoneNumber}
@@ -381,7 +382,7 @@ const Signup3 = props => {
             { onboardingState.contactEmail ?
               <div className="profile__setting">
                 <div className="profile__setting-headline">
-                  <span>Your email</span>
+                  <span>Din email</span>
                 </div>
                 <FormField
                   value={onboardingState.email}
@@ -393,7 +394,7 @@ const Signup3 = props => {
              }
             <div className="profile__setting">
               <div className="profile__setting-headline">
-                <span>Where do you live?</span>
+                <span>Hvor bor du?</span>
               </div>
               <FormField
                 value={onboardingState.location}
@@ -402,7 +403,7 @@ const Signup3 = props => {
               />
             </div>
             <div className="profile__delete-data">
-              <span>Delete my data</span>
+              <span>Slett min data</span>
             </div>
           </div>
 

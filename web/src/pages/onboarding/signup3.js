@@ -67,26 +67,26 @@ const Signup3 = props => {
       <img className="wemunity-icon" src={WemunityIconDark} alt="Ø" />
       <div className="signup3__wrapper">
         <div className="signup3__top">
-          <span>There are many ways we all can contribute, so we need to know a bit about your experience</span>
+          <span> Det er mange måter å hjelpe til på. Fortell oss litt om hva du kan og har erfaring med.</span>
         </div>
         <div className="signup3__content">
           <div className="signup3__field">
             <div className="signup3__field-headline">
-              How do you want to help?
+              Hvordan vil du hjelpe til?
             </div>
             <div className="signup3__help">
               <div className="signup3__checkboxfield">
                 <Checkbox
-                  text="Basic social care"
-                  caption="Like visiting, calling someone, taking a walk"
+                  text="Omsorg"
+                  caption="F.eks gå en tur eller ta en prat"
                   value={onboardingState.socialCare}
                   onChange={val => dispatch(setBasicSocialCare(val))}
                 />
               </div>
               <div className="signup3__checkboxfield">
                 <Checkbox
-                  text="Daily chores"
-                  caption="like grocery shopping, medicines, delivery etc"
+                  text="Daglige ærend"
+                  caption="F.eks handle og levere mat og medisiner"
                   value={onboardingState.dailyChores}
                   onChange={val => dispatch(setDailyChores(val))}
                 />
@@ -95,7 +95,7 @@ const Signup3 = props => {
           </div>
           <div className="signup3__field">
             <div className="signup3__field-headline">
-              Do you have a drivers license?
+              Har du lappen?
             </div>
             <div className="signup3__radiofield">
               <RadioButton
@@ -111,13 +111,13 @@ const Signup3 = props => {
             </div>
             { onboardingState.hasDriversLicense ? <>
               <div className="signup3__field-headline">
-                Which one(s)?
+                Hvilke(n) klasse?
               </div>
               <div className="signup3__licenses">
                 <div className="signup4__checkboxes">
                   <div className="signup3__checkboxfield">
                     <Checkbox
-                      text="Car"
+                      text="Personbil (B)"
                       caption=""
                       value={onboardingState.driversLicenses.car}
                       onChange={val => updateLicenses("car", val)}
@@ -125,7 +125,7 @@ const Signup3 = props => {
                   </div>
                   <div className="signup3__checkboxfield">
                     <Checkbox
-                      text="Bus"
+                      text="Buss (D, DE)"
                       caption=""
                       value={onboardingState.driversLicenses.bus}
                       onChange={val => updateLicenses("bus", val)}
@@ -133,7 +133,7 @@ const Signup3 = props => {
                   </div>
                   <div className="signup3__checkboxfield">
                     <Checkbox
-                      text="Truck"
+                      text="Lastebil (C, CE)"
                       caption=""
                       value={onboardingState.driversLicenses.truck}
                       onChange={val => updateLicenses("truck", val)}
@@ -141,7 +141,7 @@ const Signup3 = props => {
                   </div>
                   <div className="signup3__checkboxfield">
                     <Checkbox
-                      text="Minibus"
+                      text="Traktor (T)"
                       caption=""
                       value={onboardingState.driversLicenses.minibus}
                       onChange={val => updateLicenses("minibus", val)}
@@ -155,7 +155,7 @@ const Signup3 = props => {
           </div>
           <div className="signup3__field">
             <div className="signup3__field-headline">
-              Do you have professional experience?
+              Har du arbeidserfaring?
             </div>
             <div className="signup3__radiofield">
               <RadioButton
@@ -166,13 +166,13 @@ const Signup3 = props => {
             </div>
             {hasExperience ? <>
               <div className="signup3__field-headline">
-                What is your experience?
+                Hva har du erfaring med?
               </div>
               <div className="signup3__default-professions">
                 <div className="signup4__checkboxes">
                   <div className="signup3__checkboxfield">
                     <Checkbox
-                      text="Nurse"
+                      text="Sykepleier"
                       caption=""
                       // value={onboardingState.driversLicenses.minibus}
                       // onChange={val => {
@@ -186,7 +186,7 @@ const Signup3 = props => {
                   </div>
                   <div className="signup3__checkboxfield">
                     <Checkbox
-                      text="Doctor"
+                      text="Lege"
                       caption=""
                       // value={onboardingState.driversLicenses.minibus}
                       // onChange={val => updateLicenses("minibus", val)}
@@ -194,7 +194,7 @@ const Signup3 = props => {
                   </div>
                   <div className="signup3__checkboxfield">
                     <Checkbox
-                      text="Janitor"
+                      text="Vaktmester"
                       caption=""
                       // value={onboardingState.driversLicenses.minibus}
                       // onChange={val => updateLicenses("minibus", val)}
@@ -205,7 +205,7 @@ const Signup3 = props => {
               <ReactTags
                 tags={onboardingState.professionalExperiences}
                 suggestions={suggestions}
-                placeholder={'Engineer, carpenter, other...'}
+                placeholder={'annen arbeidserfaring...'}
                 handleDelete={handleDelete.bind(this)}
                 handleAddition={handleAddition.bind(this)}
               />
@@ -216,7 +216,7 @@ const Signup3 = props => {
 
         </div>
         <div className="signup3__bottom">
-          <Button text={'Next'} light={false} link={'/signup/4'} />
+          <Button text={'Neste'} light={false} link={'/signup/4'} />
           <div className="signup3__dots">
             <Dots active="2" />
           </div>

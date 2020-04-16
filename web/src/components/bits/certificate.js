@@ -20,18 +20,18 @@ const Certificate = props => {
 
   const determineCertificateText = (val) => {
     if (val === 1) {
-      let certificateText1 = 'You have tested positive for antibodies by ';
+      let certificateText1 = 'Du har testet positiv med antistoffer av ';
       let hospital = 'vestre sykehus at 06.04.2020'
-      let certificateText2 = '. This will most likely give immunity.';
-      let certificateText3 = 'Immunity is issued on the background of completed blood samples and adequate time in quarantine. ';
-      let certificateText4 = 'Get more info.'
+      let certificateText2 = '. Dette betyr at du mest sannsynlig er immun.';
+      let certificateText3 = 'Immunitet er diagnosert på bakgrunn av blodprøver og tilstrekkelig karantenetid. ';
+      let certificateText4 = 'Mer informasjon'
       return <span>{certificateText1}<a href={'http://google.com/search?q='+hospital}>{hospital}</a>{certificateText2}<br/><br/>{certificateText3}<a href={'http://google.com/search?q='+certificateText4}>{certificateText4}</a></span>
     }
     else if (val === 0) {
-      let certificateText1 = 'You are pending immunity by ';
+      let certificateText1 = 'Du har avventet immunitet av ';
       let hospital = 'vestre sykehus'
-      let certificateText2 = 'Immunity is issued on the background of completed blood samples and adequate time in quarantine. ';
-      let certificateText3 = 'Get more info.'
+      let certificateText2 = 'Immunitet er diagnosert på bakgrunn av blodprøver og tilstrekkelig karantenetid. ';
+      let certificateText3 = 'Mer informasjon'
       return <span>{certificateText1}<a href={'http://google.com/search?q='+hospital}>{hospital}</a><br/><br/>{certificateText2}<a href={'http://google.com/search?q='+certificateText3}>{certificateText3}</a></span>
 
     }
@@ -70,7 +70,7 @@ const Certificate = props => {
         <div className="certificate__top">
           { determineImmunityStatus(props.immunityStatus) }
           <div className="certificate__text">
-            <div className="certificate__text-title">Certificate of immunity</div>
+            <div className="certificate__text-title">Immun</div>
             <div className="certificate__text-name">Farao Frisk</div>
 
           </div>

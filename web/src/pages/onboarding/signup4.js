@@ -43,7 +43,7 @@ const Signup4 = props => {
       <img className="wemunity-icon" src={WemunityIconDark} alt="Ø" />
       <div className="signup4__wrapper">
         <div className="signup4__top">
-          <span>Can the authorities or organisations contact you for help?</span>
+          <span>Kan Kommunen kontakte deg for hjelp?</span>
         </div>
         <div className="signup4__content">
           <div className="signup4__field">
@@ -66,17 +66,17 @@ const Signup4 = props => {
           { onboardingState.canContact ? <>
             <div className="signup4__field">
               <div className="signup4__field-headline">
-                When is a good time for you?
+                Når på døgnet vil du bli kontaktet?
               </div>
               <div className="signup4__checkboxes">
                 <Checkbox
-                  text="Daytime"
+                  text="Dagtid"
                   caption=""
                   value={onboardingState.contactDaytime}
                   onChange={val => dispatch(setContactDaytime(val))}
                 />
                 <Checkbox
-                  text="Nighttime"
+                  text="Kveldstid"
                   caption=""
                   value={onboardingState.contactNighttime}
                   onChange={val => dispatch(setContactNighttime(val))}
@@ -85,23 +85,23 @@ const Signup4 = props => {
             </div>
             <div className="signup4__field">
               <div className="signup4__field-headline">
-                How much can you help?
+                Hvor mye har du tid til å hjelpe?
               </div>
               <div className="signup4__checkboxes">
                 <Checkbox
-                  text="Fulltime"
+                  text="Fulltid"
                   caption=""
                   value={onboardingState.helpFulltime}
                   onChange={val => dispatch(setHelpFulltime(val))}
                 />
                 <Checkbox
-                  text="Sometimes"
+                  text="Innimellom"
                   caption=""
                   value={onboardingState.helpSometimes}
                   onChange={val => dispatch(setHelpSometimes(val))}
                 />
                 <Checkbox
-                  text="Not very much"
+                  text="Ikke så mye"
                   caption=""
                   value={onboardingState.helpNotmuch}
                   onChange={val => dispatch(setHelpNotmuch(val))}
@@ -110,7 +110,7 @@ const Signup4 = props => {
             </div>
             <div className="signup4__field">
               <div className="signup4__field-headline">
-                How do you want to be contacted?
+                Hvordan vil du bli kontaktet?
               </div>
               <div className="signup4__checkboxes">
                 <Checkbox
@@ -128,7 +128,7 @@ const Signup4 = props => {
                   onChange={val => dispatch(setContactEmail(val))}
                 />
                 <Checkbox
-                  text="Call me"
+                  text="Ring meg"
                   caption=""
                   value={onboardingState.contactCall}
                   // onChange={val => handleContactTime(val)}
@@ -138,11 +138,11 @@ const Signup4 = props => {
               { onboardingState.contactSMS || onboardingState.contactCall ?
                 <div className="signup4__field">
                   <div className="signup4__field-headline">
-                    Your phone number
+                    Ditt telefonnummer
                   </div>
                   <FormField
                     value={onboardingState.phoneNumber}
-                    placeholderText={'(+47) 815 493 00'}
+                    placeholderText={'(+47) xx xx xx xx'}
                     onChange={e => dispatch(setPhoneNumber(e.target.value))}
                   />
                 </div>
@@ -151,7 +151,7 @@ const Signup4 = props => {
                { onboardingState.contactEmail ?
                  <div className="signup4__field">
                    <div className="signup4__field-headline">
-                     Your email
+                     Din emailadresse
                    </div>
                    <FormField
                      value={onboardingState.email}
@@ -166,7 +166,7 @@ const Signup4 = props => {
           }
         </div>
         <div className="signup4__bottom">
-          <Button text={'Next'} light={false} link={'/signup/5'} />
+          <Button text={'Neste'} light={false} link={'/signup/5'} />
           <div className="signup4__dots">
             <Dots active="3" />
           </div>

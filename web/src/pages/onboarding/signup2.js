@@ -42,13 +42,13 @@ const Signup2 = props => {
   const handleValidation = () => {
     let errors = {};
     if (onBoardingState.name.trim() === '') {
-      errors = { ...errors, name: 'This field cant be empty' };
+      errors = { ...errors, name: 'Du må fylle ut dette feltet' };
     }
     if (onBoardingState.location.trim() === '') {
-      errors = { ...errors, location: 'This field cant be empty' };
+      errors = { ...errors, location: 'Du må fylle ut dette feltet' };
     }
     if (onBoardingState.age.trim() === '') {
-      errors = { ...errors, age: 'This field cant be empty' };
+      errors = { ...errors, age: 'Du må fylle ut dette feltet' };
     }
 
     const errorCheck = Object.keys(errors);
@@ -85,7 +85,7 @@ const Signup2 = props => {
             />
           </div>
           <div className="signup2__image-text">
-            <span>Upload profile picture</span>
+            <span>Last opp et profil bilde</span>
           </div>
         </div>
         <div className="signup2__content">
@@ -99,7 +99,7 @@ const Signup2 = props => {
               )}
               <FormField
                 value={onBoardingState.name}
-                topText={'My name'}
+                topText={'Hva heter du?'}
                 placeholderText={'Jon Doe'}
                 onChange={e => dispatch(setName(e.target.value))}
               />
@@ -113,7 +113,7 @@ const Signup2 = props => {
               )}
               <FormField
                 value={onBoardingState.location}
-                topText={'Where do you live?'}
+                topText={'Hvor bor du?'}
                 placeholderText={'Tøyen'}
                 onChange={e => dispatch(setLocation(e.target.value))}
               />
@@ -127,7 +127,7 @@ const Signup2 = props => {
               )}
               <FormField
                 value={onBoardingState.age}
-                topText={'How old are you?'}
+                topText={'Hvor gammel er du?'}
                 placeholderText={'30'}
                 onChange={e => dispatch(setAge(e.target.value))}
               />
@@ -138,7 +138,7 @@ const Signup2 = props => {
         <div className="signup2__bottom">
           <Button
             handleValidation={handleValidation}
-            text={'Next'}
+            text={'Neste'}
             light={false}
             link={'/signup/3'}
           />

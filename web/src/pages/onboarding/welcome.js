@@ -36,7 +36,7 @@ const Welcome = props => {
     } else {
       setErrors({
         ...errors,
-        terms: 'You must accept the terms and conditions before continuing'
+        terms: 'Du må lese og si deg enig i terms and conditions'
       });
     }
   };
@@ -53,9 +53,9 @@ const Welcome = props => {
       <img className="wemunity-icon" src={WemunityIconDark} alt="Ø"/>
       <div className="welcome__wrapper">
         <div className="welcome__top">
-          <h4>Welcome, {onBoardingState.name}</h4>
-          <span>You are number <b>XXXX</b> to sign up globally</span><br/>
-          <span>& you are number <b>XXXX</b> to sign up in Norway</span>
+          <h4>Velkommen, {onBoardingState.name}</h4>
+          <span>Du er nummer <b>XXXX</b> som har laget en wemunity profil globalt</span><br/>
+          <span>& du er nummer <b>XXXX</b> som har laget en wemunity profil i Norge</span>
         </div>
         <div className="welcome__content"></div>
         <div className="welcome__bottom">
@@ -70,7 +70,7 @@ const Welcome = props => {
               <Checkbox
                 value={onBoardingState.agreeTerms}
                 onChange={val => dispatch(setAgreeTerms(val))}
-                text={'I agree to the'}
+                text={'Jeg er enig i '}
                 caption=" "
               />
             </div>
@@ -82,9 +82,9 @@ const Welcome = props => {
             <span className="welcome__error">{errors.terms}</span>
           )}
 
-          <div className="welcome__caption"><span><b>Together we will beat this!</b></span></div>
+          <div className="welcome__caption"><span><b>Vi står sammen!</b></span></div>
           <Button
-            text={'Explore tasks'}
+            text={'Se min profil'}
             light={false}
             link={'/'}
             arrow={true}

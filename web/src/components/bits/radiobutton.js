@@ -16,11 +16,11 @@ const RadioButton = props => {
       </div>
       <form>
         <div className="radiofield__wrapper">
-          <label className="radiofield__container"><span>Yes</span>
+          <label className="radiofield__container"><span>Ja</span>
             <input onChange={onRadioChange} name="radio-button" type="radio" checked={props.value} value="true"/>
             <span className="radiofield__checkmark"></span>
           </label>
-          <label className="radiofield__container"><span>No</span>
+          <label className="radiofield__container"><span>Nei</span>
             <input onChange={onRadioChange} name="radio-button" type="radio" checked={!props.value} value="false"/>
             <span className="radiofield__checkmark"></span>
           </label>

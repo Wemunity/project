@@ -35,7 +35,7 @@ const Signup5 = props => {
                 value={onBoardingState.symptomStartDate}
                 onChange={e => dispatch(setSymptomStartDate(e))}
                 lightText={true}
-                topText={'When did you start showing symptoms?'}
+                topText={'Når begynte du å vise symptomer?'}
                 arrow={true}
                 date={true}
               />
@@ -45,7 +45,7 @@ const Signup5 = props => {
                 value={onBoardingState.symptomEndDate}
                 onChange={e => {dispatch(setSymptomEndDate(e))}}
                 lightText={true}
-                topText={'When did you last show symptoms?'}
+                topText={'Når hadde du sist symptomer?'}
                 arrow={true}
                 date={true}
               />
@@ -54,7 +54,7 @@ const Signup5 = props => {
         </div>
         <div className="signup5__bottom">
           <Button
-            text={'Next'}
+            text={'Neste'}
             light={false}
             link={'/signup/52'}
           />

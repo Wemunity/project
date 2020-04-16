@@ -15,10 +15,10 @@ const Signup1 = props => {
           <img className="bankid" src={Bankid} alt="BankID"/>
           <div className="signup1__buttons">
             <div className="signup1__button">
-              <Button text={'Sign up'} light={false} link={'/signup/2'} arrow={true}/>
+              <Button text={'Ny bruker'} light={false} link={'/signup/2'} arrow={true}/>
             </div>
             <div className="signup1__button">
-              <Button text={'Sign in'} light={true} link={''} arrow={true}/>
+              <Button text={'Logg inn'} light={true} link={''} arrow={true}/>
             </div>
           </div>
         </div>
