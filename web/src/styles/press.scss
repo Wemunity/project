@@ -13,6 +13,17 @@
     // }
   }
 
+
+&__link {
+  @include DesktopIndentTwoColumns;
+  color: $dark-blue;
+  font-weight: bold;
+
+  &:visited {
+      color: $dark-blue;
+    }
+}
+
   &__press-kit{
     background-color: $blue-white;
     // @include DesktopIndentTwoColumns;

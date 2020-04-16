@@ -32,6 +32,7 @@
     img {
       height: 50%;
       object-fit: cover;
+      margin-bottom: 15px;
     }
 
     h4 {
@@ -53,7 +54,10 @@
 
     @media (max-width: 411px) {
       img {
-        width: 100%;
+        position: relative;
+        left: 50%;
+        margin-left: -50vw;
+        width: 100vw;
         height: 60%;
       }
 
