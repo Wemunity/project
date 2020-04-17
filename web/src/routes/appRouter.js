@@ -23,6 +23,7 @@ const AppRouter = () => (
     <div>
       <Switch>
         <Route path="/" component={LandingPage} exact={true} />
+        {/*
         <Route path="/signup" component={Signup} exact={true} />
         <Route path="/signup/1" component={Signup1} exact={true} />
         <Route path="/signup/2" component={Signup2} exact={true} />
@@ -33,12 +34,13 @@ const AppRouter = () => (
         <Route path="/welcome" component={Welcome} exact={true} />
         <Route path="/tasks" component={Tasks} exact={true} />
         <Route path="/profile" component={Profile} exact={true} />
+        */}
         <Route path="/press" component={PressPage} exact={true} />
         <Route path="/about" component={About} exact={true} />
         <Route path="/story" component={Story} exact={true} />
         <Route path="/platform" component={Platform} exact={true} />
         <Route path="/partners" component={Partners} exact={true} />
-        <Route path="/grid" component={GridPage} exact={true} />
+        {/* <Route path="/grid" component={GridPage} exact={true} /> */}
 
       </Switch>
     </div>
