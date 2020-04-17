@@ -17,11 +17,11 @@ const IntroModule = ({ m }) => {
           <img src={coronaPattern} alt="corona pattern" />
         </div>
         <div className="intro-module__content">
-          <div className="intro-module__logo">
+          {/* <div className="intro-module__logo">
             <img src={WemunityIconWhite} alt="Wemunity logo"/>
             <img className="intro-module__logo-text" src={WemunityLogoText} alt="Wemunity project"/>
           </div>
-          {/*<span className="intro-module__logo">
+          <span className="intro-module__logo">
             {m && m.branding && m.branding}
           </span>
           */}
