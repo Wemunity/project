@@ -51,7 +51,6 @@ function SideBar(props) {
    return (
       <div className={`sidebar ${props.menuOpen ? "opened" : ""} ${props.theme === "dark" ? "dark" : "light"}`}>
          <nav className="navbar__links sidebar__links">
-            <NavLink to={"/"} className={`navbar__link ${props.location.pathname === "/" ? "bold" : ""} ${props.theme}`}>Home</NavLink>
             <NavLink to={"/about"} className={`navbar__link ${props.location.pathname === "/about" ? "bold" : ""} ${props.theme}`}>About</NavLink>
             <NavLink to={"/press"} className={`navbar__link ${props.location.pathname === "/press" ? "bold" : ""} ${props.theme}`}>Press</NavLink>
             <NavLink to={"/partners"} className={`navbar__link  ${props.location.pathname === "/partners" ? "bold" : ""} ${props.theme}`}>Partners and Support</NavLink>
