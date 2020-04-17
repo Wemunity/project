@@ -41,10 +41,15 @@ export default {
       of: [{ type: 'image' }]
     },
     {
-      title: 'Press files (logo and such)',
-      name: 'pressKitFiles',
+      title: 'Logo images',
+      name: 'logoImages',
       type: 'array',
-      of: [{ type: 'file' }]
-    }
+      of: [{ type: 'image' }]
+    },
+    {
+      title: 'Full press kit (.zip)',
+      name: 'fullPressKit',
+      type: 'file',
+    },
   ]
 };

@@ -31,7 +31,9 @@ export default function PressPage(props) {
               title={press._id.charAt(0).toUpperCase() + press._id.slice(1)}
               subtitle={press.abstract}
               />
-            <a href='#press-kit' className="press__link">Take me to the press kit</a>
+            <div className="press__link">
+              <a href='#press-kit'>Take me to the press kit</a>
+            </div>
             <ArticleModule articles={press.articles} />
           </React.Fragment>
         }

@@ -16,12 +16,16 @@
 
 &__link {
   @include DesktopIndentTwoColumns;
-  color: $dark-blue;
-  font-weight: bold;
+  margin-bottom: 30px;
+  a{
+    color: $dark-blue;
+    font-weight: bold;
+    &:visited {
+        color: $dark-blue;
+      }
+  }
 
-  &:visited {
-      color: $dark-blue;
-    }
+
 }
 
   &__press-kit{
