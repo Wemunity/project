@@ -11,7 +11,7 @@ export default function PressPhoto({ image, index }) {
         className={`press-kit__image`}
         src={imageURL}
         alt={image._key}/>
-      <a
+      {/*<a
         className="button press-kit__button"
         href={`${imageURL}?dl=`}
         download
@@ -19,7 +19,7 @@ export default function PressPhoto({ image, index }) {
         <div className="button_content">
           <span>Download</span>
         </div>
-      </a>
+      </a>*/}
     </div>
   )
 }

@@ -1,8 +1,8 @@
 import React from 'react';
 
 import coronaPattern from '../assets/corona_pattern.svg';
-import WemunityIconWhite from '../assets/wemunity-icon-white.svg'
-import WemunityLogoText from '../assets/wemunity-logo-text-light.svg'
+// import WemunityIconWhite from '../assets/wemunity-icon-white.svg'
+// import WemunityLogoText from '../assets/wemunity-logo-text-light.svg'
 
 import Grid from './bits/grid';
 import PageTitle from './bits/pageTitle';

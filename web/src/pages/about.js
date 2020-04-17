@@ -40,8 +40,7 @@ function About(props) {
             title={data.about.title}
             subtitle={data.about.abstract}
             />
-          {/* <div className={`about__main-image ${data.about.mainImage.position}`}> */}
-          <div className={`about__main-image fullWidth`}>
+          <div className={`about__main-image ${data.about.mainImage.position}`}>
             <img src={imageUrlFor(buildImageObj(data.about.mainImage.image)).url()}
             alt="cover"
             />
@@ -58,8 +57,10 @@ function About(props) {
                 else if (value._type === 'contentImage'){
                   return (
                     <div key={value._key} className={`about__body-image ${value.position}`}>
-                      <img src={imageUrlFor(buildImageObj(value.image)).url()} alt="content"/>
-                      { value.caption ? <span>{value.caption}</span> : null }
+                      <div className="about__body-image-wrapper">
+                        <img src={imageUrlFor(buildImageObj(value.image)).url()} alt="content"/>
+                        { value.caption ? <span>{value.caption}</span> : null }
+                      </div>
                     </div>
                   )
                 }

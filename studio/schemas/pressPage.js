@@ -35,21 +35,31 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      title: 'Press images (.zip)',
+      name: 'pressImagesFile',
+      type: 'file',
+      description: 'This is the downloadable .zip file'
+    },
+    {
       title: 'Press images',
-      name: 'pressKitImages',
+      name: 'pressImages',
       type: 'array',
-      of: [{ type: 'image' }]
+      of: [{ type: 'image' }],
+      description: 'These are only used for preview on the page'
+    },
+    {
+      title: 'Logo pack (.zip)',
+      name: 'logoPack',
+      type: 'file',
+      description: 'This is the downloadable .zip file'
     },
     {
       title: 'Logo images',
-      name: 'logoImages',
+      name: 'logos',
       type: 'array',
-      of: [{ type: 'image' }]
+      of: [{ type: 'image' }],
+      description: 'These are only used for preview on the page'
     },
-    {
-      title: 'Full press kit (.zip)',
-      name: 'fullPressKit',
-      type: 'file',
-    },
+
   ]
 };

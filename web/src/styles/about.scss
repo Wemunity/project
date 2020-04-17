@@ -27,6 +27,7 @@
       }
     }
     &.normal{
+      @include DesktopIndentTwoColumns;
       @media (max-width: 768px){
         width: 100vw;
         position: relative;
@@ -54,8 +55,23 @@
 
   &__body-image{
     padding: 50px 0;
-    width: 100%;
+    width: auto;
     position: relative;
+    display: flex;
+    justify-content: center;
+    &-wrapper{
+      // display: flex;
+      // flex-direction: column;
+      // justify-content: flex-end;
+      width: auto;
+    }
+    img{
+      // object-fit: contain;
+      max-width: 120%;
+      max-height: 400px;
+      // @media (min-width: 769px){ width: 80% }
+      // @media (max-width: 768px){ width: 100%; }
+    }
     &.centered{
       @media (max-width: 768px){
         width: 100vw;
@@ -63,12 +79,18 @@
         left: 50%;
         margin-left: -50vw;
       }
-      img{ width: 100%; }
+      img{
+        // object-fit: contain;
+        max-width: 100%;
+      }
+
+
     }
     &.left{
       @media (min-width: 769px){
         position: relative;
-        left: -15%;
+        justify-content: flex-start;
+        // left: -30%;
       }
       @media (max-width: 768px){
         width: 100vw;
@@ -76,15 +98,18 @@
         left: 50%;
         margin-left: -50vw;
       }
-      img{
-        @media (min-width: 769px){ width: 80%; }
-        @media (max-width: 768px){ width: 100%; }
-      }
+
     }
     &.right{
       @media (min-width: 769px){
-        position: relative;
-        right: -30%;
+        // position: relative;
+        justify-content: flex-end;
+        // right: -45%;
+        // overflow: visible;
+        // text-align: right;
+        img{
+          float: right;
+        }
       }
       @media (max-width: 768px){
         width: 100vw;
@@ -92,10 +117,7 @@
         left: 50%;
         margin-left: -50vw;
       }
-      img{
-        @media (min-width: 769px){ width: 80%; }
-        @media (max-width: 768px){ width: 100%; }
-      }
+      text-align: right;
     }
     &.fullWidth{
       width: 100vw;
@@ -110,7 +132,13 @@
       @media (min-width: 769px){
         margin-left: -21.7vw;
       }
-      img{ width: 100%; }
+      img{
+        width: 100%;
+        max-height: unset;
+      }
+      span{
+        padding-left: 30px;
+      }
     }
     span{
       display: block;

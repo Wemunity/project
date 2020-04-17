@@ -12,7 +12,7 @@ export default function PressPage(props) {
   useEffect(() => {
     const query = `{
       "pressPage": *[_type == "press"],
-      "footerModule": *[_type == "footerModule"],
+      "footerModule": *[_type == "footerModule"][0],
     }`;
 
     client.fetch(query).then(data => {

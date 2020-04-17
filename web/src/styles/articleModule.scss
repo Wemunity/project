@@ -3,6 +3,7 @@
   justify-content: space-between;
   flex-flow: row wrap;
   // padding: 0 20%;
+  padding-bottom: 100px;
   @include DesktopIndentTwoColumnsLeftOneColumnRight;
 
   @media (max-width: 1000px) {
@@ -27,6 +28,7 @@
 
   @media (max-width: 411px) {
     width: 100%;
+    margin-bottom: 40px;
   }
 
     img {
@@ -65,7 +67,9 @@
         height: 60%;
       }
 
-      h4,
+      h4{
+        margin: 0 6% 15px;
+      }
       span,
       a {
         margin: 0 6%;
@@ -76,6 +80,16 @@
     span{
 
     }
+  }
+  &__article-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 140px;
+    @media (max-width: 768px){
+      min-height: 100px;
+    }
+    // align-items: flex-end;
   }
 
   &__article-read-more{

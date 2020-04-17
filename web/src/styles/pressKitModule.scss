@@ -9,10 +9,9 @@
   &__link {
   color: $dark-blue;
   font-weight: bold;
-
     &:visited {
-        color: $dark-blue;
-      }
+      color: $dark-blue;
+    }
   }
 
   &__images,
@@ -24,18 +23,25 @@
 
   &__images {
     margin-bottom: 85px;
+    @media (max-width: 768px){
+      margin-top: 30px;
+    }
   }
 
   &__logos {
     padding-bottom: 200px;
+    margin-top: 30px;
+
   }
 
   &__logos-right {
     display: flex;
     flex-flow: column;
     width: 53%;
+    justify-content: space-between;
     @media (max-width: 411px) {
       width: 100%;
+      margin-top: 20px;
     }
   }
 
@@ -63,17 +69,17 @@
   }
 
   &__0logo {
-    width: 45%;
+    width: 40%;
   }
 
   &__1logo {
     width: 100%;
-    height: 49%;
+    // height: 49%;
   }
 
   &__2logo {
     width: 100%;
-    height: 48%;
+    // height: 48%;
   }
 
   &__0,
@@ -89,6 +95,7 @@
     left: 50%;
     margin-left: -50vw;
     width: 100vw;
+    margin-top: 20px;
   }
   }
 
