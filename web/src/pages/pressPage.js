@@ -9,7 +9,6 @@ import Grid from '../components/bits/grid.js';
 
 export default function PressPage(props) {
   const [moduleData, setModuleData] = useState([]);
-
   useEffect(() => {
     const query = `{
       "pressPage": *[_type == "press"],
@@ -32,12 +31,14 @@ export default function PressPage(props) {
               title={press._id.charAt(0).toUpperCase() + press._id.slice(1)}
               subtitle={press.abstract}
               />
+            <div className="press__link">
+              <a href='#press-kit'>Take me to the press kit</a>
+            </div>
             <ArticleModule articles={press.articles} />
-            <PageTitle subtitle={press.contact} />
           </React.Fragment>
         }
       </div>
-      <div className="press__press-kit">
+      <div id="press-kit" className="press__press-kit">
         <div className="press__wrapper">
           {press &&
             <React.Fragment>
@@ -47,7 +48,6 @@ export default function PressPage(props) {
           }
         </div>
       </div>
-
       {
         press ? <React.Fragment>
         <Footer m={moduleData.footerModule} />

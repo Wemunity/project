@@ -18,7 +18,10 @@ export default {
     {
       title: 'Release date',
       name: 'releaseDate',
-      type: 'date'
+      type: 'date',
+      options: {
+        dateFormat: 'DD.MM.YY'
+      }
     },
     {
       title: 'Abstract (not used ATM)',

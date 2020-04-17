@@ -32,13 +32,18 @@
     img {
       height: 50%;
       object-fit: cover;
+      margin-bottom: 15px;
     }
 
     h4 {
-      font-size: $font-size;
+      font-size: 20px;
+      margin-top: 0;
     }
 
-    span,
+    span{
+      font-size: $font-size-s;
+      font-weight: normal;
+    }
     a {
       font-size: $font-size-s;
       font-weight: bold;
@@ -53,7 +58,10 @@
 
     @media (max-width: 411px) {
       img {
-        width: 100%;
+        position: relative;
+        left: 50%;
+        margin-left: -50vw;
+        width: 100vw;
         height: 60%;
       }
 
@@ -62,6 +70,23 @@
       a {
         margin: 0 6%;
       }
+    }
+  }
+  &__article-date{
+    span{
+
+    }
+  }
+
+  &__article-read-more{
+    display: flex;
+
+    img{
+      margin-bottom: 2px;
+      margin-left: 7px;
+      height: 10px;
+      left: unset;
+      width: unset;
     }
   }
 }
