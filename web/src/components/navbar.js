@@ -32,11 +32,11 @@ export default function NavBar(props) {
             <h2 className={`navbar__link ${theme}`}>Wemunity project</h2>
          </NavLink>
          <nav className="navbar__links">
-            <NavLink to={"/about"} className={`navbar__link ${props.location.pathname === "/about" ? "bold" : ""} ${props.theme}`}>About</NavLink>
-            <NavLink to={"/press"} className={`navbar__link ${props.location.pathname === "/press" ? "bold" : ""} ${props.theme}`}>Press</NavLink>
-            <NavLink to={"/partners"} className={`navbar__link  ${props.location.pathname === "/partners" ? "bold" : ""} ${props.theme}`}>Partners and Support</NavLink>
-            <NavLink to={"/story"} className={`navbar__link ${props.location.pathname === "/story" ? "bold" : ""} ${props.theme}`}>The Story</NavLink>
-            <NavLink to={"/platform"} className={`navbar__link ${props.location.pathname === "/platform" ? "bold" : ""} ${props.theme}`}>The Platform</NavLink>
+          <NavLink to={"/story"} className={`navbar__link ${props.location.pathname === "/story" ? "bold" : ""} ${props.theme}`}>The Story</NavLink>
+          <NavLink to={"/platform"} className={`navbar__link ${props.location.pathname === "/platform" ? "bold" : ""} ${props.theme}`}>The Platform</NavLink>
+          <NavLink to={"/roadmap"} className={`navbar__link ${props.location.pathname === "/roadmap" ? "bold" : ""} ${props.theme}`}>The Roadmap</NavLink>
+          <NavLink to={"/partners"} className={`navbar__link  ${props.location.pathname === "/partners" ? "bold" : ""} ${props.theme}`}>Supporters and Partners</NavLink>
+          <NavLink to={"/press"} className={`navbar__link ${props.location.pathname === "/press" ? "bold" : ""} ${props.theme}`}>Press</NavLink>
          </nav>
       </div>
    )
@@ -51,11 +51,11 @@ function SideBar(props) {
    return (
       <div className={`sidebar ${props.menuOpen ? "opened" : ""} ${props.theme === "dark" ? "dark" : "light"}`}>
          <nav className="navbar__links sidebar__links">
-            <NavLink to={"/about"} className={`navbar__link ${props.location.pathname === "/about" ? "bold" : ""} ${props.theme}`}>About</NavLink>
-            <NavLink to={"/press"} className={`navbar__link ${props.location.pathname === "/press" ? "bold" : ""} ${props.theme}`}>Press</NavLink>
-            <NavLink to={"/partners"} className={`navbar__link  ${props.location.pathname === "/partners" ? "bold" : ""} ${props.theme}`}>Partners and Support</NavLink>
-            <NavLink to={"/story"} className={`navbar__link ${props.location.pathname === "/story" ? "bold" : ""} ${props.theme}`}>The Story</NavLink>
-            <NavLink to={"/platform"} className={`navbar__link ${props.location.pathname === "/platform" ? "bold" : ""} ${props.theme}`}>The Platform</NavLink>
+          <NavLink to={"/story"} className={`navbar__link ${props.location.pathname === "/story" ? "bold" : ""} ${props.theme}`}>The Story</NavLink>
+          <NavLink to={"/platform"} className={`navbar__link ${props.location.pathname === "/platform" ? "bold" : ""} ${props.theme}`}>The Platform</NavLink>
+          <NavLink to={"/roadmap"} className={`navbar__link ${props.location.pathname === "/roadmap" ? "bold" : ""} ${props.theme}`}>The Roadmap</NavLink>
+          <NavLink to={"/partners"} className={`navbar__link  ${props.location.pathname === "/partners" ? "bold" : ""} ${props.theme}`}>Supporters and Partners</NavLink>
+          <NavLink to={"/press"} className={`navbar__link ${props.location.pathname === "/press" ? "bold" : ""} ${props.theme}`}>Press</NavLink>
          </nav>
          <div className="sidebar__social">
             <div>

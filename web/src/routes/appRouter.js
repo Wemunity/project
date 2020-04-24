@@ -36,7 +36,7 @@ const AppRouter = () => (
         <Route path="/profile" component={Profile} exact={true} />
         */}
         <Route path="/press" component={PressPage} exact={true} />
-        <Route path="/about" component={About} exact={true} />
+        <Route path="/roadmap" component={About} exact={true} />
         <Route path="/story" component={Story} exact={true} />
         <Route path="/platform" component={Platform} exact={true} />
         <Route path="/partners" component={Partners} exact={true} />
