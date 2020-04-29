@@ -1,11 +1,9 @@
-.social-module {
-  background: $blue-white;
+.news-module {
+  background: #fff;
   color: #090039;
   position: relative;
   min-height: 350px;
   width: 100vw;
-  padding-top: 50px;
-  padding-bottom: 70px;
 
   &__wrapper{
     @include outtergrid;
@@ -25,7 +23,6 @@
   &__content {
     // padding: 0 4%;
     // max-width: calc(900px + 8%);
-    // padding: 70px 0;
     margin: 70px auto 0;
     @media (min-width: 1650px) {
       max-width: 1100px;

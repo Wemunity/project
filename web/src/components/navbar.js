@@ -32,6 +32,7 @@ export default function NavBar(props) {
             <h2 className={`navbar__link ${theme}`}>Wemunity project</h2>
          </NavLink>
          <nav className="navbar__links">
+          <NavLink to={"/news"} className={`navbar__link ${props.location.pathname === "/news" ? "bold" : ""} ${props.theme}`}>News</NavLink>
           <NavLink to={"/story"} className={`navbar__link ${props.location.pathname === "/story" ? "bold" : ""} ${props.theme}`}>The Story</NavLink>
           <NavLink to={"/platform"} className={`navbar__link ${props.location.pathname === "/platform" ? "bold" : ""} ${props.theme}`}>The Platform</NavLink>
           <NavLink to={"/roadmap"} className={`navbar__link ${props.location.pathname === "/roadmap" ? "bold" : ""} ${props.theme}`}>The Roadmap</NavLink>
@@ -51,6 +52,7 @@ function SideBar(props) {
    return (
       <div className={`sidebar ${props.menuOpen ? "opened" : ""} ${props.theme === "dark" ? "dark" : "light"}`}>
          <nav className="navbar__links sidebar__links">
+          <NavLink to={"/news"} className={`navbar__link ${props.location.pathname === "/news" ? "bold" : ""} ${props.theme}`}>News</NavLink>
           <NavLink to={"/story"} className={`navbar__link ${props.location.pathname === "/story" ? "bold" : ""} ${props.theme}`}>The Story</NavLink>
           <NavLink to={"/platform"} className={`navbar__link ${props.location.pathname === "/platform" ? "bold" : ""} ${props.theme}`}>The Platform</NavLink>
           <NavLink to={"/roadmap"} className={`navbar__link ${props.location.pathname === "/roadmap" ? "bold" : ""} ${props.theme}`}>The Roadmap</NavLink>

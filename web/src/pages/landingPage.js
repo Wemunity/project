@@ -6,8 +6,9 @@ import '../styles/app.scss';
 import SocialModule from '../components/socialModule.js';
 import FeatureModule from '../components/featureModule.js';
 import SupportModule from '../components/supportModule.js';
+import NewsModule from '../components/newsModule.js';
 import Footer from '../components/footer.js';
-import NavBar from '../components/navbar.js'
+import NavBar from '../components/navbar.js';
 
 const query = `
 {
@@ -16,6 +17,7 @@ const query = `
   "socialModule": *[_type == "socialModule"][0],
   "supportModule": *[_type == "supportModule"][0],
   "footerModule": *[_type == "footerModule"][0],
+  "news": *[_type == "news"],
 }`;
 
 function LandingPage(props) {
@@ -35,6 +37,7 @@ function LandingPage(props) {
         /* Suspense can't come soon enough */
         moduleData ? <Fragment>
         <IntroModule m={moduleData.introModule} />
+        <NewsModule m={moduleData.news} />
         <SocialModule m={moduleData.socialModule} />
         <FeatureModule m={moduleData.featureModule} />
         <SupportModule m={moduleData.supportModule} />

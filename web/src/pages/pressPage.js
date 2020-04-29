@@ -19,7 +19,9 @@ export default function PressPage(props) {
       setModuleData(data);
     });
   }, []);
-  const press = moduleData.length !== 0 && moduleData.pressPage[0]
+
+  const press = moduleData.length !== 0 && moduleData.pressPage[0];
+  console.log(press.articles);
   return (
     <div className="press">
       <Grid show={false}/>

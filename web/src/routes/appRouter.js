@@ -17,6 +17,7 @@ import Story from '../pages/story.js';
 import Platform from '../pages/platform.js';
 import Partners from '../pages/partners.js';
 import GridPage from '../pages/gridPage.js';
+import News from '../pages/news.js';
 
 const AppRouter = () => (
   <BrowserRouter>
@@ -35,6 +36,7 @@ const AppRouter = () => (
         <Route path="/tasks" component={Tasks} exact={true} />
         <Route path="/profile" component={Profile} exact={true} />
         */}
+        <Route path="/news" component={News} exact={true} />
         <Route path="/press" component={PressPage} exact={true} />
         <Route path="/roadmap" component={About} exact={true} />
         <Route path="/story" component={Story} exact={true} />

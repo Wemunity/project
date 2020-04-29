@@ -22,6 +22,7 @@ import pressTeaser from './pressTeaser';
 import buttonLink from './buttonLink';
 import contentImage from './contentImage';
 import socialButton from './socialButton';
+import news from './news';
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -49,5 +50,6 @@ export default createSchema({
     buttonLink,
     contentImage,
     socialButton,
+    news,
   ])
 });
