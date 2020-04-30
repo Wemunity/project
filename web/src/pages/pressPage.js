@@ -21,7 +21,7 @@ export default function PressPage(props) {
   }, []);
 
   const press = moduleData.length !== 0 && moduleData.pressPage[0];
-  console.log(press.articles);
+  // console.log(press.articles);
   return (
     <div className="press">
       <Grid show={false}/>

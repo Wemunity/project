@@ -21,7 +21,7 @@ export default function News(props) {
     return <div className="App">We're sorry, something wrong happened. <a href="mailto:contact@wemunity.org">Let us know about it.</a></div>
   }
   // console.log(data);
-  console.log(props);
+  // console.log(props);
   return (
     <div className="press">
       <Grid show={false}/>

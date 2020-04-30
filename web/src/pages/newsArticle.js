@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 // ,  Component }
 import useSWR from "swr";
 import client from '../lib/sanity';
@@ -19,6 +19,16 @@ const BlockContent = require('@sanity/block-content-to-react');
 // }`;
 
 const NewsArticle = (props) => {
+  useEffect(() => {
+    console.log('hello');
+    if (window){
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
+    }
+  }, [])
   const { params: { slug } } = props.match;
   const query = `{
     "article": *[_type == "news" && slug.current == $slug][0],
@@ -32,7 +42,8 @@ const NewsArticle = (props) => {
   if (error) {
     return <div className="App">We're sorry, something wrong happened. <a href="mailto:contact@wemunity.org">Let us know about it.</a></div>
   }
-  console.log(data);
+  // console.log(data);
+
   return (
 
     <div className="about">
@@ -84,7 +95,7 @@ const NewsArticle = (props) => {
       {
         data && data.footerModule && <Fragment>
         <Footer m={data.footerModule} />
-        </Fragment> 
+        </Fragment>
       }
 
     </div>
