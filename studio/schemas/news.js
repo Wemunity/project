@@ -53,6 +53,9 @@ export default {
           type: 'image',
           accept: "image/jpeg",
           // validation: Rule => Rule.required()
+          options: {
+            hotspot: true
+          },
         },
         {
           title: 'Position',

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import PageTitle from './bits/pageTitle';
 import NewsArticles from './newsArticles';
 
@@ -28,6 +28,11 @@ const NewsModule = ({ m }) => {
             subtitle={''}
             />
           <NewsArticles articles={selectedArticles} />
+          <div className="news-module__read-more">
+            <Link to={'/news'}>
+              <p>More news</p>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

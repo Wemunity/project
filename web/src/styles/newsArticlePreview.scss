@@ -1,0 +1,117 @@
+.news-article-preview{
+  margin: unset;
+  width: 32%;
+  @media (max-width: 1000px) {
+    width: 48%;
+    height: 450px;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: unset;
+
+  }
+  a{
+    display: flex;
+    flex-flow: column;
+    color: $dark-blue;
+    height: 400px;
+
+    margin: unset;
+    margin-bottom: 40px;
+    font-size: $font-size-s;
+    font-weight: bold;
+    :visited {
+      color: $dark-blue;
+    }
+
+
+    img {
+      height: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    h4 {
+      font-size: 20px;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    span{
+      font-size: $font-size-s;
+      font-weight: normal;
+    }
+    @media (max-width: 768px) {
+      height: unset;
+      img {
+
+        position: relative;
+        left: 50%;
+        margin-left: -50vw;
+        width: 100vw;
+        height: 60%;
+      }
+
+      h4{
+        margin: 0 6% 15px;
+      }
+      span,
+      a {
+        margin: 0 6%;
+      }
+    }
+  }
+  &.small{
+    // width: 100vw;
+
+    a{
+      @media (min-width: 500px){
+        @media (max-width: 768px){
+          padding-left: 5%;
+        }
+      }
+      @media (max-width: 768px) {
+        width: 100vw;
+        height: unset;
+        flex-flow: row;
+        position: relative;
+        left: 50%;
+        margin-left: -50vw;
+        padding-right: 20px;
+
+        img {
+          flex: 150px 0;
+          position: unset;
+          left: unset;
+          margin-left: unset;
+          margin-right: 10px;
+          width: 150px;
+          height: 150px;
+          // height: 60%;
+        }
+      }
+    }
+
+  }
+  &__line{
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    border: 1px solid $blue-white;
+    margin-bottom: 40px;
+    @media (min-width: 768px){
+      display: none;
+    }
+  }
+  &__text-wrapper{
+    flex: 1;
+    // width: 100%;
+  }
+  .article-module__article-text{
+    @media (max-width: 768px) {
+      min-height: unset;
+    }
+  }
+}

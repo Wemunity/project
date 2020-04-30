@@ -20,7 +20,8 @@ export default function News(props) {
   if (error) {
     return <div className="App">We're sorry, something wrong happened. <a href="mailto:contact@wemunity.org">Let us know about it.</a></div>
   }
-  console.log(data);
+  // console.log(data);
+  console.log(props);
   return (
     <div className="press">
       <Grid show={false}/>
@@ -30,7 +31,7 @@ export default function News(props) {
           <React.Fragment>
             <PageTitle
               title={'News'}
-              subtitle={'This is where we post our news.'}
+              subtitle={''}
               />
             <NewsArticles articles={data.news} />
           </React.Fragment> : <div className="App">Loading</div>
