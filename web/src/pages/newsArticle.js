@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect } from 'react';
 // ,  Component }
-import useSWR from "swr";
+import useSWR, { mutate } from "swr";
 import client from '../lib/sanity';
 import { buildImageObj } from '../lib/helpers';
 import imageUrlFor from '../lib/image-url';
@@ -12,15 +12,9 @@ import PageTitle from '../components/bits/pageTitle';
 
 const BlockContent = require('@sanity/block-content-to-react');
 
-// const query = `
-// {
-//   "about": *[_type == "about"][0],
-//   "footerModule": *[_type == "footerModule"][0],
-// }`;
 
 const NewsArticle = (props) => {
   useEffect(() => {
-    console.log('hello');
     if (window){
       window.scrollTo({
         top: 0,
@@ -29,23 +23,22 @@ const NewsArticle = (props) => {
       });
     }
   }, [])
+
   const { params: { slug } } = props.match;
   const query = `{
     "article": *[_type == "news" && slug.current == $slug][0],
     "footerModule": *[_type == "footerModule"][0]
   }`;
   const params = {slug: slug};
-  const { data, error } = useSWR(query, query =>
-    client.fetch(query, params)
+  const { data, error, mutate, revalidate } = useSWR(query, query =>
+    client.fetch(query, params),
   )
 
   if (error) {
     return <div className="App">We're sorry, something wrong happened. <a href="mailto:contact@wemunity.org">Let us know about it.</a></div>
   }
-  // console.log(data);
 
   return (
-
     <div className="about">
       <Grid show={false}/>
       <NavBar {...props} theme="light" />

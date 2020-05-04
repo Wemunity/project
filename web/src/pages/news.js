@@ -21,7 +21,7 @@ export default function News(props) {
     return <div className="App">We're sorry, something wrong happened. <a href="mailto:contact@wemunity.org">Let us know about it.</a></div>
   }
   // console.log(data);
-  // console.log(props);
+
   return (
     <div className="press">
       <Grid show={false}/>
@@ -33,7 +33,9 @@ export default function News(props) {
               title={'News'}
               subtitle={''}
               />
-            <NewsArticles articles={data.news} />
+            <NewsArticles articles={data.news.sort(function(a,b){
+                return new Date(b.date) - new Date(a.date);
+              })} />
           </React.Fragment> : <div className="App">Loading</div>
         }
       </div>
