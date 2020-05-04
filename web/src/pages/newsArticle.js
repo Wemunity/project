@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect } from 'react';
+import {Helmet} from "react-helmet";
 // ,  Component }
 import useSWR, { mutate } from "swr";
 import client from '../lib/sanity';
@@ -37,7 +38,7 @@ const NewsArticle = (props) => {
   if (error) {
     return <div className="App">We're sorry, something wrong happened. <a href="mailto:contact@wemunity.org">Let us know about it.</a></div>
   }
-
+  console.log(data);
   return (
     <div className="about">
       <Grid show={false}/>
@@ -89,6 +90,15 @@ const NewsArticle = (props) => {
         data && data.footerModule && <Fragment>
         <Footer m={data.footerModule} />
         </Fragment>
+      }
+      {data && data &&
+        <Helmet>
+          <title>This is article</title>
+          <meta name="title" content={data.article.title} />
+          <meta name="description" content={data.article.abstract} />
+          <meta name="image" content={imageUrlFor(buildImageObj(data.article.mainImage.image))} />
+        </Helmet>
+
       }
 
     </div>
