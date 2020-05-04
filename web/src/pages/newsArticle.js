@@ -98,8 +98,11 @@ const NewsArticle = (props) => {
       <Helmet>
         <title>This is article</title>
         <meta name="title" content={slug} />
+        <meta property="og:title" content={slug} />
         <meta name="description" content={'data.article.abstract'} />
+        <meta property="og:description" content={'data.article.abstract'} />
         <meta name="image" content={BankIDLogo} />
+        <meta property="og:image" content={BankIDLogo} />
       </Helmet>
 
     </div>
