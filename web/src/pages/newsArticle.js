@@ -11,7 +11,11 @@ import NavBar from '../components/navbar.js';
 import Grid from '../components/bits/grid.js';
 import PageTitle from '../components/bits/pageTitle';
 
+import BankIDLogo from '../assets/bankid-logo@2x.png';
+
 const BlockContent = require('@sanity/block-content-to-react');
+
+
 
 
 const NewsArticle = (props) => {
@@ -91,15 +95,12 @@ const NewsArticle = (props) => {
         <Footer m={data.footerModule} />
         </Fragment>
       }
-      {data && data &&
-        <Helmet>
-          <title>This is article</title>
-          <meta name="title" content={data.article.title} />
-          <meta name="description" content={data.article.abstract} />
-          <meta name="image" content={imageUrlFor(buildImageObj(data.article.mainImage.image))} />
-        </Helmet>
-
-      }
+      <Helmet>
+        <title>This is article</title>
+        <meta name="title" content={slug} />
+        <meta name="description" content={'data.article.abstract'} />
+        <meta name="image" content={BankIDLogo} />
+      </Helmet>
 
     </div>
   );
