@@ -3,6 +3,7 @@ import useSWR from "swr";
 import client from '../lib/sanity';
 import { buildImageObj } from '../lib/helpers';
 import imageUrlFor from '../lib/image-url';
+import {Helmet} from "react-helmet";
 
 import Footer from '../components/footer.js';
 import NavBar from '../components/navbar.js';
@@ -28,6 +29,9 @@ function Story(props) {
 
   return (
     <div className="about">
+      <Helmet>
+        <title>The Platform - Wemunity</title>
+      </Helmet>
       <NavBar {...props} theme="light" />
       <div className="about__wrapper">
 

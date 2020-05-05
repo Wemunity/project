@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import client from '../lib/sanity';
+import {Helmet} from "react-helmet";
 import NavBar from '../components/navbar'
 import PageTitle from '../components/bits/pageTitle'
 import ArticleModule from '../components/articleModule'
@@ -24,6 +25,9 @@ export default function PressPage(props) {
   // console.log(press.articles);
   return (
     <div className="press">
+      <Helmet>
+        <title>Press - Wemunity</title>
+      </Helmet>
       <Grid show={false}/>
       <NavBar {...props} theme="light" />
       <div className="press__wrapper">

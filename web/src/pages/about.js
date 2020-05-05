@@ -3,6 +3,7 @@ import useSWR from "swr";
 import client from '../lib/sanity';
 import { buildImageObj } from '../lib/helpers';
 import imageUrlFor from '../lib/image-url';
+import {Helmet} from "react-helmet";
 
 import Footer from '../components/footer.js';
 import NavBar from '../components/navbar.js';
@@ -29,6 +30,9 @@ function About(props) {
   return (
 
     <div className="about">
+      <Helmet>
+        <title>The Roadmap - Wemunity</title>
+      </Helmet>
       <Grid show={false}/>
       <NavBar {...props} theme="light" />
 

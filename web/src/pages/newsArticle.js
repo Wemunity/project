@@ -1,7 +1,6 @@
 import React, { Fragment, useEffect } from 'react';
 import {Helmet} from "react-helmet";
-// ,  Component }
-import useSWR, { mutate } from "swr";
+import useSWR from "swr";
 import client from '../lib/sanity';
 import { buildImageObj } from '../lib/helpers';
 import imageUrlFor from '../lib/image-url';
@@ -11,14 +10,33 @@ import NavBar from '../components/navbar.js';
 import Grid from '../components/bits/grid.js';
 import PageTitle from '../components/bits/pageTitle';
 
-import BankIDLogo from '../assets/bankid-logo@2x.png';
-
 const BlockContent = require('@sanity/block-content-to-react');
 
 
-
+// async function getArticle(slug) {
+//
+//   const query = `{
+//     "article": *[_type == "news" && slug.current == $slug][0],
+//     "footerModule": *[_type == "footerModule"][0]
+//   }`;
+//
+//   const params = {slug: slug};
+//   const { data, error } = await useSWR(query, query =>
+//     client.fetch(query, params),
+//   )
+//     .then(promise => {
+//       return promise.data;
+//     })
+//     .catch(e => {
+//       console.error(e);
+//     })
+//     return data;
+// }
 
 const NewsArticle = (props) => {
+
+  // const [data, setData] = useState(null);
+
   useEffect(() => {
     if (window){
       window.scrollTo({
@@ -34,17 +52,33 @@ const NewsArticle = (props) => {
     "article": *[_type == "news" && slug.current == $slug][0],
     "footerModule": *[_type == "footerModule"][0]
   }`;
+
   const params = {slug: slug};
-  const { data, error, mutate, revalidate } = useSWR(query, query =>
+  const { data, error } = useSWR(query, query =>
     client.fetch(query, params),
+    { dedupingInterval: 100 }
   )
 
   if (error) {
     return <div className="App">We're sorry, something wrong happened. <a href="mailto:contact@wemunity.org">Let us know about it.</a></div>
   }
-  console.log(data);
+
+  // <Helmet>
+  //   <meta name="title" content={data.article.title} />
+  //   <meta property="og:title" content={data.article.title} />
+  //   <meta name="description" content={data.article.abstract} />
+  //   <meta property="og:description" content={data.article.abstract} />
+  //   <meta name="image" content={imageUrlFor(buildImageObj(data.article.mainImage.image)).url()} />
+  //   <meta property="og:image" content={imageUrlFor(buildImageObj(data.article.mainImage.image)).url()} />
+  // </Helmet>
   return (
     <div className="about">
+      {
+        data ?
+        <Helmet>
+          <title>{data && data.article.title && data.article.title} - Wemunity</title>
+        </Helmet> : null
+      }
       <Grid show={false}/>
       <NavBar {...props} theme="light" />
 
@@ -95,16 +129,6 @@ const NewsArticle = (props) => {
         <Footer m={data.footerModule} />
         </Fragment>
       }
-      <Helmet>
-        <title>This is article</title>
-        <meta name="title" content={slug} />
-        <meta property="og:title" content={slug} />
-        <meta name="description" content={'data.article.abstract'} />
-        <meta property="og:description" content={'data.article.abstract'} />
-        <meta name="image" content={BankIDLogo} />
-        <meta property="og:image" content={BankIDLogo} />
-      </Helmet>
-
     </div>
   );
 }

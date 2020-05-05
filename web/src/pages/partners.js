@@ -3,6 +3,7 @@ import useSWR from "swr";
 import client from '../lib/sanity';
 import { buildImageObj } from '../lib/helpers';
 import imageUrlFor from '../lib/image-url';
+import {Helmet} from "react-helmet";
 
 import Footer from '../components/footer.js';
 import NavBar from '../components/navbar.js';
@@ -29,7 +30,9 @@ function Partners(props) {
   return (
 
     <div className="partners">
-
+      <Helmet>
+        <title>Supporters and Partners - Wemunity</title>
+      </Helmet>
       <Grid show={false}/>
       <NavBar {...props} theme="dark" />
 

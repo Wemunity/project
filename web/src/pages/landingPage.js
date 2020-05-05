@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import useSWR from "swr";
 import client from '../lib/sanity';
+import {Helmet} from "react-helmet";
 import IntroModule from '../components/introModule.js';
 import '../styles/app.scss';
 import SocialModule from '../components/socialModule.js';
@@ -32,6 +33,9 @@ function LandingPage(props) {
 
   return (
     <div className="App">
+      <Helmet>
+        <title>Wemunity</title>
+      </Helmet>
       <NavBar {...props} theme="dark" />
       {
         /* Suspense can't come soon enough */

@@ -1,6 +1,7 @@
 import React from 'react'
 import client from '../lib/sanity';
 import useSWR from "swr";
+import {Helmet} from "react-helmet";
 import NavBar from '../components/navbar'
 import PageTitle from '../components/bits/pageTitle'
 import NewsArticles from '../components/newsArticles'
@@ -24,6 +25,9 @@ export default function News(props) {
 
   return (
     <div className="press">
+      <Helmet>
+        <title>News - Wemunity</title>
+      </Helmet>
       <Grid show={false}/>
       <NavBar {...props} theme="light" />
       <div className="press__wrapper">
