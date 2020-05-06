@@ -1,26 +1,31 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import GA from '../utils/GoogleAnalytics';
+
 import LandingPage from '../pages/landingPage.js';
-import Signup from '../pages/onboarding/signup';
-import Signup1 from '../pages/onboarding/signup1';
-import Signup2 from '../pages/onboarding/signup2';
-import Signup3 from '../pages/onboarding/signup3';
-import Signup4 from '../pages/onboarding/signup4';
-import Signup5 from '../pages/onboarding/signup5';
-import Signup52 from '../pages/onboarding/signup52';
-import Welcome from '../pages/onboarding/welcome';
-import Profile from '../pages/profile';
-import Tasks from '../pages/tasks';
+// import Signup from '../pages/onboarding/signup';
+// import Signup1 from '../pages/onboarding/signup1';
+// import Signup2 from '../pages/onboarding/signup2';
+// import Signup3 from '../pages/onboarding/signup3';
+// import Signup4 from '../pages/onboarding/signup4';
+// import Signup5 from '../pages/onboarding/signup5';
+// import Signup52 from '../pages/onboarding/signup52';
+// import Welcome from '../pages/onboarding/welcome';
+// import Profile from '../pages/profile';
+// import Tasks from '../pages/tasks';
 import PressPage from '../pages/pressPage.js';
 import About from '../pages/about.js';
 import Story from '../pages/story.js';
 import Platform from '../pages/platform.js';
 import Partners from '../pages/partners.js';
-import GridPage from '../pages/gridPage.js';
+// import GridPage from '../pages/gridPage.js';
+// import News from '../pages/news.js';
+// import NewsArticle from '../pages/newsArticle.js';
 
 const AppRouter = () => (
   <BrowserRouter>
     <div>
+      { GA.init() && <GA.RouteTracker /> }
       <Switch>
         <Route path="/" component={LandingPage} exact={true} />
         {/*
@@ -35,11 +40,13 @@ const AppRouter = () => (
         <Route path="/tasks" component={Tasks} exact={true} />
         <Route path="/profile" component={Profile} exact={true} />
         */}
+        {/* <Route path="/news" component={News} exact={true} /> */}
         <Route path="/press" component={PressPage} exact={true} />
         <Route path="/roadmap" component={About} exact={true} />
         <Route path="/story" component={Story} exact={true} />
         <Route path="/platform" component={Platform} exact={true} />
         <Route path="/partners" component={Partners} exact={true} />
+        {/* <Route path="/news/:slug" component={NewsArticle} exact={true} /> */}
         {/* <Route path="/grid" component={GridPage} exact={true} /> */}
 
       </Switch>
