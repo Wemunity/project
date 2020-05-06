@@ -1,5 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import GA from '../utils/GoogleAnalytics';
+
 import LandingPage from '../pages/landingPage.js';
 // import Signup from '../pages/onboarding/signup';
 // import Signup1 from '../pages/onboarding/signup1';
@@ -23,6 +25,7 @@ import NewsArticle from '../pages/newsArticle.js';
 const AppRouter = () => (
   <BrowserRouter>
     <div>
+      { GA.init() && <GA.RouteTracker /> }
       <Switch>
         <Route path="/" component={LandingPage} exact={true} />
         {/*
